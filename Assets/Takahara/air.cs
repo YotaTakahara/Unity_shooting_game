@@ -74,6 +74,7 @@ public class air : MonoBehaviour
             {
                 Debug.Log("曲がるコマンド発動中");
             }
+            //なんでそうなるのかまったくわからないんだが
 
             float turn = miuTurnInputValue * 100 * Time.deltaTime;
             //     Quaternion turnRotation = Quaternion.Euler(0, turn, 0);
