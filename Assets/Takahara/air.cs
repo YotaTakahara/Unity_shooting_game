@@ -56,6 +56,7 @@ public class air : MonoBehaviour
 
     void Update()
     {
+        Debug.Log("ここよここmiuRb" + miuRb);
         if (IsStun())
         {
             miuRb.velocity = Vector3.zero;
@@ -68,8 +69,18 @@ public class air : MonoBehaviour
 
             // 旋回
             miuTurnInputValue = Input.GetAxis("Horizontal");
+
+            if (Input.GetAxis("Horizontal") != 0)
+            {
+                Debug.Log("曲がるコマンド発動中");
+            }
+
             float turn = miuTurnInputValue * 100 * Time.deltaTime;
+            //     Quaternion turnRotation = Quaternion.Euler(0, turn, 0);
+            //turn = 100;
             Quaternion turnRotation = Quaternion.Euler(0, turn, 0);
+            Debug.Log("turnRotation" + turnRotation);
+            Debug.Log("miuRb.rotation" + miuRb.rotation);
             miuRb.MoveRotation(miuRb.rotation * turnRotation);
 
             // 機首（上昇、下降）

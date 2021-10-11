@@ -45,7 +45,7 @@ GameObject:
   - component: {fileID: -376757683341686485}
   - component: {fileID: -8303018098636197909}
   - component: {fileID: -4155407106449516545}
-  - component: {fileID: 7648845119292105136}
+  - component: {fileID: -1462457745526652211}
   m_Layer: 0
   m_Name: Slime
   m_TagString: Monster
@@ -131,7 +131,7 @@ MonoBehaviour:
   objectsRed: []
   objectsBlue: []
   fire: {fileID: 0}
---- !u!114 &7648845119292105136
+--- !u!114 &-1462457745526652211
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -143,7 +143,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ff1df1125e8b8c949ac5115e775568ca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _radius: 15
+  _radius: 0.7
 --- !u!1 &1159745215084782
 GameObject:
   m_ObjectHideFlags: 0

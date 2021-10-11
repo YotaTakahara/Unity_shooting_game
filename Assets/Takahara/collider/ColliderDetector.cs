@@ -14,7 +14,8 @@ public class ColliderDetector : MonoBehaviour
     {
         _targetColliderRoot = GameObject.Find("Monsters");
         _sphere = _sphereObj.GetComponent<ISphere>();
-        _colliders = _targetColliderRoot.GetComponentsInChildren<ICollider>();
+        // _colliders = _targetColliderRoot.GetComponentsInChildren<ICollider>();
+        //   _colliders = _targetColliderRoot.GetComponentsInChildren<ICollider>();
         Debug.Log("targetが取得できたか" + _targetColliderRoot);
         Debug.Log("いやなんでやねん");
     }

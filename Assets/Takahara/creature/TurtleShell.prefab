@@ -821,7 +821,7 @@ GameObject:
   - component: {fileID: 95528395651247964}
   - component: {fileID: 1821284040393232160}
   - component: {fileID: 510248258615195146}
-  - component: {fileID: 7559674928960567052}
+  - component: {fileID: 7204175521596166190}
   m_Layer: 0
   m_Name: TurtleShell
   m_TagString: Monster
@@ -892,7 +892,7 @@ MonoBehaviour:
   bullet: {fileID: 1272916725600244202, guid: fdd74a28b2e443d4ea33462c4a5131f1, type: 3}
   span: 1.5
   Speed: 560
---- !u!114 &7559674928960567052
+--- !u!114 &7204175521596166190
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -904,7 +904,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ff1df1125e8b8c949ac5115e775568ca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _radius: 15
+  _radius: 0.7
 --- !u!1 &1914324128724412
 GameObject:
   m_ObjectHideFlags: 0
