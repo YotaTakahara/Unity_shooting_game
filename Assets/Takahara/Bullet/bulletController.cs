@@ -7,7 +7,7 @@ public class bulletController : MonoBehaviour
     private Vector3 latestPos;
     public float num;
     public float span = 0.5f;
-    private float delta = 0;
+    //private float delta = 0;
     public float range;
 
 

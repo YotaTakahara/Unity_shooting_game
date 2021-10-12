@@ -8,8 +8,8 @@ public class ColliderSphere : MonoBehaviour, ICollider, ISphere
     {
         get { return _center; }
     }
-
-    public float _radius = 0.7f;
+    
+    public float _radius ;
 
     public float Radius
     {
@@ -22,6 +22,7 @@ public class ColliderSphere : MonoBehaviour, ICollider, ISphere
     private void Awake()
     {
         // _transform = this.transform;
+        _radius = transform.localScale.x;
     }
 
     public Vector3 WorldCenter
@@ -33,6 +34,8 @@ public class ColliderSphere : MonoBehaviour, ICollider, ISphere
     public bool CheckSphere(ISphere collider)
     {
         var collideDistance = Radius + collider.Radius;
+       // Debug.Log("collideDistance" + collideDistance* collideDistance);
+        //ebug.Log("realDistance" + (WorldCenter - collider.WorldCenter).sqrMagnitude);
         return (WorldCenter - collider.WorldCenter).sqrMagnitude <= collideDistance * collideDistance;
     }
 }

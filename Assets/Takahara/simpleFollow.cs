@@ -15,7 +15,7 @@ public class simpleFollow : MonoBehaviour
     }
 
     // Update is called once per frame
-    void LateUpdate()
+    void FixedUpdate()
     {
         // transform.position = Vector3.Lerp(transform.position, target.transform.position - diff,
         //     followSpeed * Time.deltaTime);

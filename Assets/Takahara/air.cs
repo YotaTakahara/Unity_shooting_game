@@ -54,9 +54,9 @@ public class air : MonoBehaviour
         miuRb = GetComponent<Rigidbody>();
     }
 
-    void Update()
+    void FixedUpdate()
     {
-        Debug.Log("ここよここmiuRb" + miuRb);
+     //   Debug.Log("ここよここmiuRb" + miuRb);
         if (IsStun())
         {
             miuRb.velocity = Vector3.zero;
@@ -72,7 +72,7 @@ public class air : MonoBehaviour
 
             if (Input.GetAxis("Horizontal") != 0)
             {
-                Debug.Log("曲がるコマンド発動中");
+             //   Debug.Log("曲がるコマンド発動中");
             }
             //なんでそうなるのかまったくわからないんだが
             //macyou
@@ -80,8 +80,8 @@ public class air : MonoBehaviour
             //     Quaternion turnRotation = Quaternion.Euler(0, turn, 0);
             //turn = 100;
             Quaternion turnRotation = Quaternion.Euler(0, turn, 0);
-            Debug.Log("turnRotation" + turnRotation);
-            Debug.Log("miuRb.rotation" + miuRb.rotation);
+           // Debug.Log("turnRotation" + turnRotation);
+            //Debug.Log("miuRb.rotation" + miuRb.rotation);
             miuRb.MoveRotation(miuRb.rotation * turnRotation);
 
             // 機首（上昇、下降）

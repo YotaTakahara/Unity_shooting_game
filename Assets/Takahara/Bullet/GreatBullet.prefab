@@ -15,6 +15,8 @@ GameObject:
   - component: {fileID: -7872117626081717345}
   - component: {fileID: 8907176596070152326}
   - component: {fileID: 2318719384643527806}
+  - component: {fileID: -2307914104600737242}
+  - component: {fileID: -7747919107280611664}
   m_Layer: 0
   m_Name: GreatBullet
   m_TagString: Untagged
@@ -145,6 +147,35 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   objectsRed: []
   objectsBlue: []
+  fire: {fileID: 1000011797152326, guid: acf39d9f4addf294d93fa56fa373961b, type: 3}
+--- !u!114 &-2307914104600737242
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7944100284806406011}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ff1df1125e8b8c949ac5115e775568ca, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _radius: 0
+--- !u!114 &-7747919107280611664
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7944100284806406011}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 619eb082e5dfd3f499e52ac5662545a4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _target: []
+  check: {fileID: 0}
+  air: {fileID: 0}
   fire: {fileID: 1000011797152326, guid: acf39d9f4addf294d93fa56fa373961b, type: 3}
 --- !u!1 &7944100285219630842
 GameObject:
