@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using UnityEngine;
 
 public class bulletController : MonoBehaviour
@@ -6,7 +7,11 @@ public class bulletController : MonoBehaviour
     GameObject airPlane;
     private Vector3 latestPos;
     public float num;
+    [SerializeField] private GameObject attackList;
+    [SerializeField] private List<GameObject> enemy;
+
     public float span = 0.5f;
+
     //private float delta = 0;
     public float range;
 
@@ -14,6 +19,8 @@ public class bulletController : MonoBehaviour
     void Start()
     {
         latestPos = transform.position;
+        attackList = GameObject.Find("attackList");
+        enemy = attackList.GetComponent<List>().attack;
     }
 
     void Update()
@@ -21,23 +28,14 @@ public class bulletController : MonoBehaviour
         Vector3 diff = transform.position - latestPos;
         if (diff.magnitude > range)
         {
+            if (gameObject.tag == "enemyBullet")
+            {
+                int index = enemy.IndexOf(gameObject);
+                enemy.RemoveAt(index);
+            }
+
+
             Destroy(gameObject);
         }
-        //transform.Translate(0, 0, 0.2f);
-        // Vector3 a = airPlane.transform.position;
-        // Vector3 diff = a - latestPos;
-        // delta += Time.deltaTime;
-        // if (span < delta)
-        // {
-        //     latestPos = a;
-        //     delta = 0;
-        // }
-        //
-        //
-        // Debug.Log("LatestPos" + latestPos);
-        // Debug.Log("now" + a);
-        // Debug.Log("diff" + diff.normalized);
-        //
-        // transform.Translate(diff.normalized * num);
     }
 }
