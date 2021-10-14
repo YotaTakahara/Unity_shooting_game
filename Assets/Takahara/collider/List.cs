@@ -11,9 +11,9 @@ public class List : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        // enemy = GameObject.FindGameObjectsWithTag("Monster");
-        // enemyBullet = GameObject.FindGameObjectsWithTag("enemyBullet");
-        enemy = GameObject.FindGameObjectsWithTag("experiment");
+         enemy = GameObject.FindGameObjectsWithTag("Monster");
+         enemyBullet = GameObject.FindGameObjectsWithTag("enemyBullet");
+       // enemy = GameObject.FindGameObjectsWithTag("experiment");
         for (int i = 0; i < enemy.Length; i++)
         {
             attack.Add(enemy[i]);

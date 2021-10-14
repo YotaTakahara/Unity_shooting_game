@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657826, g: 0.49641263, b: 0.57481676, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -336,6 +336,24 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 100010, guid: 147d826ca4c5a834a9dfe5db390c47f4, type: 3}
   m_PrefabInstance: {fileID: 397769667}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &88968042
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 88968032}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 730480a35c5f6644ca3bb792bae6f361, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 0
+  life: 3
+  stopTime: 0.5
+  recoverTime: 0
+  fire: {fileID: 0}
+  point: 0
 --- !u!4 &95184668 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6807935779154314191, guid: e111ec330fafe0a42a5ab2806991c8b2, type: 3}
@@ -700,13 +718,33 @@ PrefabInstance:
       propertyPath: m_UseGravity
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 9500000, guid: 147d826ca4c5a834a9dfe5db390c47f4, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 11400000, guid: 147d826ca4c5a834a9dfe5db390c47f4, type: 3}
       propertyPath: m_Enabled
-      value: 1
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400002, guid: 147d826ca4c5a834a9dfe5db390c47f4, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400006, guid: 147d826ca4c5a834a9dfe5db390c47f4, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400010, guid: 147d826ca4c5a834a9dfe5db390c47f4, type: 3}
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 11400012, guid: 147d826ca4c5a834a9dfe5db390c47f4, type: 3}
       propertyPath: m_Enabled
-      value: 1
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400018, guid: 147d826ca4c5a834a9dfe5db390c47f4, type: 3}
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 147d826ca4c5a834a9dfe5db390c47f4, type: 3}
@@ -728,7 +766,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 100004, guid: baec086904791744185aaa07a6cf55c2, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 400004, guid: baec086904791744185aaa07a6cf55c2, type: 3}
       propertyPath: m_RootOrder
@@ -918,8 +956,8 @@ MonoBehaviour:
   bull: {fileID: 5999747802507278386, guid: 3dd4baa1ba7365945957b9043ef459dc, type: 3}
   bullNext: {fileID: 8907176596070152326, guid: 26f7b9cb5c386cb41b1d169ad05c672e, type: 3}
   count: 5
-  airPlane: {fileID: 1085553088}
-  span: 100
+  airPlane: {fileID: 88968032}
+  span: 0.15
   power: 2000
 --- !u!4 &710196948
 Transform:
@@ -1195,7 +1233,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!81 &963194226
 AudioListener:
   m_ObjectHideFlags: 0
@@ -1273,7 +1311,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f4ac7f4692c75f54caf6bd6736a542f1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  target: {fileID: 1085553088}
+  target: {fileID: 88968032}
   followSpeed: 10
 --- !u!1001 &1008200625
 PrefabInstance:
@@ -1530,7 +1568,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 730480a35c5f6644ca3bb792bae6f361, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 0.1
+  speed: 0.4
   life: 3
   stopTime: 0.5
   recoverTime: 0
@@ -1944,10 +1982,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 712ae24e5ca8bf94185f0c662faa5725, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fire: {fileID: 0}
   attackList: {fileID: 0}
   enemyBox: []
   _didCollide: 0
+  airPlane: {fileID: 0}
+  airScript: {fileID: 0}
 --- !u!1 &1466385395
 GameObject:
   m_ObjectHideFlags: 0
@@ -1960,6 +1999,7 @@ GameObject:
   - component: {fileID: 1466385399}
   - component: {fileID: 1466385398}
   - component: {fileID: 1466385397}
+  - component: {fileID: 1466385400}
   m_Layer: 0
   m_Name: body
   m_TagString: Untagged
@@ -1990,7 +2030,7 @@ CapsuleCollider:
   m_GameObject: {fileID: 1466385395}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   m_Radius: 0.5
   m_Height: 2
   m_Direction: 1
@@ -2044,6 +2084,23 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1466385395}
   m_Mesh: {fileID: 10208, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &1466385400
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1466385395}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 712ae24e5ca8bf94185f0c662faa5725, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  attackList: {fileID: 0}
+  enemyBox: []
+  _didCollide: 0
+  airPlane: {fileID: 0}
+  airScript: {fileID: 0}
 --- !u!4 &1475567977 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4882590064214274, guid: 3aec22b5d3f3c2947bb81040b56e5f96, type: 3}
@@ -2481,6 +2538,7 @@ GameObject:
   - component: {fileID: 1919957660}
   - component: {fileID: 1919957659}
   - component: {fileID: 1919957662}
+  - component: {fileID: 1919957663}
   m_Layer: 0
   m_Name: Tail
   m_TagString: Untagged
@@ -2576,10 +2634,28 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 712ae24e5ca8bf94185f0c662faa5725, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fire: {fileID: 0}
   attackList: {fileID: 0}
   enemyBox: []
   _didCollide: 0
+  airPlane: {fileID: 0}
+  airScript: {fileID: 0}
+--- !u!114 &1919957663
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1919957657}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 712ae24e5ca8bf94185f0c662faa5725, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  attackList: {fileID: 0}
+  enemyBox: []
+  _didCollide: 0
+  airPlane: {fileID: 0}
+  airScript: {fileID: 0}
 --- !u!4 &1949000817 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4885079432260988, guid: a817c29ea6847604bb2c6c51d9a74bf1, type: 3}

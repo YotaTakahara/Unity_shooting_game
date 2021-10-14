@@ -6,7 +6,7 @@ public class ColliderCapsule : MonoBehaviour
     // [SerializeField] private GameObject[] enemy;
     // [SerializeField] private GameObject[] enemyBullet;
     // public  List<GameObject> attack;
-    public GameObject fire;
+    //public GameObject fire;
 
     private float maxLen;
     private float maxSeLen;
@@ -16,6 +16,13 @@ public class ColliderCapsule : MonoBehaviour
     [SerializeField] private List<GameObject> enemyBox;
     [SerializeField] private bool _didCollide;
     [SerializeField] private MaxTry capsule;
+
+    [SerializeField] private GameObject airPlane;
+    [SerializeField] private air airScript;
+   
+
+
+    
 
 
     // Start is called before the first frame update
@@ -47,9 +54,12 @@ public class ColliderCapsule : MonoBehaviour
             localPoint = new Vector3(0, 0, 1);
         }
 
-        fire = GameObject.Find("fire");
+    //   fire = GameObject.FindGameObjectWithTag("Fire");
         attackList = GameObject.Find("attackList");
         enemyBox = attackList.GetComponent<List>().attack;
+        airPlane = GameObject.Find("AirPlane");
+        airScript = airPlane.GetComponent<air>();
+
     }
 
     // Update is called once per frame
@@ -70,7 +80,9 @@ public class ColliderCapsule : MonoBehaviour
 
                 if (_didCollide)
                 {
-                    Instantiate(fire, transform.position, Quaternion.identity);
+                    airScript.Accident(enemyBox[i]);
+                    Debug.Log("ookashii");
+                  //  Instantiate(fire, transform.position, Quaternion.identity);
                     enemyBox.RemoveAt(i);
                     Debug.Log(enemyBox[i]);
                     Destroy(enemyBox[i]);
@@ -83,23 +95,22 @@ public class ColliderCapsule : MonoBehaviour
     {
         float naiseki = Vector3.Dot(localDiffPlace, localPoint);
         float absN = Mathf.Abs(naiseki);
+       // Debug.Log("localMyPlace " + localDiffPlace+ " naiseki " + naiseki+ " localPoint " + localPoint);
 
-        if (maxLen < absN)
+        if (maxLen +ene.transform.localScale.x< absN)
         {
             return false;
         }
         else
         {
-            if (maxLen - maxSeLen <= absN && absN <= maxLen)
+            if (maxLen - maxSeLen <= absN && absN <= maxLen+ene.transform.localScale.x)
             {
-                Debug.Log("localMyPlace " + localDiffPlace);
-                Debug.Log("localPoint " + localPoint);
-                Debug.Log("naiseki " + naiseki);
+               
                 Vector3 circleCenter = (maxLen - maxSeLen) * localPoint * naiseki / (Mathf.Abs(naiseki));
                 Vector3 circleDistance = circleCenter - localDiffPlace;
-                Debug.Log("circleCenter " + circleCenter + " circleDistance " + circleDistance.magnitude +
-                          " ene.transform.localScale.x " +
-                          ene.transform.localScale.x);
+              //  Debug.Log("circleCenter " + circleCenter + " circleDistance " + circleDistance.magnitude +
+              //            " ene.transform.localScale.x " +
+              //            ene.transform.localScale.x);
                 if (circleDistance.magnitude < ene.transform.localScale.x + maxSeLen)
                 {
                     Debug.Log("円判定");
@@ -111,8 +122,8 @@ public class ColliderCapsule : MonoBehaviour
             {
                 Vector3 line = naiseki * localPoint;
                 Vector3 lineDistance = line - localDiffPlace;
-                Debug.Log("line " + line + " lineDistance " + lineDistance.magnitude + " ene.transform.localScale.x " +
-                          ene.transform.localScale.x);
+              //  Debug.Log("line " + line + " lineDistance " + lineDistance.magnitude + " ene.transform.localScale.x " +
+               //           ene.transform.localScale.x);
 
                 if (lineDistance.magnitude < ene.transform.localScale.x + maxSeLen)
                 {
@@ -124,6 +135,10 @@ public class ColliderCapsule : MonoBehaviour
 
         return false;
     }
+
+
+
+  
 }
 
 public class MaxTry

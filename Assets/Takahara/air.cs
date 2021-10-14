@@ -93,7 +93,7 @@ public class air : MonoBehaviour
         }
     }
 
-    void OnCollisionEnter(Collision other)
+    public void Accident(GameObject other)
     {
         if (IsStun()) return;
         life--;
