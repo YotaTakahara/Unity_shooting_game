@@ -89,7 +89,7 @@ public class air : MonoBehaviour
             float noseTurn = miuNoseInputValue * 30 * Time.deltaTime;
             Quaternion turnNoseRotation = Quaternion.Euler(noseTurn, 0, 0);
             miuRb.MoveRotation(miuRb.rotation * turnNoseRotation);
-            //   Debug.Log("speed:" + miuRb.velocity);
+            //   Debug.Log("speed:" + miuRb.velocity);y
         }
     }
 
