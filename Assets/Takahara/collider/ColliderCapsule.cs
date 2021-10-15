@@ -19,10 +19,7 @@ public class ColliderCapsule : MonoBehaviour
 
     [SerializeField] private GameObject airPlane;
     [SerializeField] private air airScript;
-   
-
-
-    
+    public GameObject fire;
 
 
     // Start is called before the first frame update
@@ -54,12 +51,12 @@ public class ColliderCapsule : MonoBehaviour
             localPoint = new Vector3(0, 0, 1);
         }
 
-    //   fire = GameObject.FindGameObjectWithTag("Fire");
+        //   fire = GameObject.FindGameObjectWithTag("Fire");
         attackList = GameObject.Find("attackList");
         enemyBox = attackList.GetComponent<List>().attack;
         airPlane = GameObject.Find("AirPlane");
         airScript = airPlane.GetComponent<air>();
-
+        //fire = GameObject.FindGameObjectWithTag("Fire");
     }
 
     // Update is called once per frame
@@ -82,10 +79,15 @@ public class ColliderCapsule : MonoBehaviour
                 {
                     airScript.Accident(enemyBox[i]);
                     Debug.Log("ookashii");
-                  //  Instantiate(fire, transform.position, Quaternion.identity);
-                    enemyBox.RemoveAt(i);
-                    Debug.Log(enemyBox[i]);
+                    //  Instantiate(fire, transform.position, Quaternion.identity);
+                    if (enemyBox[i].gameObject.tag == "Monster")
+                    {
+                        Instantiate(fire, enemyBox[i].transform.position, Quaternion.identity);
+                    }
+
                     Destroy(enemyBox[i]);
+                    // enemyBox.RemoveAt(i);
+                    Debug.Log(enemyBox[i]);
                 }
             }
         }
@@ -95,24 +97,24 @@ public class ColliderCapsule : MonoBehaviour
     {
         float naiseki = Vector3.Dot(localDiffPlace, localPoint);
         float absN = Mathf.Abs(naiseki);
-       // Debug.Log("localMyPlace " + localDiffPlace+ " naiseki " + naiseki+ " localPoint " + localPoint);
+        // Debug.Log("localMyPlace " + localDiffPlace+ " naiseki " + naiseki+ " localPoint " + localPoint);
 
-        if (maxLen +ene.transform.localScale.x< absN)
+        if (maxLen + ene.transform.localScale.x < absN)
         {
             return false;
         }
         else
         {
-            if (maxLen - maxSeLen <= absN && absN <= maxLen+ene.transform.localScale.x)
+            if (maxLen - maxSeLen <= absN && absN <= maxLen + ene.transform.localScale.x)
             {
-               
                 Vector3 circleCenter = (maxLen - maxSeLen) * localPoint * naiseki / (Mathf.Abs(naiseki));
                 Vector3 circleDistance = circleCenter - localDiffPlace;
-              //  Debug.Log("circleCenter " + circleCenter + " circleDistance " + circleDistance.magnitude +
-              //            " ene.transform.localScale.x " +
-              //            ene.transform.localScale.x);
+                //  Debug.Log("circleCenter " + circleCenter + " circleDistance " + circleDistance.magnitude +
+                //            " ene.transform.localScale.x " +
+                //            ene.transform.localScale.x);
                 if (circleDistance.magnitude < ene.transform.localScale.x + maxSeLen)
                 {
+                    /*どうあがいても円判定の実装がおかしいので早めになおしておく*/
                     Debug.Log("円判定");
                     return true;
                 }
@@ -122,8 +124,8 @@ public class ColliderCapsule : MonoBehaviour
             {
                 Vector3 line = naiseki * localPoint;
                 Vector3 lineDistance = line - localDiffPlace;
-              //  Debug.Log("line " + line + " lineDistance " + lineDistance.magnitude + " ene.transform.localScale.x " +
-               //           ene.transform.localScale.x);
+                //  Debug.Log("line " + line + " lineDistance " + lineDistance.magnitude + " ene.transform.localScale.x " +
+                //           ene.transform.localScale.x);
 
                 if (lineDistance.magnitude < ene.transform.localScale.x + maxSeLen)
                 {
@@ -135,10 +137,6 @@ public class ColliderCapsule : MonoBehaviour
 
         return false;
     }
-
-
-
-  
 }
 
 public class MaxTry

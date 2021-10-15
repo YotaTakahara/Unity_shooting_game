@@ -1,31 +1,5 @@
 using UnityEngine;
 
-public class Air : MonoBehaviour
-{
-    private float m_MiuTurnInputValue;
-
-    [SerializeField] private float m_Speed;
-
-    private float Speed
-    {
-        get => m_Speed;
-        set => m_Speed = value;
-    }
-
-    private class SomeClass
-    {
-        private int m_Some;
-    }
-
-    private SomeClass m_SomeClass;
-
-
-    /// <summary>
-    /// スタンしているか？
-    /// </summary>
-    private bool IsStun() => false;
-}
-
 public class air : MonoBehaviour
 {
     private float miuTurnInputValue;
@@ -38,6 +12,8 @@ public class air : MonoBehaviour
     public float recoverTime = 0.0f;
     public GameObject fire;
     public int point = 0;
+    public float shotSpeed;
+    [SerializeField] private RigidTakahara yotta;
 
     bool IsStun()
     {
@@ -52,11 +28,12 @@ public class air : MonoBehaviour
     void Start()
     {
         miuRb = GetComponent<Rigidbody>();
+        yotta = GetComponent<RigidTakahara>();
     }
 
     void FixedUpdate()
     {
-     //   Debug.Log("ここよここmiuRb" + miuRb);
+        //   Debug.Log("ここよここmiuRb" + miuRb);
         if (IsStun())
         {
             miuRb.velocity = Vector3.zero;
@@ -66,21 +43,29 @@ public class air : MonoBehaviour
         {
             // 前進は自動
             transform.Translate(0f, 0f, speed);
+            //miuRb.AddForce(new Vector3(0, 0, 1.0f) * shotSpeed);
+            //yotta.AddForce(transform.forward * shotSpeed);
+            //  Debug.Log("airの速さ " + miuRb.velocity);
+            /*
+             なんかよくわからないが、transformのままにしておいたほうが良さそう。結果としてAddForceが実装できたのでよかったとは思う。
+             
+             */
 
             // 旋回
             miuTurnInputValue = Input.GetAxis("Horizontal");
 
             if (Input.GetAxis("Horizontal") != 0)
             {
-             //   Debug.Log("曲がるコマンド発動中");
+                //   Debug.Log("曲がるコマンド発動中");
             }
+
             //なんでそうなるのかまったくわからないんだが
             //macyou
             float turn = miuTurnInputValue * 100 * Time.deltaTime;
             //     Quaternion turnRotation = Quaternion.Euler(0, turn, 0);
             //turn = 100;
             Quaternion turnRotation = Quaternion.Euler(0, turn, 0);
-           // Debug.Log("turnRotation" + turnRotation);
+            // Debug.Log("turnRotation" + turnRotation);
             //Debug.Log("miuRb.rotation" + miuRb.rotation);
             miuRb.MoveRotation(miuRb.rotation * turnRotation);
 
