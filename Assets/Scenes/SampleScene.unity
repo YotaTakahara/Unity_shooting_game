@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657826, g: 0.49641263, b: 0.57481676, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1508,7 +1508,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 5184491315458302485}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1085553088}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 730480a35c5f6644ca3bb792bae6f361, type: 3}
   m_Name: 
@@ -2546,7 +2546,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5184491314372762576, guid: c7706364d54912e499ded4a7ae3d9158, type: 3}
       propertyPath: m_Enabled
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5184491314372762576, guid: c7706364d54912e499ded4a7ae3d9158, type: 3}
       propertyPath: shotSpeed
@@ -2605,8 +2605,16 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 88968032}
     - target: {fileID: 5184491314372762583, guid: c7706364d54912e499ded4a7ae3d9158, type: 3}
+      propertyPath: tor
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 5184491314372762583, guid: c7706364d54912e499ded4a7ae3d9158, type: 3}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5184491314372762583, guid: c7706364d54912e499ded4a7ae3d9158, type: 3}
+      propertyPath: target_kmph_
+      value: 20
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c7706364d54912e499ded4a7ae3d9158, type: 3}

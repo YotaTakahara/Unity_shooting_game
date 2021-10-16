@@ -67,13 +67,16 @@ public class air : MonoBehaviour
             Quaternion turnRotation = Quaternion.Euler(0, turn, 0);
             // Debug.Log("turnRotation" + turnRotation);
             //Debug.Log("miuRb.rotation" + miuRb.rotation);
-            miuRb.MoveRotation(miuRb.rotation * turnRotation);
+            // miuRb.MoveRotation(miuRb.rotation * turnRotation);
+            yotta.MoveRotation(transform.rotation * turnRotation);
 
             // 機首（上昇、下降）
             miuNoseInputValue = Input.GetAxis("Vertical");
             float noseTurn = miuNoseInputValue * 30 * Time.deltaTime;
             Quaternion turnNoseRotation = Quaternion.Euler(noseTurn, 0, 0);
-            miuRb.MoveRotation(miuRb.rotation * turnNoseRotation);
+            yotta.MoveRotation(transform.rotation * turnNoseRotation);
+            //transform.rotation = (transform.rotation * turnNoseRotation);
+            // miuRb.MoveRotation(miuRb.rotation * turnNoseRotation);
             //   Debug.Log("speed:" + miuRb.velocity);y
         }
     }

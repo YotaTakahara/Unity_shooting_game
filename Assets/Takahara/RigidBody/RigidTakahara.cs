@@ -5,6 +5,7 @@ public class RigidTakahara : MonoBehaviour
     public Vector3 position;
     public Calc prePosition;
     public float mass = 1.0f;
+    Rigidbody rigid;
 
 
     // Start is called before the first frame update
@@ -13,6 +14,7 @@ public class RigidTakahara : MonoBehaviour
         position = transform.position;
         prePosition = new Calc(transform.position);
         this.Velocity = new Vector3(0, 0, 0);
+        rigid = GetComponent<Rigidbody>();
     }
 
     // Update is called once per frame
@@ -31,6 +33,21 @@ public class RigidTakahara : MonoBehaviour
         this.Velocity += acceleration * Time.deltaTime;
         transform.Translate(this.Velocity * Time.deltaTime);
         Debug.Log("acceleration " + acceleration + " velocity " + this.Velocity + " force " + force);
+    }
+    public void MoveRotation(Quaternion turn){
+        this.transform.rotation = turn;
+
+
+    }
+    public void AddTorque(Vector3 vect){
+        Quaternion R = transform.rotation*rigid.inertiaTensorRotation;
+        Vector3 I = rigid.inertiaTensor;
+        rigid.angularVelocity += R * Vector3.Scale(Reciprocal(I), Quaternion.Inverse(R) * vect) * Time.deltaTime;
+
+
+    }
+    public Vector3 Reciprocal(Vector3 v){
+        return new Vector3(1 / v.x, 1 / v.y, 1 / v.z);
     }
 }
 
