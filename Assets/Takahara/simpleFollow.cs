@@ -7,6 +7,7 @@ public class simpleFollow : MonoBehaviour
     public float followSpeed;
 
     private Vector3 diff;
+    private Quaternion rot;
 
     // Start is called before the first frame update
     void Start()
@@ -21,5 +22,9 @@ public class simpleFollow : MonoBehaviour
         //     followSpeed * Time.deltaTime);
         transform.position = Vector3.Lerp(transform.position, target.transform.position - diff,
             followSpeed * Time.deltaTime);
+        // rot = Quaternion.LookRotation(diff);
+        
+        // transform.rotation = rot;
+
     }
 }

@@ -50,6 +50,7 @@
      <Compile Include="Assets\EffectExamples\Shared\Scripts\DecalDestroyer.cs" />
      <Compile Include="Assets\Takahara\sstageGenerator.cs" />
      <Compile Include="Assets\EffectExamples\TutorialInfo\Scripts\Readme.cs" />
+     <Compile Include="Assets\Takahara_study\Bane.cs" />
      <Compile Include="Assets\Takahara\RigidBody\RigidTakahara.cs" />
      <Compile Include="Assets\Takahara\collider\List.cs" />
      <Compile Include="Assets\Takahara\collider\ColliderCapsule.cs" />
@@ -73,7 +74,8 @@
      <Compile Include="Assets\Takahara\AirPlaneController.cs" />
      <Compile Include="Assets\Takahara\collider\ColliderSphere.cs" />
      <Compile Include="Assets\EffectExamples\Shared\Scripts\GunAim.cs" />
-     <Compile Include="Assets\Takahara_study\Bane.cs" />
+     <Compile Include="Assets\Takahara_study\Test.cs" />
+     <Compile Include="Assets\Takahara_study\Camerayota.cs" />
      <None Include="Assets\SampleScenes\Shaders\Skybox-Procedural.shader" />
      <None Include="Assets\EffectExamples\Shared\Shaders\SurfaceShader_VC.shader" />
     <Reference Include="UnityEngine">

@@ -35,12 +35,12 @@ public class AirPlaneController : MonoBehaviour
         rb.AddTorque(Vector3.Cross(left, left_hori)*tor);
         Vector3 forward = transform.TransformVector(Vector3.forward);
         Vector3 forward_vert = new Vector3(0, forward.y, forward.z);
-        rb.AddTorque(Vector3.Cross(forward, forward_vert));
+        rb.AddTorque(Vector3.Cross(forward, forward_vert)*tor);
 
         rb.AddRelativeForce(0, 0, shotSpeed);
 
 
-        
+
 
 
 

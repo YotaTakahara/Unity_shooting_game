@@ -5,6 +5,8 @@ public class RigidTakahara : MonoBehaviour
     public Vector3 position;
     public Calc prePosition;
     public float mass = 1.0f;
+    public float k = 1.0f;
+
     Rigidbody rigid;
 
 
