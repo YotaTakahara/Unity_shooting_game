@@ -3,14 +3,18 @@ using UnityEngine;
 public class AirPlaneController : MonoBehaviour
 {
     public float target_kmph_ = 100f; //時速100km
+
     public float tor = 4f;
+
     //[SerializeField] private RigidTakahara shin;
     [SerializeField] private Rigidbody rb;
+
+    //private RigidTakahara rb;
     [SerializeField] private float hori;
     [SerializeField] private float vert;
     public float speed;
     public float shotSpeed;
-   
+
     // public GameObject air;
     // private Rigidbody airScript;
 
@@ -19,6 +23,7 @@ public class AirPlaneController : MonoBehaviour
     {
         // shin = GetComponent<RigidTakahara>();
         rb = GetComponent<Rigidbody>();
+        //rb = GetComponent<RigidTakahara>();
         // Debug.Log("jikkenndai" + shin.Velocity);
         // airScript = air.GetComponent<Rigidbody>();
     }
@@ -26,34 +31,22 @@ public class AirPlaneController : MonoBehaviour
 
     void FixedUpdate()
     {
-        float hori = Input.GetAxis("Horizontal")*10;
-        float vert = Input.GetAxis("Vertical")*10;
+        float hori = Input.GetAxis("Horizontal") * 10;
+        float vert = Input.GetAxis("Vertical") * 10;
         rb.AddRelativeTorque(new Vector3(0, hori, -hori));
-        rb.AddRelativeTorque(new Vector3(vert, 0, 0));
+        rb.AddRelativeTorque(new Vector3(vert, 0, -vert));
         Vector3 left = transform.TransformVector(Vector3.left);
         Vector3 left_hori = new Vector3(left.x, 0, left.z).normalized;
-        rb.AddTorque(Vector3.Cross(left, left_hori)*tor);
+        rb.AddTorque(Vector3.Cross(left, left_hori) * tor);
         Vector3 forward = transform.TransformVector(Vector3.forward);
         Vector3 forward_vert = new Vector3(0, forward.y, forward.z);
-        rb.AddTorque(Vector3.Cross(forward, forward_vert)*tor);
+        rb.AddTorque(Vector3.Cross(forward, forward_vert) * tor);
+        var force = (rb.mass * rb.drag * target_kmph_ / 3.6f) / (1f - rb.drag * Time.fixedDeltaTime);
 
-        rb.AddRelativeForce(0, 0, shotSpeed);
-
-
-
-
-
-
-
-
-
-
+        // rb.AddRelativeForce(0, 0, shotSpeed)
+        rb.AddRelativeForce(new Vector3(0, 0, force));
     }
-
-
 }
-
-
 
 
 // void FixedUpdate()
@@ -85,6 +78,3 @@ public class AirPlaneController : MonoBehaviour
 //                 (1f - rb.drag * Time.fixedDeltaTime);
 //     rb.AddRelativeForce(new Vector3(0f, 0f, force));
 // }
-
-
-

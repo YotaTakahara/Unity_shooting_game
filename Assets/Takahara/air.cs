@@ -36,14 +36,14 @@ public class air : MonoBehaviour
         //   Debug.Log("ここよここmiuRb" + miuRb);
         if (IsStun())
         {
-            miuRb.velocity = Vector3.zero;
+            //  miuRb.velocity = Vector3.zero;
             recoverTime -= Time.deltaTime;
         }
         else
         {
             // 前進は自動
             transform.Translate(0f, 0f, speed);
-            //miuRb.AddForce(new Vector3(0, 0, 1.0f) * shotSpeed);
+
             //yotta.AddForce(transform.forward * shotSpeed);
             //  Debug.Log("airの速さ " + miuRb.velocity);
             /*
@@ -69,6 +69,7 @@ public class air : MonoBehaviour
             //Debug.Log("miuRb.rotation" + miuRb.rotation);
             // miuRb.MoveRotation(miuRb.rotation * turnRotation);
             yotta.MoveRotation(transform.rotation * turnRotation);
+            //yotta.AddTorque(new Vector3(0, 10 * turn, 0));
 
             // 機首（上昇、下降）
             miuNoseInputValue = Input.GetAxis("Vertical");
@@ -78,6 +79,7 @@ public class air : MonoBehaviour
             //transform.rotation = (transform.rotation * turnNoseRotation);
             // miuRb.MoveRotation(miuRb.rotation * turnNoseRotation);
             //   Debug.Log("speed:" + miuRb.velocity);y
+            Debug.Log("speed:" + yotta.Velocity);
         }
     }
 
