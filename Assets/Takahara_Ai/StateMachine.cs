@@ -1,35 +1,39 @@
 using UnityEngine;
 
-public class StateMachine<T> : MonoBehaviour
+namespace Ai
 {
-    [SerializeField] private State<T> currentState;
-
-    public StateMachine()
+    public class StateMachine<T> : MonoBehaviour
     {
-        currentState = null;
-    }
+        [SerializeField] private State<T> currentState;
 
-    public State<T> CurrentState
-    {
-        get { return currentState; }
-    }
-
-    public void ChangeState(State<T> state)
-    {
-        if (currentState != null)
+        public StateMachine()
         {
-            currentState.Exit();
+            currentState = null;
         }
 
-        currentState = state;
-        currentState.Execute();
-    }
-
-    public void Update()
-    {
-        if (currentState != null)
+        public State<T> CurrentState
         {
+            get { return currentState; }
+        }
+
+        public void ChangeState(State<T> state)
+        {
+            if (currentState != null)
+            {
+                currentState.Exit();
+            }
+
+            currentState = state;
+            
             currentState.Execute();
+        }
+
+        public void Update()
+        {
+            if (currentState != null)
+            {
+                currentState.Execute();
+            }
         }
     }
 }
