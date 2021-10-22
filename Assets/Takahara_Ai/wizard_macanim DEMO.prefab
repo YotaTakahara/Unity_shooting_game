@@ -20428,7 +20428,7 @@ GameObject:
   - component: {fileID: 459636275185031845}
   m_Layer: 0
   m_Name: wizard_macanim DEMO
-  m_TagString: Untagged
+  m_TagString: Monster
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -20483,6 +20483,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4b9a8532883c9f348a3f08f8b0ceb62f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  bullet: {fileID: 1272916725600244202, guid: fdd74a28b2e443d4ea33462c4a5131f1, type: 3}
+  explode: {fileID: 1000011797152326, guid: acf39d9f4addf294d93fa56fa373961b, type: 3}
   player: {fileID: 0}
   speed: 0
 --- !u!1 &1000012230336702

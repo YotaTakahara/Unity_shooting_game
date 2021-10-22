@@ -114,6 +114,7 @@ MonoBehaviour:
   _didCollide: 0
   airPlane: {fileID: 0}
   airScript: {fileID: 0}
+  fire: {fileID: 0}
 --- !u!114 &5184491313538357386
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -131,6 +132,7 @@ MonoBehaviour:
   _didCollide: 0
   airPlane: {fileID: 0}
   airScript: {fileID: 0}
+  fire: {fileID: 1000011797152326, guid: acf39d9f4addf294d93fa56fa373961b, type: 3}
 --- !u!1 &5184491314025734630
 GameObject:
   m_ObjectHideFlags: 0
@@ -245,6 +247,7 @@ MonoBehaviour:
   _didCollide: 0
   airPlane: {fileID: 0}
   airScript: {fileID: 0}
+  fire: {fileID: 1000011797152326, guid: acf39d9f4addf294d93fa56fa373961b, type: 3}
 --- !u!1 &5184491314093632639
 GameObject:
   m_ObjectHideFlags: 0
@@ -358,6 +361,7 @@ MonoBehaviour:
   _didCollide: 0
   airPlane: {fileID: 0}
   airScript: {fileID: 0}
+  fire: {fileID: 1000011797152326, guid: acf39d9f4addf294d93fa56fa373961b, type: 3}
 --- !u!1 &5184491314372762581
 GameObject:
   m_ObjectHideFlags: 0
@@ -368,7 +372,6 @@ GameObject:
   m_Component:
   - component: {fileID: 5184491314372762580}
   - component: {fileID: 5184491314372762583}
-  - component: {fileID: 5184491314372762582}
   - component: {fileID: 5184491314372762577}
   - component: {fileID: 5184491314372762579}
   - component: {fileID: 5184491314372762576}
@@ -403,34 +406,18 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5184491314372762581}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c35b128a5cf48cf458084d083ceaa3f1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   target_kmph_: 300
   tor: 2
-  shin: {fileID: 0}
-  yotta: {fileID: 0}
+  rb: {fileID: 0}
+  hori: 0
+  vert: 0
   speed: 0.2
   shotSpeed: 10
-  air: {fileID: 0}
---- !u!54 &5184491314372762582
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5184491314372762581}
-  serializedVersion: 2
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 13.06
-  m_UseGravity: 0
-  m_IsKinematic: 0
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 0
 --- !u!114 &5184491314372762577
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -458,6 +445,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   position: {x: 0, y: 0, z: 0}
   mass: 1
+  k: 1
+  isdrag: 0
+  finalSpeed: {x: 0, y: 0, z: 0}
 --- !u!114 &5184491314372762576
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -465,15 +455,16 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5184491314372762581}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 730480a35c5f6644ca3bb792bae6f361, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 0
+  speed: 0.4
   life: 3
   stopTime: 0.5
   recoverTime: 0
-  fire: {fileID: 0}
+  fire: {fileID: 5202793587325307922, guid: 266942f6400df8b4aaa4805744bf8965, type: 3}
   point: 0
   shotSpeed: 0
+  yotta: {fileID: 0}

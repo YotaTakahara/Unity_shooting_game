@@ -128,6 +128,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   abs: 0
   num: 0
+  attackList: {fileID: 0}
+  enemy: []
   span: 1
   range: 100
 --- !u!114 &1742125976685289525
