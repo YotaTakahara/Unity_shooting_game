@@ -31,6 +31,7 @@ namespace Ai
         // private float changeTargetSqrDistance = 40f;
 
         //疑問：一緒にMonoBehaviourを継承できない 
+        [SerializeField] private Animator animator;
         [SerializeField] private GameObject bullet;
         [SerializeField] private GameObject explode;
         [SerializeField] private GameObject player;
@@ -40,6 +41,7 @@ namespace Ai
         void Start()
         {
             player = GameObject.Find("AirPlane");
+            animator = GetComponent<Animator>();
             //  bullet = GameObject.FindGameObjectWithTag("enemyBullet");
             //Debug.Log("player " + player);
 
@@ -74,7 +76,7 @@ namespace Ai
             //stateMachine = new StateMachine<Enemy>();
             // Debug.Log("stateMachine" + stateMachine);
             // Debug.Log("first" + first);
-            ChangeStateNext((int) first);
+            ChangeStateNext((int)first);
         }
 
         public void TakeDamage()
@@ -111,12 +113,13 @@ namespace Ai
                 //Debug.Log("roadLength " + roadLength);
                 // Debug.Log("owner" + owner);
                 // Debug.Log("player hikouki" + owner.player);
+                owner.animator.SetTrigger("move-forward");
                 float diff = Vector3.Magnitude(owner.player.transform.position - owner.transform.position);
                 //Debug.Log("diff " + diff);
                 //Debug.Log("distance " + distance);
                 if (diff < distance)
                 {
-                    int index = (int) EnemyState.pursuit;
+                    int index = (int)EnemyState.pursuit;
                     owner.ChangeStateNext(index);
                     Debug.Log("wander to pursuit");
                     //   stateMachine.ChangeState();
@@ -163,13 +166,14 @@ namespace Ai
                 stopCircle = 25f;
 
                 Debug.Log("Excute pursuit");
+                owner.animator.SetTrigger("move_forward_fast");
                 float diff = Vector3.Magnitude(wherePlayer - owner.transform.position);
                 Debug.Log("diff " + diff);
 
 
                 if (diff <= stopCircle)
                 {
-                    int index = (int) EnemyState.attack;
+                    int index = (int)EnemyState.attack;
                     owner.ChangeStateNext(index);
                 }
                 else
@@ -217,29 +221,34 @@ namespace Ai
 
                 if (stopCircle < diff)
                 {
-                    int index = (int) EnemyState.pursuit;
+                    int index = (int)EnemyState.pursuit;
+                    owner.animator.SetTrigger("idle_comabat");
+                    owner.animator.SetTrigger("move_forward_fast");
+
                     owner.ChangeStateNext(index);
                 }
 
 
-                Debug.Log("attackState");
+                // Debug.Log("attackState");
                 Quaternion targetRotation = Quaternion.LookRotation(wherePlayer - owner.transform.position);
                 owner.transform.rotation = Quaternion.Slerp(owner.transform.rotation, targetRotation, Time.deltaTime);
                 span = 1.5f;
+                owner.animator.SetTrigger("attack_short_001");
+                owner.animator.SetTrigger("idle_combat");
 
 
                 this.timing += Time.deltaTime;
                 this.bombTime += Time.deltaTime;
                 Debug.Log("timing " + timing);
-                if (span < timing)
-                {
-                    timing = 0;
-                    Shoot();
-                }
+                // if (span < timing)
+                // {
+                //     timing = 0;
+                //     Shoot();
+                // }
 
                 if (5.0f < bombTime)
                 {
-                    int index = (int) EnemyState.explode;
+                    int index = (int)EnemyState.explode;
                     owner.ChangeStateNext(index);
                 }
             }
@@ -274,9 +283,15 @@ namespace Ai
 
             public override void Enter()
             {
+
+
+                owner.animator.SetTrigger("damage_001");
+                owner.animator.SetTrigger("idle_combat");
+                owner.animator.SetTrigger("dead");
+
                 Debug.Log("destroy this monster in 1.0 second");
-                GameObject shin = Instantiate(owner.explode, transform.position, Quaternion.identity);
-                Destroy(owner.gameObject, 1.0f);
+                // GameObject shin = Instantiate(owner.explode, transform.position, Quaternion.identity);
+                //  Destroy(owner.gameObject, 1.0f);
             }
 
             public override void Execute()
