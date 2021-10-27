@@ -20,9 +20,9 @@ namespace Boss
             }
 
         }
-        public void Update()
+        public virtual void Update()
         {
-            stateMachine.Update();
+
         }
 
 

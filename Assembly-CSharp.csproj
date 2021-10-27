@@ -41,6 +41,7 @@
      <Compile Include="Assets\SampleScenes\Scripts\ParticleSceneControls.cs" />
      <Compile Include="Assets\Takahara\collider\ISphere.cs" />
      <Compile Include="Assets\Fantasy Monster(wizard) Demo\Environment\Materials\Scripts\CamCTRLDemo.cs" />
+     <Compile Include="Assets\Takahara_Boss\StateMachine1.cs" />
      <Compile Include="Assets\EffectExamples\Shared\Scripts\ExtinguishableFire.cs" />
      <Compile Include="Assets\EffectExamples\Shared\Scripts\ParticleMenu.cs" />
      <Compile Include="Assets\Takahara\collider\NewBehaviourScript.cs" />
@@ -62,7 +63,9 @@
      <Compile Include="Assets\EffectExamples\Shared\Scripts\ParticleExamples.cs" />
      <Compile Include="Assets\Takahara\Bullet\BulletCollider.cs" />
      <Compile Include="Assets\Takahara\creature\destroyCreature.cs" />
+     <Compile Include="Assets\Takahara_Boss\State1.cs" />
      <Compile Include="Assets\SampleScenes\Menu\Scripts\PauseMenu.cs" />
+     <Compile Include="Assets\Takahara_Boss\StateBase.cs" />
      <Compile Include="Assets\Takahara\Bullet\bulletController.cs" />
      <Compile Include="Assets\EffectExamples\Shared\Scripts\ParticleCollision.cs" />
      <Compile Include="Assets\SampleScenes\Scripts\CameraSwitch.cs" />
@@ -76,16 +79,13 @@
      <Compile Include="Assets\SampleScenes\Menu\Scripts\MenuSceneLoader.cs" />
      <Compile Include="Assets\Takahara\simpleFollow.cs" />
      <Compile Include="Assets\Takahara\charaController.cs" />
+     <Compile Include="Assets\Takahara_Boss\BossZarigani.cs" />
      <Compile Include="Assets\Takahara_Ai\State.cs" />
      <Compile Include="Assets\Takahara_study\Camerayota.cs" />
      <Compile Include="Assets\Takahara\AirPlaneController.cs" />
      <Compile Include="Assets\Fantasy Monster(wizard) Demo\Environment\Materials\Scripts\MoveCTRLDemo.cs" />
      <Compile Include="Assets\Takahara\collider\ColliderSphere.cs" />
      <Compile Include="Assets\EffectExamples\Shared\Scripts\GunAim.cs" />
-     <Compile Include="Assets\Takahara_Boss\State1.cs" />
-     <Compile Include="Assets\Takahara_Boss\StateMachine1.cs" />
-     <Compile Include="Assets\Takahara_Boss\StateBase.cs" />
-     <Compile Include="Assets\Takahara_Boss\BossZarigani.cs" />
      <None Include="Assets\SampleScenes\Shaders\Skybox-Procedural.shader" />
      <None Include="Assets\Fantasy Monster(wizard) Demo\READ ME(wizard)\character setup guide link.txt" />
      <None Include="Assets\EffectExamples\Shared\Shaders\SurfaceShader_VC.shader" />
@@ -313,6 +313,24 @@
     </Reference>
     <Reference Include="Newtonsoft.Json">
         <HintPath>C:/3Dフライトシミュレーター/Library/PackageCache/com.unity.nuget.newtonsoft-json@2.0.0/Runtime/Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Burst.Unsafe">
+        <HintPath>C:/3Dフライトシミュレーター/Library/PackageCache/com.unity.burst@1.3.4/Unity.Burst.Unsafe.dll</HintPath>
+    </Reference>
+    <Reference Include="Google.Protobuf">
+        <HintPath>C:/3Dフライトシミュレーター/Library/PackageCache/com.unity.barracuda@2.0.0-pre.3/Barracuda/Runtime/Plugins/ProtoBuffer/Google.Protobuf.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Interactive.Async">
+        <HintPath>C:/3Dフライトシミュレーター/Library/PackageCache/com.unity.ml-agents@2.1.0-exp.1/Plugins/ProtoBuffer/System.Interactive.Async.dll</HintPath>
+    </Reference>
+    <Reference Include="System.IO.Abstractions.TestingHelpers">
+        <HintPath>C:/3Dフライトシミュレーター/Library/PackageCache/com.unity.ml-agents@2.1.0-exp.1/Plugins/System.IO.Abstractions.TestingHelpers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.IO.Abstractions">
+        <HintPath>C:/3Dフライトシミュレーター/Library/PackageCache/com.unity.ml-agents@2.1.0-exp.1/Plugins/System.IO.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Grpc.Core">
+        <HintPath>C:/3Dフライトシミュレーター/Library/PackageCache/com.unity.ml-agents@2.1.0-exp.1/Plugins/ProtoBuffer/Grpc.Core.dll</HintPath>
     </Reference>
     <Reference Include="UnityEditor.iOS.Extensions.Xcode">
         <HintPath>C:/Program Files/Unity/Hub/Editor/2020.3.17f1/Editor/Data/PlaybackEngines/iOSSupport/UnityEditor.iOS.Extensions.Xcode.dll</HintPath>
@@ -700,6 +718,45 @@
     </Reference>
     <Reference Include="UnityEngine.UI">
         <HintPath>C:/3Dフライトシミュレーター/Library/ScriptAssemblies/UnityEngine.UI.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Barracuda.BurstBLAS">
+        <HintPath>C:/3Dフライトシミュレーター/Library/ScriptAssemblies/Unity.Barracuda.BurstBLAS.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Mathematics.Editor">
+        <HintPath>C:/3Dフライトシミュレーター/Library/ScriptAssemblies/Unity.Mathematics.Editor.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Barracuda.Editor">
+        <HintPath>C:/3Dフライトシミュレーター/Library/ScriptAssemblies/Unity.Barracuda.Editor.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.ML-Agents.Editor">
+        <HintPath>C:/3Dフライトシミュレーター/Library/ScriptAssemblies/Unity.ML-Agents.Editor.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Barracuda.MacBLAS">
+        <HintPath>C:/3Dフライトシミュレーター/Library/ScriptAssemblies/Unity.Barracuda.MacBLAS.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.ML-Agents">
+        <HintPath>C:/3Dフライトシミュレーター/Library/ScriptAssemblies/Unity.ML-Agents.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Mathematics">
+        <HintPath>C:/3Dフライトシミュレーター/Library/ScriptAssemblies/Unity.Mathematics.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Barracuda">
+        <HintPath>C:/3Dフライトシミュレーター/Library/ScriptAssemblies/Unity.Barracuda.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Burst">
+        <HintPath>C:/3Dフライトシミュレーター/Library/ScriptAssemblies/Unity.Burst.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Barracuda.ONNX">
+        <HintPath>C:/3Dフライトシミュレーター/Library/ScriptAssemblies/Unity.Barracuda.ONNX.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Barracuda.iOSBLAS">
+        <HintPath>C:/3Dフライトシミュレーター/Library/ScriptAssemblies/Unity.Barracuda.iOSBLAS.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.ML-Agents.CommunicatorObjects">
+        <HintPath>C:/3Dフライトシミュレーター/Library/ScriptAssemblies/Unity.ML-Agents.CommunicatorObjects.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Burst.Editor">
+        <HintPath>C:/3Dフライトシミュレーター/Library/ScriptAssemblies/Unity.Burst.Editor.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>

@@ -64,6 +64,12 @@ namespace Boss
 
         }
 
+        public override void Update()
+        {
+            transform.Translate(0, 0, -speed);
+            stateMachine.Update();
+        }
+
         public class ZariIdle : State1<BossZarigani>
         {
             [SerializeField] private float speed;
@@ -74,9 +80,9 @@ namespace Boss
             }
             public override void Execute()
             {
-                this.speed = owner.speed;
-                Vector3 move = new Vector3(0, 0, speed);
-                owner.transform.Translate(move);
+                // this.speed = owner.speed;
+                // Vector3 move = new Vector3(0, 0, speed);
+                // owner.transform.Translate(move);
                 owner.animator.SetTrigger("Walk Backward");
 
                 float diff = Vector3.Magnitude(owner.transform.position - owner.player.transform.position);
@@ -93,6 +99,7 @@ namespace Boss
         {
 
             public float span;
+            public float speed;
             public float tmpSpan;
             public float HP;
             public ZariAttack(BossZarigani owner) : base(owner)
@@ -107,6 +114,9 @@ namespace Boss
             }
             public override void Execute()
             {
+                // this.speed = owner.speed;
+                // Vector3 move = new Vector3(0, 0, speed);
+                // owner.transform.Translate(move);
                 if (Input.GetAxis("Vertical") != 0)
                 {
                     Debug.Log("response");
@@ -119,7 +129,7 @@ namespace Boss
                 tmpSpan += Time.fixedDeltaTime;
                 if (0 < HP && HP < 20)
                 {
-                    owner.animator.SetTrigger("Run Backward");
+                    //  owner.animator.SetTrigger("Run Backward");
 
                     span = 5.0f;
                     if (span < tmpSpan)
@@ -134,7 +144,7 @@ namespace Boss
                 }
                 else if (HP < 20 && HP < 80)
                 {
-                    owner.animator.SetTrigger("Walk Backward In Place");
+                    // owner.animator.SetTrigger("Walk Backward In Place");
                     span = 7.0f;
                     if (span < tmpSpan)
                     {
@@ -148,9 +158,11 @@ namespace Boss
                     if (span < tmpSpan)
                     {
                         Debug.Log("okei");
-                        //owner.animator.SetTrigger("Walk Backward In Place");
-
                         owner.animator.SetTrigger("Stab Attack");
+
+
+                        //owner.animator.SetTrigger("Take Damage");
+
 
                         tmpSpan = 0f;
 
