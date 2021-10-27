@@ -79,7 +79,7 @@ public class air : MonoBehaviour
             //transform.rotation = (transform.rotation * turnNoseRotation);
             // miuRb.MoveRotation(miuRb.rotation * turnNoseRotation);
             //   Debug.Log("speed:" + miuRb.velocity);y
-            Debug.Log("speed:" + yotta.Velocity);
+            // Debug.Log("speed:" + yotta.Velocity);
         }
     }
 
