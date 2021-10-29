@@ -46,8 +46,8 @@ public class ColliderDetector : MonoBehaviour
                     // _didCollide |= _colliders[i].CheckSphere(_sphere);
                     ColliderSphere shin = _target[i].GetComponent<ColliderSphere>();
                     _didCollide = shin.CheckSphere(_sphere);
-                    //   Debug.Log("中身はどうですか" + _target[i]);
-                    //Debug.Log("_didCollideの中身" + _didCollide);
+                    Debug.Log("中身はどうですか" + _target[i]);
+                    Debug.Log("_didCollideの中身" + _didCollide);
                     if (_didCollide)
                     {
                         Instantiate(fire, transform.position, Quaternion.identity);

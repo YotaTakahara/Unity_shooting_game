@@ -23,6 +23,7 @@ public class ColliderSphere : MonoBehaviour, ICollider, ISphere
     {
         // _transform = this.transform;
         _radius = transform.localScale.x;
+        // _radius = 15f;
     }
 
     public Vector3 WorldCenter
@@ -34,8 +35,9 @@ public class ColliderSphere : MonoBehaviour, ICollider, ISphere
     public bool CheckSphere(ISphere collider)
     {
         var collideDistance = Radius + collider.Radius;
-        // Debug.Log("collideDistance" + collideDistance* collideDistance);
-        //ebug.Log("realDistance" + (WorldCenter - collider.WorldCenter).sqrMagnitude);
+        Debug.Log("collide.radius " + collider.Radius);
+        Debug.Log("Radius " + Radius);
+        Debug.Log("realDistance" + Vector3.Magnitude(WorldCenter - collider.WorldCenter));
         return (WorldCenter - collider.WorldCenter).sqrMagnitude <= collideDistance * collideDistance;
     }
 }

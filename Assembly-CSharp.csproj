@@ -247,7 +247,6 @@
      <Compile Include="Assets\OpenCV+Unity\Assets\Scripts\OpenCvSharp\PInvoke\video\NativeMethods_video_BackgroundSubtractor.cs" />
      <Compile Include="Assets\OpenCV+Unity\Assets\Scripts\OpenCvSharp\modules\core\Struct\Point3f.cs" />
      <Compile Include="Assets\OpenCV+Unity\Demo\Document_Scanner\Scripts\PaperScanner.cs" />
-     <Compile Include="Assets\Takahara\creature\destroyCreature.cs" />
      <Compile Include="Assets\OpenCV+Unity\Assets\Scripts\OpenCvSharp\modules\imgproc\Moments.cs" />
      <Compile Include="Assets\OpenCV+Unity\Assets\Scripts\OpenCvSharp\modules\core\Struct\Rect.cs" />
      <Compile Include="Assets\OpenCV+Unity\Assets\Scripts\OpenCvSharp\PInvoke\NativeMethods_stitching.cs" />

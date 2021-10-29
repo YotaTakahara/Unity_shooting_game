@@ -35,6 +35,8 @@ namespace Ai
         [SerializeField] private GameObject bullet;
         [SerializeField] private GameObject explode;
         [SerializeField] private GameObject player;
+        [SerializeField] private air air;
+
         [SerializeField] public float speed = 2.0f;
         // public GameObject damage;
 
@@ -42,6 +44,7 @@ namespace Ai
         void Start()
         {
             player = GameObject.Find("AirPlane");
+            air = player.GetComponent<air>();
             animator = GetComponent<Animator>();
 
             //  bullet = GameObject.FindGameObjectWithTag("enemyBullet");
@@ -165,7 +168,7 @@ namespace Ai
             public override void Execute()
             {
                 wherePlayer = owner.player.transform.position;
-                stopCircle = 4f;
+                stopCircle = 10f;
 
                 //Debug.Log("Excute pursuit");
                 owner.animator.SetTrigger("move_forward_fast");
@@ -201,6 +204,8 @@ namespace Ai
             public float bombTime = 0f;
             [SerializeField] private float stopCircle;
             [SerializeField] private Vector3 wherePlayer;
+            [SerializeField] private air air;
+            [SerializeField] private float span;
             //[SerializeField] private float span;
 
 
@@ -210,6 +215,7 @@ namespace Ai
 
             public override void Enter()
             {
+                this.air = owner.air;
             }
 
             public override void Execute()
@@ -217,6 +223,7 @@ namespace Ai
                 attackList = GameObject.Find("attackList");
                 wherePlayer = owner.player.transform.position;
                 stopCircle = 25f;
+                span = 2.0f;
 
                 //Debug.Log("Excute pursuit");
                 float diff = Vector3.Magnitude(wherePlayer - owner.transform.position);
@@ -235,7 +242,9 @@ namespace Ai
                 Quaternion targetRotation = Quaternion.LookRotation(wherePlayer - owner.transform.position);
                 owner.transform.rotation = Quaternion.Slerp(owner.transform.rotation, targetRotation, Time.deltaTime);
                 //span = 1.5f;
-                owner.animator.SetTrigger("attack_short_001");
+
+
+
                 //Instantiate(owner.damage, owner.transform.position, Quaternion.identity);
                 //owner.animator.SetBool("attack_short_001",true);
                 owner.animator.SetTrigger("idle_combat");
@@ -243,22 +252,34 @@ namespace Ai
 
                 this.timing += Time.deltaTime;
                 this.bombTime += Time.deltaTime;
-                //Debug.Log("timing " + timing);
-                // if (span < timing)
-                // {
-                //     timing = 0;
-                //     Shoot();
-                // }
+
 
                 if (5.0f < bombTime)
                 {
                     int index = (int)EnemyState.explode;
                     owner.ChangeStateNext(index);
                 }
+
+                if (span < timing)
+                {
+                    AttackInterval();
+                    timing = 0;
+                }
             }
 
             public override void Exit()
             {
+
+
+
+            }
+
+
+            void AttackInterval()
+            {
+                owner.animator.SetTrigger("attack_short_001");
+                owner.air.AccidentStrong();
+
             }
 
 

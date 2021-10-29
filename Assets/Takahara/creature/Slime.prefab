@@ -42,7 +42,6 @@ GameObject:
   m_Component:
   - component: {fileID: 4885079432260988}
   - component: {fileID: 95471671811264702}
-  - component: {fileID: -376757683341686485}
   - component: {fileID: -8303018098636197909}
   - component: {fileID: -4155407106449516545}
   - component: {fileID: -1462457745526652211}
@@ -88,19 +87,6 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &-376757683341686485
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1090219386143568}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8dbedb47e4adc53468b431fe737c41da, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  fire: {fileID: 1000011797152326, guid: acf39d9f4addf294d93fa56fa373961b, type: 3}
 --- !u!114 &-8303018098636197909
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -116,6 +102,7 @@ MonoBehaviour:
   bullet: {fileID: 1272916725600244202, guid: fdd74a28b2e443d4ea33462c4a5131f1, type: 3}
   span: 1.5
   Speed: 560
+  attackList: {fileID: 0}
 --- !u!114 &-4155407106449516545
 MonoBehaviour:
   m_ObjectHideFlags: 0

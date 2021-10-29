@@ -11,6 +11,7 @@ public class air : MonoBehaviour
     public float stopTime = 0.5f;
     public float recoverTime = 0.0f;
     public GameObject fire;
+    public GameObject explosion;
     public int point = 0;
     public float shotSpeed;
     [SerializeField] private RigidTakahara yotta;
@@ -91,5 +92,15 @@ public class air : MonoBehaviour
         Debug.Log(life);
         Instantiate(fire, transform.position, Quaternion.identity);
         Destroy(other.gameObject);
+    }
+
+    public void AccidentStrong()
+    {
+        if (IsStun()) return;
+        life--;
+        recoverTime = stopTime;
+        Debug.Log(life);
+        Instantiate(explosion, transform.position, Quaternion.identity);
+
     }
 }
