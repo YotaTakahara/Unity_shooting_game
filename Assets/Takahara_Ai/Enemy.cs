@@ -66,10 +66,10 @@ namespace Ai
             //Debug.Log("stateWander" + stateWander.owner);
 
 
-            stageList.Add(stateWander);
-            stageList.Add(statePursuit);
-            stageList.Add(stateAttack);
-            stageList.Add(stateExplode);
+            stateList.Add(stateWander);
+            stateList.Add(statePursuit);
+            stateList.Add(stateAttack);
+            stateList.Add(stateExplode);
             // Debug.Log("stageList " + stageList);
             stateMachine = this.gameObject.AddComponent<StateMachineEnemy>();
 
@@ -165,7 +165,7 @@ namespace Ai
             public override void Execute()
             {
                 wherePlayer = owner.player.transform.position;
-                stopCircle = 5f;
+                stopCircle = 4f;
 
                 //Debug.Log("Excute pursuit");
                 owner.animator.SetTrigger("move_forward_fast");

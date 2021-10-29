@@ -7,7 +7,7 @@ namespace Ai
     public abstract class StatefulObjectBase<T, TEnum> : MonoBehaviour
         where T : class where TEnum : IConvertible
     {
-        protected List<State<T>> stageList = new List<State<T>>();
+        protected List<State<T>> stateList = new List<State<T>>();
         protected StateMachine<T> stateMachine;
 
         public virtual void ChangeStateNext(int state)
@@ -18,7 +18,7 @@ namespace Ai
                 return;
             }
             //Debug.Log("stateMachine go well " + stateMachine);
-            stateMachine.ChangeState(stageList[state]);
+            stateMachine.ChangeState(stateList[state]);
         }
 
         public virtual bool IsCurrentState(int state)
@@ -28,10 +28,10 @@ namespace Ai
                 return false;
             }
 
-            return stateMachine.CurrentState == stageList[state];
+            return stateMachine.CurrentState == stateList[state];
         }
 
-        protected virtual void Update()
+        public virtual void Update()
         {
             if (stateMachine != null)
             {
