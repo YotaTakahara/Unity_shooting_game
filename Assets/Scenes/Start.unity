@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
+  m_IndirectSpecularColor: {r: 0.4465785, g: 0.49641252, b: 0.574817, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -343,7 +343,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 88968032}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 730480a35c5f6644ca3bb792bae6f361, type: 3}
   m_Name: 
@@ -694,8 +694,20 @@ PrefabInstance:
       value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 400010, guid: 147d826ca4c5a834a9dfe5db390c47f4, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 400010, guid: 147d826ca4c5a834a9dfe5db390c47f4, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 400010, guid: 147d826ca4c5a834a9dfe5db390c47f4, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 400010, guid: 147d826ca4c5a834a9dfe5db390c47f4, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 36.5
+      value: 50
       objectReference: {fileID: 0}
     - target: {fileID: 400010, guid: 147d826ca4c5a834a9dfe5db390c47f4, type: 3}
       propertyPath: m_LocalPosition.y
@@ -743,11 +755,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 11400000, guid: 147d826ca4c5a834a9dfe5db390c47f4, type: 3}
       propertyPath: m_Enabled
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 11400002, guid: 147d826ca4c5a834a9dfe5db390c47f4, type: 3}
       propertyPath: m_Enabled
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 11400006, guid: 147d826ca4c5a834a9dfe5db390c47f4, type: 3}
       propertyPath: m_Enabled
@@ -755,7 +767,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 11400010, guid: 147d826ca4c5a834a9dfe5db390c47f4, type: 3}
       propertyPath: m_Enabled
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 11400012, guid: 147d826ca4c5a834a9dfe5db390c47f4, type: 3}
       propertyPath: m_Enabled
@@ -763,7 +775,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 11400018, guid: 147d826ca4c5a834a9dfe5db390c47f4, type: 3}
       propertyPath: m_Enabled
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 147d826ca4c5a834a9dfe5db390c47f4, type: 3}
@@ -975,7 +987,7 @@ MonoBehaviour:
   bull: {fileID: 5999747802507278386, guid: 3dd4baa1ba7365945957b9043ef459dc, type: 3}
   bullNext: {fileID: 8907176596070152326, guid: 26f7b9cb5c386cb41b1d169ad05c672e, type: 3}
   count: 5
-  airPlane: {fileID: 1085553088}
+  airPlane: {fileID: 88968032}
   span: 0.15
   power: 2000
 --- !u!4 &710196948
@@ -1286,7 +1298,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f4ac7f4692c75f54caf6bd6736a542f1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  target: {fileID: 1085553088}
+  target: {fileID: 88968032}
   followSpeed: 10
 --- !u!114 &963194230
 MonoBehaviour:
@@ -2650,6 +2662,10 @@ PrefabInstance:
     - target: {fileID: 5184491314372762581, guid: c7706364d54912e499ded4a7ae3d9158, type: 3}
       propertyPath: m_Name
       value: AirPlane
+      objectReference: {fileID: 0}
+    - target: {fileID: 5184491314372762581, guid: c7706364d54912e499ded4a7ae3d9158, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5184491314372762583, guid: c7706364d54912e499ded4a7ae3d9158, type: 3}
       propertyPath: air

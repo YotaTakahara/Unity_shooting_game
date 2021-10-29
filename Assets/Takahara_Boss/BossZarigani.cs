@@ -83,7 +83,7 @@ namespace Boss
                 // this.speed = owner.speed;
                 // Vector3 move = new Vector3(0, 0, speed);
                 // owner.transform.Translate(move);
-                owner.animator.SetTrigger("Walk Backward");
+                //owner.animator.SetTrigger("Walk Backward");
 
                 float diff = Vector3.Magnitude(owner.transform.position - owner.player.transform.position);
                 if (diff < owner.distance)
@@ -158,8 +158,10 @@ namespace Boss
                     if (span < tmpSpan)
                     {
                         Debug.Log("okei");
-                        owner.animator.SetTrigger("Stab Attack");
+                        owner.animator.SetTrigger("Walk Backward In Place");
 
+                        owner.animator.SetTrigger("Stab Attack");
+                       
 
                         //owner.animator.SetTrigger("Take Damage");
 
