@@ -8,6 +8,9 @@ public class air : MonoBehaviour
     private float miuNoseInputValue;
     public float speed;
     public int life = 3;
+    //hennkou 
+    public int hp = 100;
+    //hennkou 
     public float stopTime = 0.5f;
     public float recoverTime = 0.0f;
     public GameObject fire;
@@ -18,13 +21,19 @@ public class air : MonoBehaviour
 
     bool IsStun()
     {
-        return recoverTime > 0.0f || life <= 0;
+        return recoverTime > 0.0f || life <= 0 || hp <= 0;
     }
 
     public int Life()
     {
         return life;
     }
+    //hennkou
+    public int HP()
+    {
+        return hp;
+    }
+    //hennkou
 
     void Start()
     {
@@ -84,6 +93,7 @@ public class air : MonoBehaviour
         }
     }
 
+
     public void Accident(GameObject other)
     {
         if (IsStun()) return;
@@ -103,4 +113,19 @@ public class air : MonoBehaviour
         Instantiate(explosion, transform.position, Quaternion.identity);
 
     }
+    //hennkou 
+    public void AccidentBossDamage(int str)
+    {
+        life--;
+        hp -= str;
+        Debug.Log(hp);
+        Instantiate(explosion, transform.position, Quaternion.identity);
+
+    }
+    public void GameOverScene()
+    {
+
+    }
+
+    //hennkou
 }

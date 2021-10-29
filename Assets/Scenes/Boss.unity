@@ -134,6 +134,10 @@ PrefabInstance:
       propertyPath: speed
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5184491314372762576, guid: c7706364d54912e499ded4a7ae3d9158, type: 3}
+      propertyPath: explosion
+      value: 
+      objectReference: {fileID: 1000011797152326, guid: acf39d9f4addf294d93fa56fa373961b, type: 3}
     - target: {fileID: 5184491314372762580, guid: c7706364d54912e499ded4a7ae3d9158, type: 3}
       propertyPath: m_RootOrder
       value: 2
@@ -384,6 +388,8 @@ MonoBehaviour:
   distance: 0
   span: 0
   HP: 0
+  stabDamage: 0
+  smashDamage: 0
 --- !u!1 &1611793221
 GameObject:
   m_ObjectHideFlags: 0

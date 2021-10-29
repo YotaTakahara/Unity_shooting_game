@@ -29,7 +29,10 @@ public class BossZarigani : Zari
     [SerializeField] public float distance;
     [SerializeField] public float span;
     [SerializeField] public float HP;
-
+    //hennkou
+    [SerializeField] private int stabDamage;
+    [SerializeField] private int smashDamage;
+    //hennkou
 
     void Start()
     {
@@ -40,6 +43,10 @@ public class BossZarigani : Zari
         span = 10f;
         airScript = player.GetComponent<air>();
         speed = airScript.speed;
+        //hennkou
+        stabDamage = 5;
+        smashDamage = 10;
+        //hennkou
         Initialize();
     }
     void Initialize()
@@ -134,7 +141,7 @@ public class BossZarigani : Zari
                 span = 5.0f;
                 if (span < tmpSpan)
                 {
-                    owner.animator.SetTrigger("Smash Attack");
+                    SmashAttack();
                     tmpSpan = 0f;
 
                 }
@@ -148,7 +155,8 @@ public class BossZarigani : Zari
                 span = 7.0f;
                 if (span < tmpSpan)
                 {
-                    owner.animator.SetTrigger("Smash Attack");
+
+                    SmashAttack();
                     tmpSpan = 0f;
 
                 }
@@ -160,12 +168,7 @@ public class BossZarigani : Zari
                     Debug.Log("okei");
                     owner.animator.SetTrigger("Walk Backward In Place");
 
-                    owner.animator.SetTrigger("Stab Attack");
-
-
-                    //owner.animator.SetTrigger("Take Damage");
-
-
+                    StabAttack();
                     tmpSpan = 0f;
 
 
@@ -178,6 +181,23 @@ public class BossZarigani : Zari
 
 
         }
+
+
+
+        //hennkou
+        public void StabAttack()
+        {
+            owner.animator.SetTrigger("Stab Attack");
+            owner.airScript.AccidentBossDamage(owner.stabDamage);
+            Debug.Log("player hp " + owner.airScript.hp);
+        }
+        public void SmashAttack()
+        {
+            owner.animator.SetTrigger("Smash Attack");
+            owner.airScript.AccidentBossDamage(owner.smashDamage);
+            Debug.Log("player hp " + owner.airScript.hp);
+        }
+        //hennkou
     }
     public class ZariDamage : State<BossZarigani>
     {
