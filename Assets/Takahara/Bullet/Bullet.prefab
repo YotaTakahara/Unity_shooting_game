@@ -11,10 +11,8 @@ GameObject:
   - component: {fileID: 6400876247866702153}
   - component: {fileID: 276582279947155799}
   - component: {fileID: 4043605783053430386}
-  - component: {fileID: 1228395081652294118}
   - component: {fileID: 5999747802507278386}
   - component: {fileID: 5589427999262211786}
-  - component: {fileID: 4290725252489011532}
   - component: {fileID: -7291845709572284527}
   - component: {fileID: 9055041246788536677}
   m_Layer: 0
@@ -87,19 +85,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!135 &1228395081652294118
-SphereCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6061075652065483688}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 0
-  serializedVersion: 2
-  m_Radius: 0.5
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &5999747802507278386
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -114,6 +99,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   abs: 0
   num: 1
+  attackList: {fileID: 0}
+  enemy: []
   span: 0.5
   range: 60
 --- !u!54 &5589427999262211786
@@ -132,21 +119,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!114 &4290725252489011532
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6061075652065483688}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d905515ab3c7ead47943b018a50c0116, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  objectsRed: []
-  objectsBlue: []
-  fire: {fileID: 1000011797152326, guid: acf39d9f4addf294d93fa56fa373961b, type: 3}
 --- !u!114 &-7291845709572284527
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -159,8 +131,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 619eb082e5dfd3f499e52ac5662545a4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _sphereObj: {fileID: 6061075652065483688}
-  _targetColliderRoot: {fileID: 0}
+  _target: []
+  check: {fileID: 0}
+  air: {fileID: 0}
+  attackList: {fileID: 0}
+  attack: []
   fire: {fileID: 1000011797152326, guid: acf39d9f4addf294d93fa56fa373961b, type: 3}
 --- !u!114 &9055041246788536677
 MonoBehaviour:

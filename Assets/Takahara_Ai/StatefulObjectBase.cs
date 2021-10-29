@@ -17,7 +17,7 @@ namespace Ai
                 //Debug.Log("statemachine" + "null");
                 return;
             }
-            Debug.Log("stateMachine go well " + stateMachine);
+            //Debug.Log("stateMachine go well " + stateMachine);
             stateMachine.ChangeState(stageList[state]);
         }
 

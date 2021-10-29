@@ -24,8 +24,8 @@ namespace Ai
             }
 
             currentState = state;
-            Debug.Log("Change State にはおかしなところはない");
-            Debug.Log("state " + state);
+            // Debug.Log("Change State にはおかしなところはない");
+            // Debug.Log("state " + state);
 
             currentState.Enter();
         }

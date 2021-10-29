@@ -8,8 +8,8 @@ public class ColliderSphere : MonoBehaviour, ICollider, ISphere
     {
         get { return _center; }
     }
-    
-    public float _radius ;
+
+    [SerializeField] private float _radius;
 
     public float Radius
     {
@@ -34,7 +34,7 @@ public class ColliderSphere : MonoBehaviour, ICollider, ISphere
     public bool CheckSphere(ISphere collider)
     {
         var collideDistance = Radius + collider.Radius;
-       // Debug.Log("collideDistance" + collideDistance* collideDistance);
+        // Debug.Log("collideDistance" + collideDistance* collideDistance);
         //ebug.Log("realDistance" + (WorldCenter - collider.WorldCenter).sqrMagnitude);
         return (WorldCenter - collider.WorldCenter).sqrMagnitude <= collideDistance * collideDistance;
     }

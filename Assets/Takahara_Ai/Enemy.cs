@@ -36,14 +36,14 @@ namespace Ai
         [SerializeField] private GameObject explode;
         [SerializeField] private GameObject player;
         [SerializeField] public float speed = 2.0f;
-       // public GameObject damage;
+        // public GameObject damage;
 
 
         void Start()
         {
             player = GameObject.Find("AirPlane");
             animator = GetComponent<Animator>();
-            
+
             //  bullet = GameObject.FindGameObjectWithTag("enemyBullet");
             //Debug.Log("player " + player);
 
@@ -115,7 +115,7 @@ namespace Ai
                 //Debug.Log("roadLength " + roadLength);
                 // Debug.Log("owner" + owner);
                 // Debug.Log("player hikouki" + owner.player);
-                owner.animator.SetTrigger("move-forward");
+                owner.animator.SetTrigger("move_forward");
                 float diff = Vector3.Magnitude(owner.player.transform.position - owner.transform.position);
                 //Debug.Log("diff " + diff);
                 //Debug.Log("distance " + distance);
@@ -123,7 +123,7 @@ namespace Ai
                 {
                     int index = (int)EnemyState.pursuit;
                     owner.ChangeStateNext(index);
-                    Debug.Log("wander to pursuit");
+                    //Debug.Log("wander to pursuit");
                     //   stateMachine.ChangeState();
                 }
 
@@ -165,12 +165,12 @@ namespace Ai
             public override void Execute()
             {
                 wherePlayer = owner.player.transform.position;
-                stopCircle = 25f;
+                stopCircle = 5f;
 
-                Debug.Log("Excute pursuit");
+                //Debug.Log("Excute pursuit");
                 owner.animator.SetTrigger("move_forward_fast");
                 float diff = Vector3.Magnitude(wherePlayer - owner.transform.position);
-                Debug.Log("diff " + diff);
+                //Debug.Log("diff " + diff);
 
 
                 if (diff <= stopCircle)
@@ -218,7 +218,7 @@ namespace Ai
                 wherePlayer = owner.player.transform.position;
                 stopCircle = 25f;
 
-                Debug.Log("Excute pursuit");
+                //Debug.Log("Excute pursuit");
                 float diff = Vector3.Magnitude(wherePlayer - owner.transform.position);
 
                 if (stopCircle < diff)
@@ -243,7 +243,7 @@ namespace Ai
 
                 this.timing += Time.deltaTime;
                 this.bombTime += Time.deltaTime;
-                Debug.Log("timing " + timing);
+                //Debug.Log("timing " + timing);
                 // if (span < timing)
                 // {
                 //     timing = 0;
@@ -293,7 +293,7 @@ namespace Ai
                 owner.animator.SetTrigger("idle_combat");
                 owner.animator.SetTrigger("dead");
 
-                Debug.Log("destroy this monster in 1.0 second");
+                //Debug.Log("destroy this monster in 1.0 second");
                 // GameObject shin = Instantiate(owner.explode, transform.position, Quaternion.identity);
                 // Destroy(owner.gameObject, 1.0f);
             }

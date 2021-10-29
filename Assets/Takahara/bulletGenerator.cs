@@ -10,6 +10,11 @@ public class bulletGenerator : MonoBehaviour
     float delta = 0.0f;
     public float power;
 
+    void Start()
+    {
+        airPlane = GameObject.Find("AirPlane");
+    }
+
 
     void Update()
     {
