@@ -4,6 +4,15 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Scenes/Start.unity
+    guid: 9fc0d4010bbf28b4594072e72b8655ab
+  - enabled: 1
+    path: Assets/Scenes/AI.unity
+    guid: f0fc36371c21e674fb70bc4477ef330d
+  - enabled: 1
+    path: Assets/Scenes/Boss.unity
+    guid: cf1fdba2798c63846a3eaf6702012e7e
   m_configObjects:
-    UnityEditor.XR.ARKit.ARKitSettings: {fileID: 11400000, guid: 0008dab41872c4142b8f34f32f98cbb1, type: 2}
+    UnityEditor.XR.ARKit.ARKitSettings: {fileID: 11400000, guid: 6348cf9148753e64cac23d0e05f80b98, type: 2}

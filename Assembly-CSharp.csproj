@@ -412,9 +412,9 @@
      <Compile Include="Assets\OpenCV+Unity\Assets\Scripts\OpenCvSharp\modules\core\Mat\MatOfFloat6.cs" />
      <Compile Include="Assets\OpenCV+Unity\Assets\Scripts\OpenCvSharp\modules\imgproc\Enum\GrabCutModes.cs" />
      <Compile Include="Assets\OpenCV+Unity\Assets\Scripts\OpenCvSharp\PInvoke\core\NativeMethods_core_SparseMat.cs" />
+     <Compile Include="Assets\Takahara\LifePanel.cs" />
      <Compile Include="Assets\OpenCV+Unity\Assets\Scripts\OpenCvSharp\modules\aruco\DetectorParameters.cs" />
      <Compile Include="Assets\OpenCV+Unity\Assets\Scripts\OpenCvSharp\PInvoke\imgproc\NativeMethods_imgproc_LineSegmentDetector.cs" />
-     <Compile Include="Assets\Takahara\LifePanel.cs" />
      <Compile Include="Assets\Takahara\simpleFollow.cs" />
      <Compile Include="Assets\OpenCV+Unity\Assets\Scripts\OpenCvSharp\PInvoke\NativeMethods_aruco.cs" />
      <Compile Include="Assets\OpenCV+Unity\Assets\Scripts\OpenCvSharp\PInvoke\features2d\NativeMethods_features2d_SimpleBlobDetector.cs" />
@@ -487,6 +487,13 @@
      <Compile Include="Assets\OpenCV+Unity\Assets\Scripts\OpenCvSharp\modules\features2d\GFTTDetector.cs" />
      <Compile Include="Assets\OpenCV+Unity\Assets\Scripts\OpenCvSharp\Util\PlatformUtil.cs" />
      <Compile Include="Assets\EffectExamples\Shared\Scripts\GunAim.cs" />
+     <Compile Include="Assets\Takahara_general\SingletonMonoBehaviour.cs" />
+     <Compile Include="Assets\Takahara_general\GameManager.cs" />
+     <Compile Include="Assets\Takahara_general\AirPlane.cs" />
+     <Compile Include="Assets\AutoSave.cs" />
+     <Compile Include="Assets\SceneBackup.cs" />
+     <Compile Include="Assets\Takahara_general\Canvas.cs" />
+     <Compile Include="Assets\Takahara\LifeGauge.cs" />
      <None Include="Assets\OpenCV+Unity\Demo\Face_Detector\haarcascade_eye.xml" />
      <None Include="Assets\OpenCV+Unity\Documentation\Third-Party Licenses.txt" />
      <None Include="Assets\smcs.rsp" />
@@ -724,11 +731,11 @@
     <Reference Include="System.IO.Abstractions">
         <HintPath>C:/3Dフライトシミュレーター/Library/PackageCache/com.unity.ml-agents@2.1.0-exp.1/Plugins/System.IO.Abstractions.dll</HintPath>
     </Reference>
-    <Reference Include="Google.Protobuf">
-        <HintPath>C:/3Dフライトシミュレーター/Library/PackageCache/com.unity.barracuda@2.0.0-pre.3/Barracuda/Runtime/Plugins/ProtoBuffer/Google.Protobuf.dll</HintPath>
-    </Reference>
     <Reference Include="Unity.Burst.Unsafe">
         <HintPath>C:/3Dフライトシミュレーター/Library/PackageCache/com.unity.burst@1.3.4/Unity.Burst.Unsafe.dll</HintPath>
+    </Reference>
+    <Reference Include="Google.Protobuf">
+        <HintPath>C:/3Dフライトシミュレーター/Library/PackageCache/com.unity.barracuda@2.0.0-pre.3/Barracuda/Runtime/Plugins/ProtoBuffer/Google.Protobuf.dll</HintPath>
     </Reference>
     <Reference Include="System.IO.Abstractions.TestingHelpers">
         <HintPath>C:/3Dフライトシミュレーター/Library/PackageCache/com.unity.ml-agents@2.1.0-exp.1/Plugins/System.IO.Abstractions.TestingHelpers.dll</HintPath>
@@ -736,11 +743,11 @@
     <Reference Include="System.Interactive.Async">
         <HintPath>C:/3Dフライトシミュレーター/Library/PackageCache/com.unity.ml-agents@2.1.0-exp.1/Plugins/ProtoBuffer/System.Interactive.Async.dll</HintPath>
     </Reference>
-    <Reference Include="Newtonsoft.Json">
-        <HintPath>C:/3Dフライトシミュレーター/Library/PackageCache/com.unity.nuget.newtonsoft-json@2.0.0/Runtime/Newtonsoft.Json.dll</HintPath>
-    </Reference>
     <Reference Include="Grpc.Core">
         <HintPath>C:/3Dフライトシミュレーター/Library/PackageCache/com.unity.ml-agents@2.1.0-exp.1/Plugins/ProtoBuffer/Grpc.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json">
+        <HintPath>C:/3Dフライトシミュレーター/Library/PackageCache/com.unity.nuget.newtonsoft-json@2.0.0/Runtime/Newtonsoft.Json.dll</HintPath>
     </Reference>
     <Reference Include="UnityEditor.iOS.Extensions.Xcode">
         <HintPath>C:/Program Files/Unity/Hub/Editor/2020.3.17f1/Editor/Data/PlaybackEngines/iOSSupport/UnityEditor.iOS.Extensions.Xcode.dll</HintPath>
