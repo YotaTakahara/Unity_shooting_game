@@ -530,6 +530,10 @@ PrefabInstance:
       propertyPath: player
       value: 
       objectReference: {fileID: 1534809746}
+    - target: {fileID: 31343525883307907, guid: 8b2843684d079444c8a9b17862e0f5f6, type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 1534809746}
     - target: {fileID: 436759024441520107, guid: 8b2843684d079444c8a9b17862e0f5f6, type: 3}
       propertyPath: m_Name
       value: stage
@@ -542,6 +546,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Aiprefab
       objectReference: {fileID: 0}
+    - target: {fileID: 7075422817048713286, guid: 8b2843684d079444c8a9b17862e0f5f6, type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 1534809746}
     - target: {fileID: 8627582328869700716, guid: 8b2843684d079444c8a9b17862e0f5f6, type: 3}
       propertyPath: m_RootOrder
       value: 5

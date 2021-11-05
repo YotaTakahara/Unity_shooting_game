@@ -40,7 +40,7 @@ public class BossZarigani : Zari
         player = GameObject.Find("AirPlane");
         HP = 100f;
         distance = 100f;
-        span = 10f;
+        span = 20f;
         airScript = player.GetComponent<air>();
         speed = airScript.speed;
         //hennkou
@@ -71,10 +71,10 @@ public class BossZarigani : Zari
 
     }
 
-    public override void Update()
+    public override void FixedUpdate()
     {
         transform.Translate(0, 0, -speed);
-        stateMachine.Update();
+        stateMachine.FixedUpdate();
     }
 
     public class ZariIdle : State<BossZarigani>
@@ -90,7 +90,7 @@ public class BossZarigani : Zari
             // this.speed = owner.speed;
             // Vector3 move = new Vector3(0, 0, speed);
             // owner.transform.Translate(move);
-            //owner.animator.SetTrigger("Walk Backward");
+            owner.animator.SetTrigger("Walk Backward");
 
             float diff = Vector3.Magnitude(owner.transform.position - owner.player.transform.position);
             if (diff < owner.distance)
@@ -136,7 +136,7 @@ public class BossZarigani : Zari
             tmpSpan += Time.fixedDeltaTime;
             if (0 < HP && HP < 20)
             {
-                //  owner.animator.SetTrigger("Run Backward");
+                owner.animator.SetTrigger("Run Backward");
 
                 span = 5.0f;
                 if (span < tmpSpan)
@@ -151,7 +151,7 @@ public class BossZarigani : Zari
             }
             else if (HP < 20 && HP < 80)
             {
-                // owner.animator.SetTrigger("Walk Backward In Place");
+                owner.animator.SetTrigger("Walk Backward In Place");
                 span = 7.0f;
                 if (span < tmpSpan)
                 {

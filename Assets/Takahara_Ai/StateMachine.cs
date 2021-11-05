@@ -30,7 +30,7 @@ namespace Ai
             currentState.Enter();
         }
 
-        public void Update()
+        public void FixedUpdate()
         {
             if (currentState != null)
             {

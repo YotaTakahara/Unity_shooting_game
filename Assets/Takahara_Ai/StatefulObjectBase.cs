@@ -31,11 +31,11 @@ namespace Ai
             return stateMachine.CurrentState == stateList[state];
         }
 
-        public virtual void Update()
+        public virtual void FixedUpdate()
         {
             if (stateMachine != null)
             {
-                stateMachine.Update();
+                stateMachine.FixedUpdate();
             }
         }
     }
