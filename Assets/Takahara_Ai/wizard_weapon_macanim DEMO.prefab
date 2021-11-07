@@ -10123,6 +10123,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4000010094665428}
+  - component: {fileID: 4110685911975390332}
   m_Layer: 0
   m_Name: Bip001
   m_TagString: Untagged
@@ -10146,6 +10147,20 @@ Transform:
   m_Father: {fileID: 4000011578242470}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &4110685911975390332
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1000010649453898}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ff1df1125e8b8c949ac5115e775568ca, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  k: 2
+  _radius: 1.5
 --- !u!1 &1000010671167300
 GameObject:
   m_ObjectHideFlags: 0
@@ -10190,6 +10205,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4000010061761376}
   - component: {fileID: 137000012753977332}
+  - component: {fileID: 1922683847379611626}
   m_Layer: 0
   m_Name: Mesh_AddOn_head_01
   m_TagString: Untagged
@@ -10264,6 +10280,20 @@ SkinnedMeshRenderer:
     m_Center: {x: -0.38644612, y: 0.4000771, z: 0.000000059604645}
     m_Extent: {x: 0.4976411, y: 0.2212044, z: 0.3357892}
   m_DirtyAABB: 0
+--- !u!114 &1922683847379611626
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1000010737857800}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ff1df1125e8b8c949ac5115e775568ca, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  k: 2
+  _radius: 1.5
 --- !u!1 &1000010757243608
 GameObject:
   m_ObjectHideFlags: 0
@@ -16877,7 +16907,6 @@ GameObject:
   - component: {fileID: 4000011578242470}
   - component: {fileID: 95000012058624550}
   - component: {fileID: 7223595218827112172}
-  - component: {fileID: 218288921914718773}
   m_Layer: 0
   m_Name: wizard_weapon_macanim DEMO
   m_TagString: Monster
@@ -16942,19 +16971,6 @@ MonoBehaviour:
   player: {fileID: 0}
   air: {fileID: 0}
   speed: 0
---- !u!114 &218288921914718773
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1000013586557078}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ff1df1125e8b8c949ac5115e775568ca, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _radius: 0
 --- !u!1 &1000013699516860
 GameObject:
   m_ObjectHideFlags: 0

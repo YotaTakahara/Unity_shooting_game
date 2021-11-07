@@ -8,6 +8,7 @@ public class GameController : MonoBehaviour
     public air air;
     public GameObject airPlane;
     public Text text;
+    [SerializeField] private int sceneNum =0;
 
     void Start()
     {
@@ -33,6 +34,11 @@ public class GameController : MonoBehaviour
 
     void CheckSceneMove(int score)
     {
+        if(sceneNum==1){
+            if(50<=score){
+                SceneManager.LoadScene("Boss");
+            }
+        }
         if (score < 400)
         {
             return;
@@ -46,7 +52,10 @@ public class GameController : MonoBehaviour
             PlayerPrefs.SetInt("倒した敵の数", air.point);
             // airPlane.transform.position.z = 0;
             SceneManager.LoadScene("AI");
+            sceneNum = 1;
             airPlane.transform.position = new Vector3(0, 5, 0);
+
+
         }
 
 

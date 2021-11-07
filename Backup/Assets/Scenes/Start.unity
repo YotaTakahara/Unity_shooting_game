@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657826, g: 0.49641263, b: 0.57481676, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1879,6 +1879,7 @@ MonoBehaviour:
   air: {fileID: 1085553093}
   airPlane: {fileID: 1085553088}
   text: {fileID: 1269782564}
+  sceneNum: 0
 --- !u!4 &1165938922
 Transform:
   m_ObjectHideFlags: 0
@@ -3088,7 +3089,7 @@ PrefabInstance:
       objectReference: {fileID: 5202793587325307922, guid: 266942f6400df8b4aaa4805744bf8965, type: 3}
     - target: {fileID: 5184491314372762576, guid: c7706364d54912e499ded4a7ae3d9158, type: 3}
       propertyPath: speed
-      value: 0.4
+      value: 0.2
       objectReference: {fileID: 0}
     - target: {fileID: 5184491314372762576, guid: c7706364d54912e499ded4a7ae3d9158, type: 3}
       propertyPath: explosion

@@ -4,31 +4,41 @@ using UnityEngine;
 public class ColliderDetector : MonoBehaviour
 {
     // [SerializeField] private GameObject _sphereObj;
-    [SerializeField] private GameObject[] _target;
+    //[SerializeField] private GameObject[] attack;
     [SerializeField] public ColliderSphere check;
     [SerializeField] private GameObject air;
     [SerializeField] private GameObject attackList;
     [SerializeField] private List<GameObject> attack;
+    [SerializeField] private air airScript;
+    [SerializeField] private GameObject boss;
+    [SerializeField] private BossZarigani zariScript;
 
 
     private ISphere _sphere;
     private bool _didCollide;
     public GameObject fire;
+    
 
     private void Awake()
     {
         air = GameObject.Find("AirPlane");
-        //_targetColliderRoot = GameObject.Find("Monsters");
-        _target = GameObject.FindGameObjectsWithTag("Monster");
+        //attackColliderRoot = GameObject.Find("Monsters");
+        //attack = GameObject.FindGameObjectsWithTag("Monster");
+        boss = GameObject.FindGameObjectWithTag("Boss");
+        if (boss != null)
+        {
+            zariScript = boss.GetComponent<BossZarigani>();
+        }
 
         _sphere = GetComponent<ISphere>();
 
         attackList = GameObject.Find("attackList");
         attack = attackList.GetComponent<List>().attack;
+        airScript = air.GetComponent<air>();
 
-        //  _colliders = _targetColliderRoot.GetComponentsInChildren<ICollider>();
-        //   _colliders = _targetColliderRoot.GetComponentsInChildren<ICollider>();
-        // Debug.Log("targetが取得できたか" + _target.Length);
+        //  _colliders = attackColliderRoot.GetComponentsInChildren<ICollider>();
+        //   _colliders = attackColliderRoot.GetComponentsInChildren<ICollider>();
+        // Debug.Log("targetが取得できたか" + attack.Length);
         // Debug.Log("_sphere"+_sphere);
     }
 
@@ -36,29 +46,85 @@ public class ColliderDetector : MonoBehaviour
     private void Update()
     {
         _didCollide = false;
-        if (_sphere != null && _target != null)
+        if (_sphere != null && attack != null)
         {
             // Debug.Log("ここまでは順調です");
-            for (int i = 0; i < _target.Length; i++)
+            for (int i = 0; i < attack.Count; i++)
             {
-                if (_target[i] != null)
+                if (attack[i] != null)
                 {
-                    // _didCollide |= _colliders[i].CheckSphere(_sphere);
-                    ColliderSphere shin = _target[i].GetComponent<ColliderSphere>();
-                    _didCollide = shin.CheckSphere(_sphere);
-                    Debug.Log("中身はどうですか" + _target[i]);
-                    Debug.Log("_didCollideの中身" + _didCollide);
-                    if (_didCollide)
-                    {
-                        Instantiate(fire, transform.position, Quaternion.identity);
-                        // int index = attack.IndexOf(_target[i]);
-                        // attack.RemoveAt(index);
-                        Destroy(_target[i]);
-                        air airScript = air.GetComponent<air>();
-                        airScript.point += 1;
+                    if(attack[i].tag=="Boss"){
+                        ColliderSphere[] shin = attack[i].GetComponentsInChildren<ColliderSphere>();
+                        for (int j = 0; j < shin.Length; j++)
+                        {
+                            _didCollide = shin[j].CheckSphere(_sphere);
+                            
+                            if (_didCollide)
+                            {
+                                zariScript.HP -= 1;
+                               // Instantiate(fire, transform.position, Quaternion.identity);
+                                Destroy(this.gameObject);
 
-                        Debug.Log("無事衝突判定ができました");
+
+
+                            }
+
+                        }
+
+
+
+
                     }
+                    else
+                    {
+
+                        // _didCollide |= _colliders[i].CheckSphere(_sphere);
+
+                        if (attack[i].GetComponent<ColliderSphere>() != null)
+                        {
+                            ColliderSphere shin = attack[i].GetComponent<ColliderSphere>();
+                            _didCollide = shin.CheckSphere(_sphere);
+                            Debug.Log("中身はどうですか" + attack[i]);
+                            Debug.Log("_didCollideの中身" + _didCollide);
+                            if (_didCollide)
+                            {
+                                Instantiate(fire, transform.position, Quaternion.identity);
+                                // int index = attack.IndexOf(attack[i]);
+                                // attack.RemoveAt(index);
+                                Destroy(attack[i]);
+                                
+                                airScript.point += 1;
+
+                                Debug.Log("無事衝突判定ができました");
+                            }
+                        }
+                        else
+                        {
+                            ColliderSphere[] shin = attack[i].GetComponentsInChildren<ColliderSphere>();
+                            for (int j = 0; j < shin.Length; j++)
+                            {
+                                _didCollide = shin[j].CheckSphere(_sphere);
+                                Debug.Log("中身はどうですか" + attack[i]);
+                                Debug.Log("_didCollideの中身" + _didCollide);
+                                if (_didCollide)
+                                {
+                                    Instantiate(fire, transform.position, Quaternion.identity);
+                                    // int index = attack.IndexOf(attack[i]);
+                                    // attack.RemoveAt(index);
+                                    Destroy(attack[i]);
+                                    
+                                    airScript.point += 1;
+
+                                    Debug.Log("無事衝突判定ができました");
+                                }
+
+                            }
+
+
+                        }
+                    }
+
+
                 }
             }
         }

@@ -5,15 +5,18 @@ public class List : MonoBehaviour
 {
     [SerializeField] private GameObject[] enemy;
     [SerializeField] private GameObject[] enemyBullet;
+    [SerializeField] private GameObject boss;
 
     public List<GameObject> attack;
 
     // Start is called before the first frame update
     void Start()
     {
-         enemy = GameObject.FindGameObjectsWithTag("Monster");
+        boss = GameObject.FindGameObjectWithTag("Boss");
+        enemy = GameObject.FindGameObjectsWithTag("Monster");
          enemyBullet = GameObject.FindGameObjectsWithTag("enemyBullet");
-       // enemy = GameObject.FindGameObjectsWithTag("experiment");
+        // enemy = GameObject.FindGameObjectsWithTag("experiment");
+        attack.Add(boss);
         for (int i = 0; i < enemy.Length; i++)
         {
             attack.Add(enemy[i]);

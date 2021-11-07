@@ -4980,6 +4980,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4000011098808454}
   - component: {fileID: 137000012669076280}
+  - component: {fileID: 4636680828382881018}
   m_Layer: 0
   m_Name: Mesh_AddOn_head_01
   m_TagString: Untagged
@@ -5054,6 +5055,20 @@ SkinnedMeshRenderer:
     m_Center: {x: -0.38644654, y: 0.400077, z: 0.000000059604645}
     m_Extent: {x: 0.49764103, y: 0.22120439, z: 0.3357892}
   m_DirtyAABB: 0
+--- !u!114 &4636680828382881018
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1000010245900214}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ff1df1125e8b8c949ac5115e775568ca, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  k: 2
+  _radius: 1.5
 --- !u!1 &1000010297892732
 GameObject:
   m_ObjectHideFlags: 0
@@ -20426,7 +20441,6 @@ GameObject:
   - component: {fileID: 4000010723399292}
   - component: {fileID: 95000012767169196}
   - component: {fileID: 459636275185031845}
-  - component: {fileID: 6857716070201075148}
   m_Layer: 0
   m_Name: wizard_macanim DEMO
   m_TagString: Monster
@@ -20490,19 +20504,6 @@ MonoBehaviour:
   player: {fileID: 0}
   air: {fileID: 0}
   speed: 0
---- !u!114 &6857716070201075148
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1000012226140144}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ff1df1125e8b8c949ac5115e775568ca, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _radius: 0
 --- !u!1 &1000012230336702
 GameObject:
   m_ObjectHideFlags: 0
@@ -20512,6 +20513,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4000010906546194}
+  - component: {fileID: 3619041678935081187}
   m_Layer: 0
   m_Name: Bip001
   m_TagString: Untagged
@@ -20535,6 +20537,20 @@ Transform:
   m_Father: {fileID: 4000010723399292}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 270, y: 89.99999, z: 0}
+--- !u!114 &3619041678935081187
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1000012230336702}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ff1df1125e8b8c949ac5115e775568ca, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  k: 2
+  _radius: 1.5
 --- !u!1 &1000012247248602
 GameObject:
   m_ObjectHideFlags: 0

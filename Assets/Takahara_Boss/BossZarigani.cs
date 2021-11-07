@@ -40,7 +40,7 @@ public class BossZarigani : Zari
         player = GameObject.Find("AirPlane");
         HP = 100f;
         distance = 100f;
-        span = 20f;
+        span = 10f;
         airScript = player.GetComponent<air>();
         speed = airScript.speed;
         //hennkou
@@ -75,6 +75,11 @@ public class BossZarigani : Zari
     {
         transform.Translate(0, 0, -speed);
         stateMachine.FixedUpdate();
+        if(this.HP<=0){
+            int index=(int)BossState.dead;
+            ChangeStateNext(index);
+
+        }
     }
 
     public class ZariIdle : State<BossZarigani>
@@ -133,12 +138,14 @@ public class BossZarigani : Zari
             }
 
             this.HP = owner.HP;
+            Debug.Log("HP " + this.HP);
             tmpSpan += Time.fixedDeltaTime;
             if (0 < HP && HP < 20)
             {
+
                 owner.animator.SetTrigger("Run Backward");
 
-                span = 5.0f;
+                span = 7.0f;
                 if (span < tmpSpan)
                 {
                     SmashAttack();
@@ -153,6 +160,7 @@ public class BossZarigani : Zari
             {
                 owner.animator.SetTrigger("Walk Backward In Place");
                 span = 7.0f;
+                Debug.Log("span " + span);
                 if (span < tmpSpan)
                 {
 
@@ -163,6 +171,8 @@ public class BossZarigani : Zari
             }
             else
             {
+               // Debug.Log("じかんはおかしくない");
+
                 if (span < tmpSpan)
                 {
                     Debug.Log("okei");
@@ -187,6 +197,7 @@ public class BossZarigani : Zari
         //hennkou
         public void StabAttack()
         {
+            Debug.Log("attack");
             owner.animator.SetTrigger("Stab Attack");
             owner.airScript.AccidentBossDamage(owner.stabDamage);
             Debug.Log("player hp " + owner.airScript.hp);
@@ -216,7 +227,15 @@ public class BossZarigani : Zari
             owner.ChangeStateNext(index);
         }
     }
-    public class ZariDead : State<BossZarigani> { public ZariDead(BossZarigani owner) : base(owner) { } }
+    public class ZariDead : State<BossZarigani> {
+        public ZariDead(BossZarigani owner) : base(owner) { } 
+        public override void Enter(){
+            owner.animator.SetTrigger("Die");;
+
+        }
+        public override void Execute(){}
+        public override void Exit(){}
+    }
 
 
 

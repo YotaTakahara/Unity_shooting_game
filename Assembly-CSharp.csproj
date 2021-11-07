@@ -9,7 +9,7 @@
     <ProductVersion>10.0.20506</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <RootNamespace></RootNamespace>
-    <ProjectGuid>{29e2ff53-279b-1806-5a3f-63ecf0c1535e}</ProjectGuid>
+    <ProjectGuid>{e6faa1b6-3264-d8d8-d78b-60647433711e}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <AssemblyName>Assembly-CSharp</AssemblyName>
@@ -266,6 +266,7 @@
      <Compile Include="Assets\OpenCV+Unity\Assets\Scripts\OpenCvSharp\modules\highgui\Enum\WindowMode.cs" />
      <Compile Include="Assets\Takahara\collider\ColliderSphere.cs" />
      <Compile Include="Assets\OpenCV+Unity\Assets\Scripts\OpenCvSharp\modules\imgproc\Enum\ProjectionType.cs" />
+     <Compile Include="Assets\Scripts\LightEstimation.cs" />
      <Compile Include="Assets\OpenCV+Unity\Assets\Scripts\OpenCvSharp\modules\features2d\BFMatcher.cs" />
      <Compile Include="Assets\OpenCV+Unity\Assets\Scripts\OpenCvSharp\Vector\VectorOfRect.cs" />
      <Compile Include="Assets\OpenCV+Unity\Assets\Scripts\OpenCvSharp\modules\imgproc\Enum\MorphTypes.cs" />
@@ -275,6 +276,7 @@
      <Compile Include="Assets\OpenCV+Unity\Assets\Scripts\OpenCvSharp\modules\tracking\Enum\TrackerTypes.cs" />
      <Compile Include="Assets\OpenCV+Unity\Assets\Scripts\OpenCvSharp\modules\core\Struct\DMatch.cs" />
      <Compile Include="Assets\OpenCV+Unity\Assets\Scripts\OpenCvSharp\Delegate\CvMouseCallback.cs" />
+     <Compile Include="Assets\Takahara_Boss\TryColor.cs" />
      <Compile Include="Assets\OpenCV+Unity\Assets\Scripts\OpenCvSharp\modules\bgsegm\BackgroundSubtractorMOG.cs" />
      <Compile Include="Assets\OpenCV+Unity\Assets\Scripts\OpenCvSharp\modules\superres\DenseOpticalFlowExt.cs" />
      <Compile Include="Assets\SampleScenes\Scripts\ParticleSceneControls.cs" />
@@ -327,6 +329,7 @@
      <Compile Include="Assets\OpenCV+Unity\Assets\Scripts\OpenCvSharp\modules\highgui\Window.cs" />
      <Compile Include="Assets\OpenCV+Unity\Demo\Grayscale\GrayscaleScript.cs" />
      <Compile Include="Assets\OpenCV+Unity\Assets\Scripts\OpenCvSharp\modules\core\Struct\Vecs.cs" />
+     <Compile Include="Assets\Scripts\CreateObject.cs" />
      <Compile Include="Assets\OpenCV+Unity\Assets\Scripts\OpenCvSharp\Vector\VectorOfVectorInt.cs" />
      <Compile Include="Assets\OpenCV+Unity\Demo\OCR.Alphabet\AlphabetOCRScene.cs" />
      <Compile Include="Assets\OpenCV+Unity\Assets\Scripts\OpenCvSharp\modules\features2d\MSER.cs" />
@@ -364,6 +367,7 @@
      <Compile Include="Assets\OpenCV+Unity\Assets\Scripts\OpenCvSharp\modules\imgproc\Model\LineSegmentPolar.cs" />
      <Compile Include="Assets\OpenCV+Unity\Assets\Scripts\OpenCvSharp\modules\face\CvFace.cs" />
      <Compile Include="Assets\OpenCV+Unity\Assets\Scripts\OpenCvSharp\Constants.cs" />
+     <Compile Include="Assets\Scripts\DancerController.cs" />
      <Compile Include="Assets\EffectExamples\Shared\Scripts\ParticleExamples.cs" />
      <Compile Include="Assets\OpenCV+Unity\Assets\Scripts\OpenCvSharp\Util\Platform.cs" />
      <Compile Include="Assets\OpenCV+Unity\Assets\Scripts\OpenCvSharp\modules\features2d\KAZE.cs" />
@@ -395,6 +399,7 @@
      <Compile Include="Assets\OpenCV+Unity\Assets\Scripts\OpenCvSharp\modules\objdetect\HistogramNormType.cs" />
      <Compile Include="Assets\OpenCV+Unity\Assets\Scripts\OpenCvSharp\PInvoke\features2d\NativeMethods_features2d_KAZE.cs" />
      <Compile Include="Assets\OpenCV+Unity\Assets\Scripts\OpenCvSharp\PInvoke\imgproc\NativeMethods_imgproc_CLAHE.cs" />
+     <Compile Include="Assets\Takahara_Boss\BossText.cs" />
      <Compile Include="Assets\OpenCV+Unity\Assets\Scripts\OpenCvSharp\modules\core\Struct\Size.cs" />
      <Compile Include="Assets\OpenCV+Unity\Assets\Scripts\OpenCvSharp\modules\xfeatures2d\SIFT.cs" />
      <Compile Include="Assets\OpenCV+Unity\Assets\Scripts\OpenCvSharp\Vector\VectorOfVectorERStat.cs" />
@@ -494,10 +499,6 @@
      <Compile Include="Assets\OpenCV+Unity\Assets\Scripts\OpenCvSharp\modules\features2d\GFTTDetector.cs" />
      <Compile Include="Assets\OpenCV+Unity\Assets\Scripts\OpenCvSharp\Util\PlatformUtil.cs" />
      <Compile Include="Assets\EffectExamples\Shared\Scripts\GunAim.cs" />
-     <Compile Include="Assets\Takahara_Boss\BossText.cs" />
-     <Compile Include="Assets\Scripts\DancerController.cs" />
-     <Compile Include="Assets\Scripts\LightEstimation.cs" />
-     <Compile Include="Assets\Scripts\CreateObject.cs" />
      <None Include="Assets\OpenCV+Unity\Demo\Face_Detector\haarcascade_eye.xml" />
      <None Include="Assets\OpenCV+Unity\Documentation\Third-Party Licenses.txt" />
      <None Include="Assets\smcs.rsp" />
@@ -733,25 +734,25 @@
         <HintPath>C:/Program Files/Unity/Hub/Editor/2020.3.17f1/Editor/Data/Managed/UnityEngine/UnityEditor.UnityConnectModule.dll</HintPath>
     </Reference>
     <Reference Include="System.IO.Abstractions">
-        <HintPath>C:/3Dフライトシミュレーター/Library/PackageCache/com.unity.ml-agents@2.1.0-exp.1/Plugins/System.IO.Abstractions.dll</HintPath>
+        <HintPath>C:/Users/denjo/Documents/intern/intern_takahara/Library/PackageCache/com.unity.ml-agents@2.1.0-exp.1/Plugins/System.IO.Abstractions.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Burst.Unsafe">
-        <HintPath>C:/3Dフライトシミュレーター/Library/PackageCache/com.unity.burst@1.3.4/Unity.Burst.Unsafe.dll</HintPath>
+        <HintPath>C:/Users/denjo/Documents/intern/intern_takahara/Library/PackageCache/com.unity.burst@1.3.4/Unity.Burst.Unsafe.dll</HintPath>
     </Reference>
     <Reference Include="Google.Protobuf">
-        <HintPath>C:/3Dフライトシミュレーター/Library/PackageCache/com.unity.barracuda@2.0.0-pre.3/Barracuda/Runtime/Plugins/ProtoBuffer/Google.Protobuf.dll</HintPath>
+        <HintPath>C:/Users/denjo/Documents/intern/intern_takahara/Library/PackageCache/com.unity.barracuda@2.0.0-pre.3/Barracuda/Runtime/Plugins/ProtoBuffer/Google.Protobuf.dll</HintPath>
     </Reference>
     <Reference Include="System.IO.Abstractions.TestingHelpers">
-        <HintPath>C:/3Dフライトシミュレーター/Library/PackageCache/com.unity.ml-agents@2.1.0-exp.1/Plugins/System.IO.Abstractions.TestingHelpers.dll</HintPath>
+        <HintPath>C:/Users/denjo/Documents/intern/intern_takahara/Library/PackageCache/com.unity.ml-agents@2.1.0-exp.1/Plugins/System.IO.Abstractions.TestingHelpers.dll</HintPath>
     </Reference>
     <Reference Include="System.Interactive.Async">
-        <HintPath>C:/3Dフライトシミュレーター/Library/PackageCache/com.unity.ml-agents@2.1.0-exp.1/Plugins/ProtoBuffer/System.Interactive.Async.dll</HintPath>
+        <HintPath>C:/Users/denjo/Documents/intern/intern_takahara/Library/PackageCache/com.unity.ml-agents@2.1.0-exp.1/Plugins/ProtoBuffer/System.Interactive.Async.dll</HintPath>
     </Reference>
     <Reference Include="Grpc.Core">
-        <HintPath>C:/3Dフライトシミュレーター/Library/PackageCache/com.unity.ml-agents@2.1.0-exp.1/Plugins/ProtoBuffer/Grpc.Core.dll</HintPath>
+        <HintPath>C:/Users/denjo/Documents/intern/intern_takahara/Library/PackageCache/com.unity.ml-agents@2.1.0-exp.1/Plugins/ProtoBuffer/Grpc.Core.dll</HintPath>
     </Reference>
     <Reference Include="Newtonsoft.Json">
-        <HintPath>C:/3Dフライトシミュレーター/Library/PackageCache/com.unity.nuget.newtonsoft-json@2.0.0/Runtime/Newtonsoft.Json.dll</HintPath>
+        <HintPath>C:/Users/denjo/Documents/intern/intern_takahara/Library/PackageCache/com.unity.nuget.newtonsoft-json@2.0.0/Runtime/Newtonsoft.Json.dll</HintPath>
     </Reference>
     <Reference Include="UnityEditor.iOS.Extensions.Xcode">
         <HintPath>C:/Program Files/Unity/Hub/Editor/2020.3.17f1/Editor/Data/PlaybackEngines/iOSSupport/UnityEditor.iOS.Extensions.Xcode.dll</HintPath>
@@ -1108,135 +1109,135 @@
         <HintPath>C:/Program Files/Unity/Hub/Editor/2020.3.17f1/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Xml.XPath.XDocument.dll</HintPath>
     </Reference>
     <Reference Include="Unity.ML-Agents">
-        <HintPath>C:/3Dフライトシミュレーター/Library/ScriptAssemblies/Unity.ML-Agents.dll</HintPath>
+        <HintPath>C:/Users/denjo/Documents/intern/intern_takahara/Library/ScriptAssemblies/Unity.ML-Agents.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Barracuda.iOSBLAS">
-        <HintPath>C:/3Dフライトシミュレーター/Library/ScriptAssemblies/Unity.Barracuda.iOSBLAS.dll</HintPath>
+        <HintPath>C:/Users/denjo/Documents/intern/intern_takahara/Library/ScriptAssemblies/Unity.Barracuda.iOSBLAS.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Barracuda.BurstBLAS">
-        <HintPath>C:/3Dフライトシミュレーター/Library/ScriptAssemblies/Unity.Barracuda.BurstBLAS.dll</HintPath>
+        <HintPath>C:/Users/denjo/Documents/intern/intern_takahara/Library/ScriptAssemblies/Unity.Barracuda.BurstBLAS.dll</HintPath>
     </Reference>
     <Reference Include="Unity.XR.ARKit">
-        <HintPath>C:/3Dフライトシミュレーター/Library/ScriptAssemblies/Unity.XR.ARKit.dll</HintPath>
+        <HintPath>C:/Users/denjo/Documents/intern/intern_takahara/Library/ScriptAssemblies/Unity.XR.ARKit.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Barracuda.ONNX">
-        <HintPath>C:/3Dフライトシミュレーター/Library/ScriptAssemblies/Unity.Barracuda.ONNX.dll</HintPath>
+        <HintPath>C:/Users/denjo/Documents/intern/intern_takahara/Library/ScriptAssemblies/Unity.Barracuda.ONNX.dll</HintPath>
     </Reference>
     <Reference Include="Unity.VSCode.Editor">
-        <HintPath>C:/3Dフライトシミュレーター/Library/ScriptAssemblies/Unity.VSCode.Editor.dll</HintPath>
+        <HintPath>C:/Users/denjo/Documents/intern/intern_takahara/Library/ScriptAssemblies/Unity.VSCode.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.TextMeshPro.Editor">
-        <HintPath>C:/3Dフライトシミュレーター/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
+        <HintPath>C:/Users/denjo/Documents/intern/intern_takahara/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.VisualStudio.Editor">
-        <HintPath>C:/3Dフライトシミュレーター/Library/ScriptAssemblies/Unity.VisualStudio.Editor.dll</HintPath>
+        <HintPath>C:/Users/denjo/Documents/intern/intern_takahara/Library/ScriptAssemblies/Unity.VisualStudio.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Sysroot.Linux_x86_64">
-        <HintPath>C:/3Dフライトシミュレーター/Library/ScriptAssemblies/Unity.Sysroot.Linux_x86_64.dll</HintPath>
+        <HintPath>C:/Users/denjo/Documents/intern/intern_takahara/Library/ScriptAssemblies/Unity.Sysroot.Linux_x86_64.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Barracuda">
-        <HintPath>C:/3Dフライトシミュレーター/Library/ScriptAssemblies/Unity.Barracuda.dll</HintPath>
+        <HintPath>C:/Users/denjo/Documents/intern/intern_takahara/Library/ScriptAssemblies/Unity.Barracuda.dll</HintPath>
     </Reference>
     <Reference Include="Unity.XR.Management.Editor">
-        <HintPath>C:/3Dフライトシミュレーター/Library/ScriptAssemblies/Unity.XR.Management.Editor.dll</HintPath>
+        <HintPath>C:/Users/denjo/Documents/intern/intern_takahara/Library/ScriptAssemblies/Unity.XR.Management.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Timeline">
-        <HintPath>C:/3Dフライトシミュレーター/Library/ScriptAssemblies/Unity.Timeline.dll</HintPath>
+        <HintPath>C:/Users/denjo/Documents/intern/intern_takahara/Library/ScriptAssemblies/Unity.Timeline.dll</HintPath>
     </Reference>
     <Reference Include="Unity.TextMeshPro">
-        <HintPath>C:/3Dフライトシミュレーター/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
+        <HintPath>C:/Users/denjo/Documents/intern/intern_takahara/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Burst.Editor">
-        <HintPath>C:/3Dフライトシミュレーター/Library/ScriptAssemblies/Unity.Burst.Editor.dll</HintPath>
+        <HintPath>C:/Users/denjo/Documents/intern/intern_takahara/Library/ScriptAssemblies/Unity.Burst.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.XR.ARKit.Editor">
-        <HintPath>C:/3Dフライトシミュレーター/Library/ScriptAssemblies/Unity.XR.ARKit.Editor.dll</HintPath>
+        <HintPath>C:/Users/denjo/Documents/intern/intern_takahara/Library/ScriptAssemblies/Unity.XR.ARKit.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Toolchain.Linux-x86_64">
-        <HintPath>C:/3Dフライトシミュレーター/Library/ScriptAssemblies/Unity.Toolchain.Linux-x86_64.dll</HintPath>
+        <HintPath>C:/Users/denjo/Documents/intern/intern_takahara/Library/ScriptAssemblies/Unity.Toolchain.Linux-x86_64.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Subsystem.Registration">
-        <HintPath>C:/3Dフライトシミュレーター/Library/ScriptAssemblies/Unity.Subsystem.Registration.dll</HintPath>
+        <HintPath>C:/Users/denjo/Documents/intern/intern_takahara/Library/ScriptAssemblies/Unity.Subsystem.Registration.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Postprocessing.Editor">
-        <HintPath>C:/3Dフライトシミュレーター/Library/ScriptAssemblies/Unity.Postprocessing.Editor.dll</HintPath>
+        <HintPath>C:/Users/denjo/Documents/intern/intern_takahara/Library/ScriptAssemblies/Unity.Postprocessing.Editor.dll</HintPath>
     </Reference>
     <Reference Include="UnityEditor.UI">
-        <HintPath>C:/3Dフライトシミュレーター/Library/ScriptAssemblies/UnityEditor.UI.dll</HintPath>
+        <HintPath>C:/Users/denjo/Documents/intern/intern_takahara/Library/ScriptAssemblies/UnityEditor.UI.dll</HintPath>
     </Reference>
     <Reference Include="Unity.PlasticSCM.Editor">
-        <HintPath>C:/3Dフライトシミュレーター/Library/ScriptAssemblies/Unity.PlasticSCM.Editor.dll</HintPath>
+        <HintPath>C:/Users/denjo/Documents/intern/intern_takahara/Library/ScriptAssemblies/Unity.PlasticSCM.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Rider.Editor">
-        <HintPath>C:/3Dフライトシミュレーター/Library/ScriptAssemblies/Unity.Rider.Editor.dll</HintPath>
+        <HintPath>C:/Users/denjo/Documents/intern/intern_takahara/Library/ScriptAssemblies/Unity.Rider.Editor.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.UI">
-        <HintPath>C:/3Dフライトシミュレーター/Library/ScriptAssemblies/UnityEngine.UI.dll</HintPath>
+        <HintPath>C:/Users/denjo/Documents/intern/intern_takahara/Library/ScriptAssemblies/UnityEngine.UI.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.SpatialTracking">
-        <HintPath>C:/3Dフライトシミュレーター/Library/ScriptAssemblies/UnityEngine.SpatialTracking.dll</HintPath>
+        <HintPath>C:/Users/denjo/Documents/intern/intern_takahara/Library/ScriptAssemblies/UnityEngine.SpatialTracking.dll</HintPath>
     </Reference>
     <Reference Include="Unity.EditorCoroutines.Editor">
-        <HintPath>C:/3Dフライトシミュレーター/Library/ScriptAssemblies/Unity.EditorCoroutines.Editor.dll</HintPath>
+        <HintPath>C:/Users/denjo/Documents/intern/intern_takahara/Library/ScriptAssemblies/Unity.EditorCoroutines.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.ML-Agents.CommunicatorObjects">
-        <HintPath>C:/3Dフライトシミュレーター/Library/ScriptAssemblies/Unity.ML-Agents.CommunicatorObjects.dll</HintPath>
+        <HintPath>C:/Users/denjo/Documents/intern/intern_takahara/Library/ScriptAssemblies/Unity.ML-Agents.CommunicatorObjects.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Mathematics">
-        <HintPath>C:/3Dフライトシミュレーター/Library/ScriptAssemblies/Unity.Mathematics.dll</HintPath>
+        <HintPath>C:/Users/denjo/Documents/intern/intern_takahara/Library/ScriptAssemblies/Unity.Mathematics.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Burst">
-        <HintPath>C:/3Dフライトシミュレーター/Library/ScriptAssemblies/Unity.Burst.dll</HintPath>
+        <HintPath>C:/Users/denjo/Documents/intern/intern_takahara/Library/ScriptAssemblies/Unity.Burst.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Postprocessing.Runtime">
-        <HintPath>C:/3Dフライトシミュレーター/Library/ScriptAssemblies/Unity.Postprocessing.Runtime.dll</HintPath>
+        <HintPath>C:/Users/denjo/Documents/intern/intern_takahara/Library/ScriptAssemblies/Unity.Postprocessing.Runtime.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.XR.LegacyInputHelpers">
-        <HintPath>C:/3Dフライトシミュレーター/Library/ScriptAssemblies/UnityEngine.XR.LegacyInputHelpers.dll</HintPath>
+        <HintPath>C:/Users/denjo/Documents/intern/intern_takahara/Library/ScriptAssemblies/UnityEngine.XR.LegacyInputHelpers.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Timeline.Editor">
-        <HintPath>C:/3Dフライトシミュレーター/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
+        <HintPath>C:/Users/denjo/Documents/intern/intern_takahara/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.XR.ARSubsystems.Editor">
-        <HintPath>C:/3Dフライトシミュレーター/Library/ScriptAssemblies/Unity.XR.ARSubsystems.Editor.dll</HintPath>
+        <HintPath>C:/Users/denjo/Documents/intern/intern_takahara/Library/ScriptAssemblies/Unity.XR.ARSubsystems.Editor.dll</HintPath>
     </Reference>
     <Reference Include="UnityEditor.XR.LegacyInputHelpers">
-        <HintPath>C:/3Dフライトシミュレーター/Library/ScriptAssemblies/UnityEditor.XR.LegacyInputHelpers.dll</HintPath>
+        <HintPath>C:/Users/denjo/Documents/intern/intern_takahara/Library/ScriptAssemblies/UnityEditor.XR.LegacyInputHelpers.dll</HintPath>
     </Reference>
     <Reference Include="Unity.XR.Management">
-        <HintPath>C:/3Dフライトシミュレーター/Library/ScriptAssemblies/Unity.XR.Management.dll</HintPath>
+        <HintPath>C:/Users/denjo/Documents/intern/intern_takahara/Library/ScriptAssemblies/Unity.XR.Management.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Mathematics.Editor">
-        <HintPath>C:/3Dフライトシミュレーター/Library/ScriptAssemblies/Unity.Mathematics.Editor.dll</HintPath>
+        <HintPath>C:/Users/denjo/Documents/intern/intern_takahara/Library/ScriptAssemblies/Unity.Mathematics.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.XR.ARSubsystems">
-        <HintPath>C:/3Dフライトシミュレーター/Library/ScriptAssemblies/Unity.XR.ARSubsystems.dll</HintPath>
+        <HintPath>C:/Users/denjo/Documents/intern/intern_takahara/Library/ScriptAssemblies/Unity.XR.ARSubsystems.dll</HintPath>
     </Reference>
     <Reference Include="Unity.XR.ARFoundation.Editor">
-        <HintPath>C:/3Dフライトシミュレーター/Library/ScriptAssemblies/Unity.XR.ARFoundation.Editor.dll</HintPath>
+        <HintPath>C:/Users/denjo/Documents/intern/intern_takahara/Library/ScriptAssemblies/Unity.XR.ARFoundation.Editor.dll</HintPath>
     </Reference>
     <Reference Include="UnityEditor.SpatialTracking">
-        <HintPath>C:/3Dフライトシミュレーター/Library/ScriptAssemblies/UnityEditor.SpatialTracking.dll</HintPath>
+        <HintPath>C:/Users/denjo/Documents/intern/intern_takahara/Library/ScriptAssemblies/UnityEditor.SpatialTracking.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Barracuda.Editor">
-        <HintPath>C:/3Dフライトシミュレーター/Library/ScriptAssemblies/Unity.Barracuda.Editor.dll</HintPath>
+        <HintPath>C:/Users/denjo/Documents/intern/intern_takahara/Library/ScriptAssemblies/Unity.Barracuda.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Barracuda.MacBLAS">
-        <HintPath>C:/3Dフライトシミュレーター/Library/ScriptAssemblies/Unity.Barracuda.MacBLAS.dll</HintPath>
+        <HintPath>C:/Users/denjo/Documents/intern/intern_takahara/Library/ScriptAssemblies/Unity.Barracuda.MacBLAS.dll</HintPath>
     </Reference>
     <Reference Include="Unity.ML-Agents.Editor">
-        <HintPath>C:/3Dフライトシミュレーター/Library/ScriptAssemblies/Unity.ML-Agents.Editor.dll</HintPath>
+        <HintPath>C:/Users/denjo/Documents/intern/intern_takahara/Library/ScriptAssemblies/Unity.ML-Agents.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.SysrootPackage.Editor">
-        <HintPath>C:/3Dフライトシミュレーター/Library/ScriptAssemblies/Unity.SysrootPackage.Editor.dll</HintPath>
+        <HintPath>C:/Users/denjo/Documents/intern/intern_takahara/Library/ScriptAssemblies/Unity.SysrootPackage.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.XR.ARFoundation">
-        <HintPath>C:/3Dフライトシミュレーター/Library/ScriptAssemblies/Unity.XR.ARFoundation.dll</HintPath>
+        <HintPath>C:/Users/denjo/Documents/intern/intern_takahara/Library/ScriptAssemblies/Unity.XR.ARFoundation.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="Assembly-CSharp-firstpass.csproj">
-      <Project>{5433f0ee-0d21-f8f5-253d-338ce043b2a3}</Project>
+      <Project>{941ae0e8-ffb5-7bfd-e6df-2a5cc6b3385b}</Project>
       <Name>Assembly-CSharp-firstpass</Name>
     </ProjectReference>
   </ItemGroup>
