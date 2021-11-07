@@ -37,6 +37,7 @@ public class GameController : MonoBehaviour
         if(sceneNum==1){
             if(50<=score){
                 SceneManager.LoadScene("Boss");
+                sceneNum =2;
             }
         }
         if (score < 400)
@@ -51,7 +52,10 @@ public class GameController : MonoBehaviour
             PlayerPrefs.SetInt("進んだ距離", tmpScore + score);
             PlayerPrefs.SetInt("倒した敵の数", air.point);
             // airPlane.transform.position.z = 0;
-            SceneManager.LoadScene("AI");
+            if (sceneNum == 0)
+            {
+                SceneManager.LoadScene("AI");
+            }
             sceneNum = 1;
             airPlane.transform.position = new Vector3(0, 5, 0);
 

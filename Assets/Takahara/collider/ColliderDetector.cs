@@ -51,7 +51,7 @@ public class ColliderDetector : MonoBehaviour
             // Debug.Log("ここまでは順調です");
             for (int i = 0; i < attack.Count; i++)
             {
-                if (attack[i] != null)
+                if (attack[i] != null&& attack[i].gameObject.tag!="enemyBullet")
                 {
                     if(attack[i].tag=="Boss"){
                         ColliderSphere[] shin = attack[i].GetComponentsInChildren<ColliderSphere>();
@@ -82,10 +82,10 @@ public class ColliderDetector : MonoBehaviour
 
                         if (attack[i].GetComponent<ColliderSphere>() != null)
                         {
+                            Debug.Log("ここが呼び出されいません");
                             ColliderSphere shin = attack[i].GetComponent<ColliderSphere>();
                             _didCollide = shin.CheckSphere(_sphere);
-                            Debug.Log("中身はどうですか" + attack[i]);
-                            Debug.Log("_didCollideの中身" + _didCollide);
+                            
                             if (_didCollide)
                             {
                                 Instantiate(fire, transform.position, Quaternion.identity);
@@ -95,7 +95,7 @@ public class ColliderDetector : MonoBehaviour
                                 
                                 airScript.point += 1;
 
-                                Debug.Log("無事衝突判定ができました");
+                                
                             }
                         }
                         else
@@ -104,8 +104,8 @@ public class ColliderDetector : MonoBehaviour
                             for (int j = 0; j < shin.Length; j++)
                             {
                                 _didCollide = shin[j].CheckSphere(_sphere);
-                                Debug.Log("中身はどうですか" + attack[i]);
-                                Debug.Log("_didCollideの中身" + _didCollide);
+                                Debug.Log("原因はここです");
+
                                 if (_didCollide)
                                 {
                                     Instantiate(fire, transform.position, Quaternion.identity);
@@ -115,7 +115,7 @@ public class ColliderDetector : MonoBehaviour
                                     
                                     airScript.point += 1;
 
-                                    Debug.Log("無事衝突判定ができました");
+                                    //Debug.Log("無事衝突判定ができました");
                                 }
 
                             }
