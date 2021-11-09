@@ -26,7 +26,7 @@ public class ColliderSphere : MonoBehaviour, ICollider, ISphere
     {
     
         // _transform = this.transform;
-        _radius = transform.localScale.x*k;
+        _radius = transform.localScale.y*k;
         // _radius = 15f;
     }
 

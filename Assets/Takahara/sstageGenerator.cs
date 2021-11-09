@@ -3,7 +3,8 @@ using UnityEngine;
 
 public class sstageGenerator : MonoBehaviour
 {
-    private const int StageChipSize = 250;
+    public int k = 2;
+    [SerializeField]private  int StageChipSize = 30;
     private int currentChipIndex;
     public GameObject airPlane;
     public GameObject[] stageChips;
@@ -14,6 +15,7 @@ public class sstageGenerator : MonoBehaviour
 
     void Start()
     {
+        StageChipSize *= k;
         currentChipIndex = startChipIndex - 1;
         UpdateStage(preInstantiate);
     }
@@ -45,7 +47,7 @@ public class sstageGenerator : MonoBehaviour
     {
         int nextStageChip = Random.Range(0, stageChips.Length);
         GameObject stageObject = Instantiate(stageChips[nextStageChip],
-            new Vector3(-250, -3, chipIndex * StageChipSize), Quaternion.identity);
+            new Vector3(0, 0, chipIndex * StageChipSize), Quaternion.identity);
         return stageObject;
     }
 

@@ -357,7 +357,13 @@ MonoBehaviour:
   explosion: {fileID: 0}
   point: 0
   shotSpeed: 10
+  miuRb: {fileID: 0}
   yotta: {fileID: 0}
+  moveDirection: {x: 0, y: 0, z: 0}
+  targetLane: 0
+  speedZ: 0
+  speedX: 0
+  accelerationZ: 0
 --- !u!114 &88968043
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2256,6 +2262,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f85b16094403f7f40837089225d2e914, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  k: 2
+  StageChipSize: 30
   airPlane: {fileID: 1085553088}
   stageChips:
   - {fileID: 7581227334614047275, guid: dd28253ef231f3445a7e459f8c77b401, type: 3}
@@ -3092,6 +3100,14 @@ PrefabInstance:
       value: 0.2
       objectReference: {fileID: 0}
     - target: {fileID: 5184491314372762576, guid: c7706364d54912e499ded4a7ae3d9158, type: 3}
+      propertyPath: speedX
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5184491314372762576, guid: c7706364d54912e499ded4a7ae3d9158, type: 3}
+      propertyPath: speedZ
+      value: 0.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 5184491314372762576, guid: c7706364d54912e499ded4a7ae3d9158, type: 3}
       propertyPath: explosion
       value: 
       objectReference: {fileID: 1000011797152326, guid: acf39d9f4addf294d93fa56fa373961b, type: 3}
@@ -3102,6 +3118,10 @@ PrefabInstance:
     - target: {fileID: 5184491314372762576, guid: c7706364d54912e499ded4a7ae3d9158, type: 3}
       propertyPath: shotSpeed
       value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 5184491314372762576, guid: c7706364d54912e499ded4a7ae3d9158, type: 3}
+      propertyPath: accelerationZ
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 5184491314372762579, guid: c7706364d54912e499ded4a7ae3d9158, type: 3}
       propertyPath: m_Enabled
