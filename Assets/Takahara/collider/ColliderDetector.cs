@@ -13,6 +13,8 @@ public class ColliderDetector : MonoBehaviour
     [SerializeField] private air airScript;
     [SerializeField] private GameObject boss;
     [SerializeField] private BossZarigani zariScript;
+    [SerializeField] private bulletController bullController;
+    [SerializeField] private int whichBull = 0;
 
 
 
@@ -52,14 +54,25 @@ public class ColliderDetector : MonoBehaviour
 
         // cube = GameObject.FindGameObjectWithTag("Wall");
         // cubeScript = cube.GetComponent<ColliderCube>();
+
+        bullController = GetComponent<bulletController>();
+        whichBull = bullController.attackOrWall;
+
     }
 
 
     private void Update()
     {
         _didCollide = false;
-        //SphereDetection();
-        CubeDetection();
+        if (whichBull == 1)
+        {
+            SphereDetection();
+        }
+        else if (whichBull == 2)
+        {
+            CubeDetection();
+
+        }
 
 
 

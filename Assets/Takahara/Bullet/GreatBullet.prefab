@@ -131,8 +131,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   abs: 0
   num: 0
+  attackList: {fileID: 0}
+  enemy: []
   span: 0.5
   range: 100
+  attackOrWall: 1
 --- !u!114 &2318719384643527806
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -160,6 +163,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ff1df1125e8b8c949ac5115e775568ca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _center: {x: 0, y: 0, z: 0}
+  k: 2
   _radius: 0
 --- !u!114 &-7747919107280611664
 MonoBehaviour:
@@ -173,9 +178,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 619eb082e5dfd3f499e52ac5662545a4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _target: []
   check: {fileID: 0}
   air: {fileID: 0}
+  attackList: {fileID: 0}
+  attack: []
+  obstacle: []
+  airScript: {fileID: 0}
+  boss: {fileID: 0}
+  zariScript: {fileID: 0}
   fire: {fileID: 1000011797152326, guid: acf39d9f4addf294d93fa56fa373961b, type: 3}
 --- !u!1 &7944100285219630842
 GameObject:

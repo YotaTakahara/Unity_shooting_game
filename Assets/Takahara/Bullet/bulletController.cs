@@ -15,6 +15,10 @@ public class bulletController : MonoBehaviour
     //private float delta = 0;
     public float range;
 
+    //銃弾役割切り替え成功
+    //動作確認済み
+    public int attackOrWall;
+
 
     void Start()
     {

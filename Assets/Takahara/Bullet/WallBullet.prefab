@@ -103,6 +103,7 @@ MonoBehaviour:
   enemy: []
   span: 0.5
   range: 60
+  attackOrWall: 2
 --- !u!54 &6761937517961061563
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -135,6 +136,7 @@ MonoBehaviour:
   air: {fileID: 0}
   attackList: {fileID: 0}
   attack: []
+  obstacle: []
   airScript: {fileID: 0}
   boss: {fileID: 0}
   zariScript: {fileID: 0}
