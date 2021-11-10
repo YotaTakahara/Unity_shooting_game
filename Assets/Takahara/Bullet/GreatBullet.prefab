@@ -134,7 +134,7 @@ MonoBehaviour:
   attackList: {fileID: 0}
   enemy: []
   span: 0.5
-  range: 100
+  range: 20
   attackOrWall: 1
 --- !u!114 &2318719384643527806
 MonoBehaviour:
@@ -186,6 +186,8 @@ MonoBehaviour:
   airScript: {fileID: 0}
   boss: {fileID: 0}
   zariScript: {fileID: 0}
+  bullController: {fileID: 0}
+  whichBull: 0
   fire: {fileID: 1000011797152326, guid: acf39d9f4addf294d93fa56fa373961b, type: 3}
 --- !u!1 &7944100285219630842
 GameObject:

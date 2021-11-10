@@ -104,6 +104,7 @@
      <Compile Include="Assets\EffectExamples\Shared\Scripts\DecalDestroyer.cs" />
      <Compile Include="Assets\OpenCV+Unity\Assets\Scripts\OpenCvSharp\modules\core\MatExpr_CvMethods.cs" />
      <Compile Include="Assets\OpenCV+Unity\Assets\Scripts\OpenCvSharp\modules\objdetect\HOGDescriptor.cs" />
+     <Compile Include="Assets\Takahara\collider\MyColliderDetection.cs" />
      <Compile Include="Assets\OpenCV+Unity\Assets\Scripts\OpenCvSharp\MatProxy.cs" />
      <Compile Include="Assets\OpenCV+Unity\Assets\Scripts\OpenCvSharp\Vector\VectorOfByte.cs" />
      <Compile Include="Assets\OpenCV+Unity\Assets\Scripts\OpenCvSharp\modules\core\Struct\Point3d.cs" />
@@ -235,6 +236,7 @@
      <Compile Include="Assets\OpenCV+Unity\Assets\Scripts\OpenCvSharp\modules\imgproc\LineIterator.cs" />
      <Compile Include="Assets\OpenCV+Unity\Assets\Scripts\OpenCvSharp\PInvoke\ml\NativeMethods_ml_EM.cs" />
      <Compile Include="Assets\OpenCV+Unity\Assets\Scripts\OpenCvSharp\modules\features2d\Feature2D.cs" />
+     <Compile Include="Assets\Takahara_sudden\TmpCollider.cs" />
      <Compile Include="Assets\OpenCV+Unity\Assets\Scripts\OpenCvSharp\modules\core\Mat\MatOfPoint.cs" />
      <Compile Include="Assets\OpenCV+Unity\Assets\Scripts\OpenCvSharp\modules\core\Mat\MatOfFloat.cs" />
      <Compile Include="Assets\OpenCV+Unity\Assets\Scripts\OpenCvSharp\modules\core\MatExprRowColIndexer.cs" />
@@ -501,8 +503,8 @@
      <Compile Include="Assets\OpenCV+Unity\Assets\Scripts\OpenCvSharp\modules\features2d\GFTTDetector.cs" />
      <Compile Include="Assets\OpenCV+Unity\Assets\Scripts\OpenCvSharp\Util\PlatformUtil.cs" />
      <Compile Include="Assets\EffectExamples\Shared\Scripts\GunAim.cs" />
-     <Compile Include="Assets\Takahara_sudden\TmpCollider.cs" />
-     <Compile Include="Assets\Takahara\collider\MyColliderDetection.cs" />
+     <Compile Include="Assets\Takahara_sudden\EnemyPoint.cs" />
+     <Compile Include="Assets\Takahara_sudden\tmp.cs" />
      <None Include="Assets\NejikoBaseAssets\LICENSE.txt" />
      <None Include="Assets\OpenCV+Unity\Demo\Face_Detector\haarcascade_eye.xml" />
      <None Include="Assets\OpenCV+Unity\Documentation\Third-Party Licenses.txt" />

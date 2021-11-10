@@ -110,6 +110,21 @@ public class sstageGenerator : MonoBehaviour
             stageObject = (GameObject)Instantiate(stageChips[nextStageChip],
                 new Vector3(0, 0, chipIndex * StageChipSize), Quaternion.identity);
 
+            foreach (Transform childTransform in stageObject.gameObject.transform)
+            {
+                Debug.Log(childTransform.gameObject.name); // 子オブジェクト名を出力
+                                                           // EnemyPoint tmp = childTransform.gameObject.GetComponent<EnemyPoint>();
+                                                           //Debug.Log("enemy:" + tmp.prefab);
+            }
+
+
+
+
+
+
+
+
+
             // foreach (Transform child in stageObject.transform)
             // {
             //     GameObject childCha = (GameObject)child.gameObject;

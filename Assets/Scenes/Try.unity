@@ -141,7 +141,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &7693318
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1950,9 +1950,9 @@ MonoBehaviour:
   StageChipSize: 30
   airPlane: {fileID: 1744069119}
   stageChips:
-  - {fileID: 7287350568185544929, guid: de3844eb9d4064a48a34554ff1045e35, type: 3}
-  - {fileID: 114390, guid: 16de06a814a1d403fbe161e9851bc37b, type: 3}
-  - {fileID: 1049230196372225247, guid: bc9ef4fdc6f1c1743bb574021e819e97, type: 3}
+  - {fileID: 4566896784034625910, guid: e5afd4d9da0626d4f93a33a9378309be, type: 3}
+  - {fileID: 3902321112452085612, guid: d896614c6cb339543a742026d465642c, type: 3}
+  - {fileID: 529405581827050660, guid: e9505c5c8d6a73a4e804c63f4516901a, type: 3}
   stageChips1:
   - {fileID: 6569184854945698351, guid: d5e941dffea768d41b318f2dc657f0cf, type: 3}
   startChipIndex: 1
