@@ -1215,7 +1215,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2329093932753029959, guid: ab5c34f869e5892438ebc383ef7402a7, type: 3}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ab5c34f869e5892438ebc383ef7402a7, type: 3}
@@ -1338,12 +1338,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   k: 2
+  stageState: 0
   StageChipSize: 30
   airPlane: {fileID: 1744069119}
   stageChips:
   - {fileID: 114390, guid: 16de06a814a1d403fbe161e9851bc37b, type: 3}
   - {fileID: 7287350568185544929, guid: de3844eb9d4064a48a34554ff1045e35, type: 3}
   - {fileID: 1049230196372225247, guid: bc9ef4fdc6f1c1743bb574021e819e97, type: 3}
+  - {fileID: 6569184854945698351, guid: d5e941dffea768d41b318f2dc657f0cf, type: 3}
+  stageChips1:
+  - {fileID: 6569184854945698351, guid: d5e941dffea768d41b318f2dc657f0cf, type: 3}
   startChipIndex: 1
   preInstantiate: 5
   generatedStageList:
@@ -1437,40 +1441,15 @@ PrefabInstance:
       propertyPath: m_Name
       value: AirPlane
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 5184491314372762583, guid: c7706364d54912e499ded4a7ae3d9158, type: 3}
+    - {fileID: 5184491314372762577, guid: c7706364d54912e499ded4a7ae3d9158, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: c7706364d54912e499ded4a7ae3d9158, type: 3}
 --- !u!1 &1744069119 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 5184491314372762581, guid: c7706364d54912e499ded4a7ae3d9158, type: 3}
   m_PrefabInstance: {fileID: 1744069118}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1744069120
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1744069119}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2ebf194e5cba5244684f33928ccbe6ef, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  life: 3
-  hp: 100
-  stopTime: 0.5
-  recoverTime: 0
-  fire: {fileID: 0}
-  explosion: {fileID: 0}
-  point: 0
-  shotSpeed: 0
-  miuRb: {fileID: 0}
-  yotta: {fileID: 0}
-  moveDirection: {x: 0, y: 0, z: 0}
-  targetLane: 0
-  speedZ: 0.1
-  speedX: 0.05
-  accelerationZ: 10
 --- !u!1 &1940785865
 GameObject:
   m_ObjectHideFlags: 0

@@ -4,10 +4,13 @@ using UnityEngine;
 public class sstageGenerator : MonoBehaviour
 {
     public int k = 2;
+    public int stageState = 0;
     [SerializeField]private  int StageChipSize = 30;
     private int currentChipIndex;
     public GameObject airPlane;
     public GameObject[] stageChips;
+
+    public GameObject[] stageChips1;
     public int startChipIndex;
     public int preInstantiate;
     public List<GameObject> generatedStageList = new List<GameObject>();
@@ -46,8 +49,16 @@ public class sstageGenerator : MonoBehaviour
     GameObject GenerateStage(int chipIndex)
     {
         int nextStageChip = Random.Range(0, stageChips.Length);
-        GameObject stageObject = Instantiate(stageChips[nextStageChip],
-            new Vector3(0, 0, chipIndex * StageChipSize), Quaternion.identity);
+        GameObject stageObject ;
+        if (stageState == 1)
+        {
+            stageObject = Instantiate(stageChips1[nextStageChip],
+                new Vector3(0, 0, chipIndex * StageChipSize), Quaternion.identity);
+        }else{
+            stageObject = Instantiate(stageChips[nextStageChip],
+                new Vector3(0, 0, chipIndex * StageChipSize), Quaternion.identity);
+
+        }
         return stageObject;
     }
 

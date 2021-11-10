@@ -4,6 +4,8 @@ using UnityEngine.SceneManagement;
 
 public class GameController : MonoBehaviour
 {
+    public GameObject tmpStage;
+    public sstageGenerator stageGenerator;
     public LifePanel panel;
     public air air;
     public GameObject airPlane;
@@ -12,6 +14,8 @@ public class GameController : MonoBehaviour
 
     void Start()
     {
+        tmpStage = GameObject.Find("StageGenerator");
+        stageGenerator = tmpStage.GetComponent<sstageGenerator>();
         airPlane = GameObject.Find("AirPlane");
         if (SceneManager.GetActiveScene().name == "Start")
         {
@@ -23,6 +27,7 @@ public class GameController : MonoBehaviour
 
     void Update()
     {
+        ChangeStage();
 
         int c = CalcScore();
         int ans = air.Life();
@@ -68,5 +73,15 @@ public class GameController : MonoBehaviour
     int CalcScore()
     {
         return (int)airPlane.transform.position.z;
+    }
+
+
+    void ChangeStage(){
+        int distance =(int) air.transform.position.z;
+        if(400<distance){
+            stageGenerator.stageState += 1;
+
+        }
+
     }
 }
