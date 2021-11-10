@@ -10,7 +10,9 @@ public class GameController : MonoBehaviour
     public air air;
     public GameObject airPlane;
     public Text text;
-    [SerializeField] private int sceneNum =0;
+    [SerializeField] private int sceneNum = 0;
+    [SerializeField] private int sceneDistance = 0;
+    [SerializeField] private bool check = true;
 
     void Start()
     {
@@ -34,15 +36,19 @@ public class GameController : MonoBehaviour
         text.text = "Score " + c + "m" + "  倒した敵の数" + air.point + "体";
         panel.UpdateLife(ans);
 
-        CheckSceneMove(c);
+        AirSpeedChange();
+
+        // CheckSceneMove(c);
     }
 
     void CheckSceneMove(int score)
     {
-        if(sceneNum==1){
-            if(50<=score){
+        if (sceneNum == 1)
+        {
+            if (50 <= score)
+            {
                 SceneManager.LoadScene("Boss");
-                sceneNum =2;
+                sceneNum = 2;
             }
         }
         if (score < 400)
@@ -70,15 +76,33 @@ public class GameController : MonoBehaviour
 
 
     }
+
+    public void AirSpeedChange()
+    {
+        //動作確認済み
+        int distance = (int)air.transform.position.z;
+        if (400 * (this.sceneDistance + 1) < distance)
+        {
+            air.speedZ *= 1.1f;
+            this.sceneDistance += 1;
+        }
+
+    }
     int CalcScore()
     {
         return (int)airPlane.transform.position.z;
     }
 
 
-    void ChangeStage(){
-        int distance =(int) air.transform.position.z;
-        if(400<distance){
+    void ChangeStage()
+    {
+
+        //動作確認済み
+        //ただ改善の余地あり
+        int distance = (int)air.transform.position.z;
+        if (400 * (stageGenerator.stageState + 1) < distance)
+        {
+            Debug.Log("ステージ変更" + stageGenerator.stageState);
             stageGenerator.stageState += 1;
 
         }

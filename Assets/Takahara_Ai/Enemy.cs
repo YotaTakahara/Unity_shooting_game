@@ -231,7 +231,7 @@ namespace Ai
                 if (stopCircle < diff)
                 {
                     int index = (int)EnemyState.pursuit;
-                    owner.animator.SetTrigger("idle_comabat");
+                    owner.animator.SetTrigger("idle_combat");
                     owner.animator.SetTrigger("move_forward_fast");
 
                     owner.ChangeStateNext(index);

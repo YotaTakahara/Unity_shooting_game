@@ -28,13 +28,6 @@ public class bulletController : MonoBehaviour
         Vector3 diff = transform.position - latestPos;
         if (diff.magnitude > range)
         {
-            //if (gameObject.tag == "enemyBullet")
-            //{
-            //    int index = enemy.IndexOf(gameObject);
-            //    enemy.RemoveAt(index);
-            //}
-
-
             Destroy(gameObject);
         }
     }

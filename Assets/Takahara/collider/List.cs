@@ -6,15 +6,21 @@ public class List : MonoBehaviour
     [SerializeField] private GameObject[] enemy;
     [SerializeField] private GameObject[] enemyBullet;
     [SerializeField] private GameObject boss;
+    [SerializeField] private GameObject[] wall;
 
     public List<GameObject> attack;
+
+    //動作確認済み
+    public List<GameObject> obstacle;
 
     // Start is called before the first frame update
     void Start()
     {
         boss = GameObject.FindGameObjectWithTag("Boss");
         enemy = GameObject.FindGameObjectsWithTag("Monster");
-         enemyBullet = GameObject.FindGameObjectsWithTag("enemyBullet");
+        enemyBullet = GameObject.FindGameObjectsWithTag("enemyBullet");
+        wall = GameObject.FindGameObjectsWithTag("Wall");
+
         // enemy = GameObject.FindGameObjectsWithTag("experiment");
         attack.Add(boss);
         for (int i = 0; i < enemy.Length; i++)
@@ -31,11 +37,16 @@ public class List : MonoBehaviour
         {
             Debug.Log("attackContent " + attack[i]);
         }
+        for (int i = 0; i < wall.Length; i++)
+        {
+
+            obstacle.Add(wall[i]);
+        }
     }
 
     // Update is called once per frame
     void Update()
     {
-        //Debug.Log("enemy+bullet " + attack.Count);
+
     }
 }

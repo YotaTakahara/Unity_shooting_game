@@ -9,6 +9,7 @@ TagManager:
   - enemyBullet
   - experiment
   - Boss
+  - Wall
   layers:
   - Default
   - TransparentFX

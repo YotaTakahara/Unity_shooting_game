@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class air : MonoBehaviour
 {
-    public float speed=0.4f;
+    public float speed = 0.4f;
 
     public int life = 3;
     //hennkou 
@@ -106,7 +106,7 @@ public class air : MonoBehaviour
         if (IsStun()) return;
         life--;
         recoverTime = stopTime;
-        Debug.Log(life);
+        //Debug.Log(life);
         Instantiate(explosion, transform.position, Quaternion.identity);
 
     }
@@ -199,7 +199,7 @@ public class air : MonoBehaviour
 //             //  Debug.Log("airの速さ " + miuRb.velocity);
 //             /*
 //              なんかよくわからないが、transformのままにしておいたほうが良さそう。結果としてAddForceが実装できたのでよかったとは思う。
-             
+
 //              */
 
 //             // 旋回

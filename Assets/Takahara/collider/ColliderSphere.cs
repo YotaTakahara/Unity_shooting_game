@@ -3,16 +3,18 @@ using UnityEngine;
 public class ColliderSphere : MonoBehaviour, ICollider, ISphere
 {
     //private Vector3 _center = Vector3.zero;
-    public Vector3 _center=new Vector3(0,0,0);
-    public float k = 2*1.0f;
-    
+    //修正要確認
+    //コライダーのコードまじでぐちゃぐちゃ
+    public Vector3 _center = new Vector3(0, 0, 0);
+    public float k = 2 * 1.0f;
+
 
     public Vector3 Center
     {
         get { return _center; }
     }
 
-    [SerializeField] private float _radius=1.5f;
+    [SerializeField] private float _radius = 1.5f;
 
     public float Radius
     {
@@ -24,9 +26,9 @@ public class ColliderSphere : MonoBehaviour, ICollider, ISphere
 
     private void Awake()
     {
-    
+
         // _transform = this.transform;
-        _radius = transform.localScale.y*k;
+        _radius = transform.localScale.y / 2 * k;
         // _radius = 15f;
     }
 
@@ -45,8 +47,14 @@ public class ColliderSphere : MonoBehaviour, ICollider, ISphere
         return (WorldCenter - collider.WorldCenter).sqrMagnitude <= collideDistance * collideDistance;
     }
 
-    void OnDrawGizmos(){
+    public bool CheckCube(ISphere collider)
+    {
+        return false;
+    }
+
+    void OnDrawGizmos()
+    {
         Gizmos.color = Color.red;
-        Gizmos.DrawWireSphere(transform.position+_center, _radius/2);
+        Gizmos.DrawWireSphere(WorldCenter, _radius);
     }
 }
