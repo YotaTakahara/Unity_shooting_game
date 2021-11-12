@@ -16,18 +16,21 @@ public class air : MonoBehaviour
     public GameObject explosion;
     public int point = 0;
     public float shotSpeed;
+    [SerializeField] private GameObject stage;
+    [SerializeField] private sstageGenerator sstageGenerator;
     [SerializeField] private Rigidbody miuRb;
 
     [SerializeField] private RigidTakahara yotta;
     const int MinLane = -2;
     const int MaxLane = 2;
-    const float LaneWidth = 1.0f * 4;
+    public float LaneWidth = 1.0f * 4;
 
     public Vector3 moveDirection = Vector3.zero;
     public int targetLane;
     public float speedZ;
     public float speedX;
     public float accelerationZ;
+    public Vector3 globalDirection;
 
 
 
@@ -51,6 +54,10 @@ public class air : MonoBehaviour
 
     void Start()
     {
+        stage = GameObject.Find("StageGenerator");
+        sstageGenerator = stage.GetComponent<sstageGenerator>();
+        LaneWidth = sstageGenerator.LaneWidth;
+
         miuRb = GetComponent<Rigidbody>();
         yotta = GetComponent<RigidTakahara>();
 
@@ -76,8 +83,10 @@ public class air : MonoBehaviour
             float ratioX = (targetLane * LaneWidth - transform.position.x) / LaneWidth;
             moveDirection.x = ratioX * speedX;
 
-            Vector3 globalDirection = transform.TransformDirection(moveDirection);
+            globalDirection = transform.TransformDirection(moveDirection);
             transform.Translate(globalDirection);
+            // tmpSpeed = globalDirection;
+            // Debug.Log("tmpSpeed by airplane:" + tmpSpeed);
         }
 
 

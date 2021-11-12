@@ -92,6 +92,7 @@
      <Compile Include="Assets\OpenCV+Unity\Assets\Scripts\OpenCvSharp\PInvoke\ml\NativeMethods_ml_StatModel.cs" />
      <Compile Include="Assets\OpenCV+Unity\Assets\Scripts\OpenCvSharp\modules\core\OutputArrayOfMatList.cs" />
      <Compile Include="Assets\OpenCV+Unity\Assets\Scripts\OpenCvSharp\modules\core\Enum\SortFlags.cs" />
+     <Compile Include="Assets\Takahara_sudden\Tmp.cs" />
      <Compile Include="Assets\OpenCV+Unity\Assets\Scripts\OpenCvSharp\Vector\VectorOfVec3f.cs" />
      <Compile Include="Assets\OpenCV+Unity\Demo\Identifiy_Contours_by_Shape\ContoursByShapeScript.cs" />
      <Compile Include="Assets\OpenCV+Unity\Demo\Document_Scanner\Scripts\DocumentScannerLobby.cs" />
@@ -284,7 +285,6 @@
      <Compile Include="Assets\OpenCV+Unity\Assets\Scripts\OpenCvSharp\modules\superres\DenseOpticalFlowExt.cs" />
      <Compile Include="Assets\SampleScenes\Scripts\ParticleSceneControls.cs" />
      <Compile Include="Assets\OpenCV+Unity\Assets\Scripts\OpenCvSharp\OpenCVException.cs" />
-     <Compile Include="Assets\Takahara_general\Canvas.cs" />
      <Compile Include="Assets\Takahara\collider\ICollideObject.cs" />
      <Compile Include="Assets\OpenCV+Unity\Assets\Scripts\OpenCvSharp\modules\core\MatExpr.cs" />
      <Compile Include="Assets\OpenCV+Unity\Assets\Scripts\OpenCvSharp\modules\imgproc\Model\Line3D.cs" />
@@ -440,6 +440,7 @@
      <Compile Include="Assets\Takahara\charaController.cs" />
      <Compile Include="Assets\OpenCV+Unity\Assets\Scripts\OpenCvSharp\modules\imgproc\Enum\GrabCutClasses.cs" />
      <Compile Include="Assets\OpenCV+Unity\Assets\Scripts\OpenCvSharp\modules\core\SparseMat.cs" />
+     <Compile Include="Assets\Takahara_sudden\EnemyPoint.cs" />
      <Compile Include="Assets\OpenCV+Unity\Assets\Scripts\OpenCvSharp\Util\DynamicInvoker.cs" />
      <Compile Include="Assets\OpenCV+Unity\Assets\Scripts\OpenCvSharp\Cv2\Cv2_xfeatures2d.cs" />
      <Compile Include="Assets\Takahara_sudden\Collider\ColliderCube.cs" />
@@ -503,8 +504,11 @@
      <Compile Include="Assets\OpenCV+Unity\Assets\Scripts\OpenCvSharp\modules\features2d\GFTTDetector.cs" />
      <Compile Include="Assets\OpenCV+Unity\Assets\Scripts\OpenCvSharp\Util\PlatformUtil.cs" />
      <Compile Include="Assets\EffectExamples\Shared\Scripts\GunAim.cs" />
-     <Compile Include="Assets\Takahara_sudden\EnemyPoint.cs" />
-     <Compile Include="Assets\Takahara_sudden\tmp.cs" />
+     <Compile Include="Assets\Takahara_sudden\Enemy\EnemyNew.cs" />
+     <Compile Include="Assets\Takahara_sudden\CanvasPoint\UIFollowTarget.cs" />
+     <Compile Include="Assets\Takahara_general\CanvasSCore.cs" />
+     <Compile Include="Assets\Takahara_sudden\CanvasPoint\ObjectMarker.cs" />
+     <Compile Include="Assets\Takahara_sudden\CanvasPoint\BoxCheck.cs" />
      <None Include="Assets\NejikoBaseAssets\LICENSE.txt" />
      <None Include="Assets\OpenCV+Unity\Demo\Face_Detector\haarcascade_eye.xml" />
      <None Include="Assets\OpenCV+Unity\Documentation\Third-Party Licenses.txt" />

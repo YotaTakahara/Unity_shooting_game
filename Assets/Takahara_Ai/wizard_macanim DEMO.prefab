@@ -5067,6 +5067,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ff1df1125e8b8c949ac5115e775568ca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _center: {x: 0, y: 0, z: 0}
   k: 2
   _radius: 1.5
 --- !u!1 &1000010297892732
@@ -20443,7 +20444,7 @@ GameObject:
   - component: {fileID: 459636275185031845}
   m_Layer: 0
   m_Name: wizard_macanim DEMO
-  m_TagString: Monster
+  m_TagString: MonsterHP
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -20503,7 +20504,11 @@ MonoBehaviour:
   explode: {fileID: 1000011797152326, guid: acf39d9f4addf294d93fa56fa373961b, type: 3}
   player: {fileID: 0}
   air: {fileID: 0}
-  speed: 0
+  speed: 2
+  stageGenerator: {fileID: 0}
+  sstageGenerator: {fileID: 0}
+  LaneWidth: 0
+  HP: 10
 --- !u!1 &1000012230336702
 GameObject:
   m_ObjectHideFlags: 0
@@ -20549,6 +20554,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ff1df1125e8b8c949ac5115e775568ca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _center: {x: 0, y: 0, z: 0}
   k: 2
   _radius: 1.5
 --- !u!1 &1000012247248602

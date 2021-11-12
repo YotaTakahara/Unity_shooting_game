@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using UnityEngine;
+using Ai;
 
 public class ColliderDetector : MonoBehaviour
 {
@@ -101,6 +102,8 @@ public class ColliderDetector : MonoBehaviour
                         // int index = attack.IndexOf(attack[i]);
                         // attack.RemoveAt(index);
                         Destroy(obstacle[i]);
+                        Destroy(this.gameObject);
+
                         Debug.Log("dekitaaaaaa");
 
                         //  airScript.point += 1;
@@ -164,12 +167,26 @@ public class ColliderDetector : MonoBehaviour
 
                             if (_didCollide)
                             {
-                                Instantiate(fire, transform.position, Quaternion.identity);
-                                // int index = attack.IndexOf(attack[i]);
-                                // attack.RemoveAt(index);
-                                Destroy(attack[i]);
+                                if (attack[i].gameObject.tag == "MonsterHP")
+                                {
+                                    attack[i].GetComponent<Enemy>().TakeDamage();
+                                    Destroy(this.gameObject);
 
-                                airScript.point += 1;
+
+                                }
+                                else
+                                {
+
+
+                                    Instantiate(fire, transform.position, Quaternion.identity);
+                                    // int index = attack.IndexOf(attack[i]);
+                                    // attack.RemoveAt(index);
+                                    Destroy(attack[i]);
+                                    Destroy(this.gameObject);
+
+
+                                    airScript.point += 1;
+                                }
 
 
                             }
@@ -180,18 +197,32 @@ public class ColliderDetector : MonoBehaviour
                             for (int j = 0; j < shin.Length; j++)
                             {
                                 _didCollide = shin[j].CheckSphere(_sphere);
+
                                 //Debug.Log("原因はここです");
 
                                 if (_didCollide)
                                 {
-                                    Instantiate(fire, transform.position, Quaternion.identity);
-                                    // int index = attack.IndexOf(attack[i]);
-                                    // attack.RemoveAt(index);
-                                    Destroy(attack[i]);
+                                    if (attack[i].gameObject.tag == "MonsterHP")
+                                    {
+                                        attack[i].GetComponent<Enemy>().TakeDamage();
+                                        Destroy(this.gameObject);
 
-                                    airScript.point += 1;
 
-                                    //Debug.Log("無事衝突判定ができました");
+
+                                    }
+                                    else
+                                    {
+                                        Instantiate(fire, transform.position, Quaternion.identity);
+                                        // int index = attack.IndexOf(attack[i]);
+                                        // attack.RemoveAt(index);
+                                        Destroy(attack[i]);
+                                        Destroy(this.gameObject);
+
+
+                                        airScript.point += 1;
+
+                                        //Debug.Log("無事衝突判定ができました");
+                                    }
                                 }
 
                             }

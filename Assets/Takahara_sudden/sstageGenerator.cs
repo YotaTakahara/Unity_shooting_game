@@ -3,6 +3,7 @@ using UnityEngine;
 
 public class sstageGenerator : MonoBehaviour
 {
+    public float LaneWidth = 1.0f * 4;
     public int k = 2;
     public int stageState = 0;
     [SerializeField] private int StageChipSize = 30;
@@ -112,9 +113,9 @@ public class sstageGenerator : MonoBehaviour
 
             foreach (Transform childTransform in stageObject.gameObject.transform)
             {
-                Debug.Log(childTransform.gameObject.name); // 子オブジェクト名を出力
-                                                           // EnemyPoint tmp = childTransform.gameObject.GetComponent<EnemyPoint>();
-                                                           //Debug.Log("enemy:" + tmp.prefab);
+                // Debug.Log(childTransform.gameObject.name); // 子オブジェクト名を出力
+                // EnemyPoint tmp = childTransform.gameObject.GetComponent<EnemyPoint>();
+                //Debug.Log("enemy:" + tmp.prefab);
             }
 
 

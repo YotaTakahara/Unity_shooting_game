@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Canvas : SingletonMonoBehaviour<Canvas>
+public class CanvasScore : SingletonMonoBehaviour<CanvasScore>
 
 {
     public void Awake()

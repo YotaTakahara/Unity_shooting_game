@@ -4,6 +4,7 @@ using UnityEngine;
 public class List : MonoBehaviour
 {
     [SerializeField] private GameObject[] enemy;
+    [SerializeField] private GameObject[] enemyHP;
     [SerializeField] private GameObject[] enemyBullet;
     [SerializeField] private GameObject boss;
     [SerializeField] private GameObject[] wall;
@@ -18,6 +19,7 @@ public class List : MonoBehaviour
     {
         boss = GameObject.FindGameObjectWithTag("Boss");
         enemy = GameObject.FindGameObjectsWithTag("Monster");
+        enemyHP = GameObject.FindGameObjectsWithTag("MonsterHP");
         enemyBullet = GameObject.FindGameObjectsWithTag("enemyBullet");
         wall = GameObject.FindGameObjectsWithTag("Wall");
 
@@ -27,6 +29,11 @@ public class List : MonoBehaviour
         {
             attack.Add(enemy[i]);
         }
+        for (int i = 0; i < enemyHP.Length; i++)
+        {
+            attack.Add(enemyHP[i]);
+        }
+
 
         for (int i = 0; i < enemyBullet.Length; i++)
         {
@@ -35,7 +42,7 @@ public class List : MonoBehaviour
 
         for (int i = 0; i < attack.Count; i++)
         {
-            Debug.Log("attackContent " + attack[i]);
+            //            Debug.Log("attackContent " + attack[i]);
         }
         for (int i = 0; i < wall.Length; i++)
         {

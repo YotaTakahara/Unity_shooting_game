@@ -38,6 +38,10 @@ namespace Ai
         [SerializeField] private air air;
 
         [SerializeField] public float speed = 2.0f;
+        [SerializeField] private GameObject stageGenerator;
+        [SerializeField] private sstageGenerator sstageGenerator;
+        [SerializeField] private float LaneWidth;
+        [SerializeField] private float HP = 10;
         // public GameObject damage;
 
 
@@ -46,6 +50,10 @@ namespace Ai
             player = GameObject.Find("AirPlane");
             air = player.GetComponent<air>();
             animator = GetComponent<Animator>();
+            stageGenerator = GameObject.Find("StageGenerator");
+            sstageGenerator = stageGenerator.GetComponent<sstageGenerator>();
+            LaneWidth = sstageGenerator.LaneWidth;
+
 
             //  bullet = GameObject.FindGameObjectWithTag("enemyBullet");
             //Debug.Log("player " + player);
@@ -86,6 +94,13 @@ namespace Ai
 
         public void TakeDamage()
         {
+            this.HP -= 1;
+            Debug.Log("HPダメージ判定に成功しました、残りのHP:" + HP);
+            if (this.HP <= 0)
+            {
+                int index = (int)EnemyState.explode;
+                ChangeStateNext(index);
+            }
         }
 
 
@@ -113,17 +128,19 @@ namespace Ai
 
             public override void Execute()
             {
-                distance = 100f;
-                roadLength = 40f;
+                distance = 25f;
+                roadLength = 3f;
                 //Debug.Log("roadLength " + roadLength);
                 // Debug.Log("owner" + owner);
                 // Debug.Log("player hikouki" + owner.player);
                 owner.animator.SetTrigger("move_forward");
                 float diff = Vector3.Magnitude(owner.player.transform.position - owner.transform.position);
+                // Debug.Log("diff:" + diff);
                 //Debug.Log("diff " + diff);
                 //Debug.Log("distance " + distance);
                 if (diff < distance)
                 {
+                    // Debug.Log("ここが今現在進行形で呼ばれている");
                     int index = (int)EnemyState.pursuit;
                     owner.ChangeStateNext(index);
                     //Debug.Log("wander to pursuit");
@@ -147,10 +164,17 @@ namespace Ai
 
             public Vector3 RandomPosition()
             {
-                float size = 100f;
-                return new Vector3(Random.Range(-size, size), 0, Random.Range(-size, size));
+                int chipNum = 2;
+                float LaneWidth = owner.LaneWidth;
+                //   Debug.Log("targetPosition:" + new Vector3(Random.Range(-chipNum, chipNum) * LaneWidth, owner.transform.position.y, owner.transform.position.z));
+                return new Vector3(Random.Range(-chipNum, chipNum) * LaneWidth, owner.transform.position.y, owner.transform.position.z);
+
+                // float size = 100f;
+                // return new Vector3(Random.Range(-size, size), 0, Random.Range(-size, size));
             }
         }
+
+
 
         public class StatePursuit : State<Enemy>
         {
@@ -168,25 +192,37 @@ namespace Ai
             public override void Execute()
             {
                 wherePlayer = owner.player.transform.position;
-                stopCircle = 10f;
+                stopCircle = 15f;
 
                 //Debug.Log("Excute pursuit");
                 owner.animator.SetTrigger("move_forward_fast");
                 float diff = Vector3.Magnitude(wherePlayer - owner.transform.position);
                 //Debug.Log("diff " + diff);
+                // Debug.Log("StatePursuit.diff:" + diff);
 
 
                 if (diff <= stopCircle)
                 {
+                    Debug.Log("shineeeeeeeeeeeeeeeeeeeeeeeeeeeeee");
                     int index = (int)EnemyState.attack;
                     owner.ChangeStateNext(index);
                 }
                 else
                 {
+
                     Quaternion targetRotation = Quaternion.LookRotation(wherePlayer - owner.transform.position);
                     owner.transform.rotation =
                         Quaternion.Slerp(owner.transform.rotation, targetRotation, Time.deltaTime);
-                    owner.transform.Translate(Vector3.forward * owner.speed * 2 * Time.deltaTime);
+
+                    float ratioX = (owner.air.targetLane * owner.LaneWidth - owner.transform.position.x) / owner.LaneWidth;
+                    Vector3 moveDirection = Vector3.zero;
+                    moveDirection.x = ratioX * owner.speed / 50;
+                    //Debug.Log("moveDirection:" + moveDirection);
+
+                    /*速度追随のパラメータ。結構値が小さくても何とかなる*/
+
+                    Vector3 globalDirection = transform.TransformDirection(moveDirection);
+                    owner.transform.Translate(globalDirection);
                 }
             }
 
@@ -215,15 +251,16 @@ namespace Ai
 
             public override void Enter()
             {
+                Debug.Log("attackStateが呼び出されています");
                 this.air = owner.air;
             }
 
             public override void Execute()
             {
-                attackList = GameObject.Find("attackList");
+                // attackList = GameObject.Find("attackList");
                 wherePlayer = owner.player.transform.position;
-                stopCircle = 25f;
-                span = 2.0f;
+                stopCircle = 20f;
+                span = 6.0f;
 
                 //Debug.Log("Excute pursuit");
                 float diff = Vector3.Magnitude(wherePlayer - owner.transform.position);
@@ -247,17 +284,20 @@ namespace Ai
 
                 //Instantiate(owner.damage, owner.transform.position, Quaternion.identity);
                 //owner.animator.SetBool("attack_short_001",true);
-                owner.animator.SetTrigger("idle_combat");
+                //Debug.Log("いったい何回ここが条件として呼び出されたのか");
+                //owner.animator.SetTrigger("idle_combat");
 
 
                 this.timing += Time.deltaTime;
                 this.bombTime += Time.deltaTime;
 
 
-                if (5.0f < bombTime)
+                if (15.0f < bombTime)
                 {
+                    bombTime = 0;
                     int index = (int)EnemyState.explode;
                     owner.ChangeStateNext(index);
+                    //  Debug.Log("現在進行形");
                 }
 
                 if (span < timing)
@@ -278,7 +318,9 @@ namespace Ai
             void AttackInterval()
             {
                 owner.animator.SetTrigger("attack_short_001");
+                //  owner.animator.SetTrigger("idle_normal");
                 owner.air.AccidentStrong();
+                // Debug.Log("攻撃発生");
 
             }
 
@@ -308,19 +350,26 @@ namespace Ai
 
             public override void Enter()
             {
+                Debug.Log("死亡しました");
+                //owner.animator.SetTrigger("idle_combat");
 
 
                 owner.animator.SetTrigger("damage_001");
-                owner.animator.SetTrigger("idle_combat");
+                // owner.animator.SetTrigger("idle_combat");
                 owner.animator.SetTrigger("dead");
+                Invoke("Execute", 7.0f);
+                // Destroy(owner.gameObject);
 
                 //Debug.Log("destroy this monster in 1.0 second");
                 // GameObject shin = Instantiate(owner.explode, transform.position, Quaternion.identity);
                 // Destroy(owner.gameObject, 1.0f);
             }
 
+
             public override void Execute()
             {
+                Destroy(owner.gameObject);
+                owner.air.point += 1;
             }
 
             public override void Exit()

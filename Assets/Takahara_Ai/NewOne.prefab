@@ -20383,7 +20383,7 @@ GameObject:
   - component: {fileID: 7595979133305886042}
   m_Layer: 0
   m_Name: NewOne
-  m_TagString: Monster
+  m_TagString: MonsterHP
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -20443,7 +20443,11 @@ MonoBehaviour:
   explode: {fileID: 1000011797152326, guid: acf39d9f4addf294d93fa56fa373961b, type: 3}
   player: {fileID: 0}
   air: {fileID: 0}
-  speed: 0
+  speed: 2
+  stageGenerator: {fileID: 0}
+  sstageGenerator: {fileID: 0}
+  LaneWidth: 0
+  HP: 10
 --- !u!1 &8000978467593203521
 GameObject:
   m_ObjectHideFlags: 0
