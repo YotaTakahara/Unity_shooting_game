@@ -16,9 +16,9 @@ public class BoxCheck : MonoBehaviour
         //   Debug.Log("shinneeee");
 
     }
-    void OnCollisionEnter2D(Collision2D collision)
-    {
+    void  OnTriggerEnter2D(Collider2D other) {
         Debug.Log("衝突判定できました");
+        
     }
     void OnCollisionEnter(Collision collision)
     {

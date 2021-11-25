@@ -357,13 +357,17 @@ MonoBehaviour:
   explosion: {fileID: 0}
   point: 0
   shotSpeed: 10
+  stage: {fileID: 0}
+  sstageGenerator: {fileID: 0}
   miuRb: {fileID: 0}
   yotta: {fileID: 0}
+  LaneWidth: 4
   moveDirection: {x: 0, y: 0, z: 0}
   targetLane: 0
   speedZ: 0
   speedX: 0
   accelerationZ: 0
+  globalDirection: {x: 0, y: 0, z: 0}
 --- !u!114 &88968043
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1881,11 +1885,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a306b915b1290c745abd5a7b35650e27, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  tmpStage: {fileID: 0}
+  stageGenerator: {fileID: 0}
   panel: {fileID: 734161108}
   air: {fileID: 1085553093}
   airPlane: {fileID: 1085553088}
   text: {fileID: 1269782564}
   sceneNum: 0
+  sceneDistance: 0
+  check: 1
 --- !u!4 &1165938922
 Transform:
   m_ObjectHideFlags: 0
@@ -2262,14 +2270,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f85b16094403f7f40837089225d2e914, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  LaneWidth: 4
   k: 2
+  stageState: 0
   StageChipSize: 30
   airPlane: {fileID: 1085553088}
   stageChips:
   - {fileID: 7581227334614047275, guid: dd28253ef231f3445a7e459f8c77b401, type: 3}
+  stageChips1: []
   startChipIndex: 1
   preInstantiate: 1
   generatedStageList: []
+  attackList: {fileID: 0}
+  list: {fileID: 0}
 --- !u!1001 &1654766441
 PrefabInstance:
   m_ObjectHideFlags: 0
