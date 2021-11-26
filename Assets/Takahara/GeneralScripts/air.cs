@@ -43,7 +43,8 @@ public class air : MonoBehaviour
 
     bool IsStun()
     {
-        return recoverTime > 0.0f || life <= 0 || hp <= 0;
+         return recoverTime > 0.0f || life <= 0 || hp <= 0;
+        //return life <= 0;
     }
 
     public int Life()
@@ -79,8 +80,8 @@ public class air : MonoBehaviour
             //  miuRb.velocity = Vector3.zero;
             recoverTime -= Time.deltaTime;
         }
-        else
-        {
+        // else
+        // {
             if(Input.GetKeyDown("up")) MoveToUp();
             if(Input.GetKeyDown("down")) MoveToDown();
             if (Input.GetKeyDown("left")) MoveToLeft();
@@ -98,7 +99,7 @@ public class air : MonoBehaviour
             transform.Translate(moveDirection);
             // tmpSpeed = globalDirection;
             // Debug.Log("tmpSpeed by airplane:" + tmpSpeed);
-        }
+       // }
 
 
     }

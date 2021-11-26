@@ -275,13 +275,20 @@ namespace Ai
             public override void Execute()
             {
                 // attackList = GameObject.Find("attackList");
+                
                 wherePlayer = owner.player.transform.position;
                 stopCircle = 20f;
                 span = 6.0f;
+                
 
                 //Debug.Log("Excute pursuit");
                 float diff = Vector3.Magnitude(wherePlayer - owner.transform.position);
-
+                Vector3 moveDirection = new Vector3(0, 0, owner.air.speedZ*1);
+                if(owner.player.transform.position.z<owner.transform.position.z){
+                    Vector3 globalDirection = transform.TransformDirection(moveDirection);
+                    owner.transform.Translate(globalDirection);
+                }
+               
                 if (stopCircle < diff)
                 {
                     int index = (int)EnemyState.pursuit;
@@ -293,8 +300,8 @@ namespace Ai
 
 
                 // Debug.Log("attackState");
-                Quaternion targetRotation = Quaternion.LookRotation(wherePlayer - owner.transform.position);
-                owner.transform.rotation = Quaternion.Slerp(owner.transform.rotation, targetRotation, Time.deltaTime);
+                //Quaternion targetRotation = Quaternion.LookRotation(wherePlayer - owner.transform.position);
+                //owner.transform.rotation = Quaternion.Slerp(owner.transform.rotation, targetRotation, Time.deltaTime);
                 //span = 1.5f;
 
 
