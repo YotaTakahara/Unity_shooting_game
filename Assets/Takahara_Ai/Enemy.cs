@@ -41,7 +41,10 @@ namespace Ai
         [SerializeField] private GameObject stageGenerator;
         [SerializeField] private sstageGenerator sstageGenerator;
         [SerializeField] private float LaneWidth;
-        public float HP = 10;
+        [SerializeField] private List list;
+         
+
+        public float HP = 5;
         // public GameObject damage;
 
 
@@ -53,6 +56,8 @@ namespace Ai
             stageGenerator = GameObject.Find("StageGenerator");
             sstageGenerator = stageGenerator.GetComponent<sstageGenerator>();
             LaneWidth = sstageGenerator.LaneWidth;
+            GameObject listTmp = GameObject.Find("attackList");
+            list = listTmp.GetComponent<List>();
 
 
             //  bullet = GameObject.FindGameObjectWithTag("enemyBullet");
@@ -103,6 +108,17 @@ namespace Ai
                 ChangeStateNext(index);
             }
         }
+        public override void FixedUpdate()
+        {
+            float deathDistance = this.transform.position.z - player.transform.position.z;
+            if(deathDistance<-5f){
+                list.attack.Remove(this.gameObject);
+                Destroy(this.gameObject);
+
+
+            }
+        }
+    
 
 
         // void Update()
@@ -355,10 +371,11 @@ namespace Ai
                 //owner.animator.SetTrigger("idle_combat");
 
 
-                owner.animator.SetTrigger("damage_001");
+                //owner.animator.SetTrigger("damage_001");
                 // owner.animator.SetTrigger("idle_combat");
-                owner.animator.SetTrigger("dead");
-                Invoke("Execute", 7.0f);
+                //owner.animator.SetTrigger("dead");
+
+                Invoke("Execute", 1.0f);
                 // Destroy(owner.gameObject);
 
                 //Debug.Log("destroy this monster in 1.0 second");
@@ -369,6 +386,8 @@ namespace Ai
 
             public override void Execute()
             {
+                owner.list.attack.Remove(owner.gameObject);
+
                 Destroy(owner.gameObject);
                 owner.air.point += 1;
             }

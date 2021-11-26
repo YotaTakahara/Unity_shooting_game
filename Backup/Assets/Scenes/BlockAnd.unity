@@ -289,14 +289,15 @@ MonoBehaviour:
   stageState: 0
   StageChipSize: 30
   airPlane: {fileID: 531059390}
-  stageChips:
-  - {fileID: 2399326795808465009, guid: 2b0a67fb37f150f4f9d4b0c57241ddc0, type: 3}
-  - {fileID: 4332637460492025328, guid: 830e6fea69a697f47ab734b86cab6c31, type: 3}
-  - {fileID: 7115911163003055400, guid: 6086f4de079d93946b1c33397b4ec1a7, type: 3}
+  stageChips0: []
   stageChips1:
   - {fileID: 3902321112452085612, guid: d896614c6cb339543a742026d465642c, type: 3}
+  stageChips2: []
+  currentStageChips: []
+  stageList: {fileID: 0}
+  currentStageIndex: 0
   startChipIndex: 1
-  preInstantiate: 5
+  preInstantiate: 3
   generatedStageList: []
   attackList: {fileID: 0}
   list: {fileID: 0}
@@ -609,6 +610,59 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &389032359
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 389032361}
+  - component: {fileID: 389032360}
+  m_Layer: 0
+  m_Name: StageList
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &389032360
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 389032359}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e027d518e30c04498ffbc63f0a9fb66, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  stageChips0:
+  - {fileID: 7025814693828897198, guid: e5afd4d9da0626d4f93a33a9378309be, type: 3}
+  - {fileID: 529405581827050660, guid: e9505c5c8d6a73a4e804c63f4516901a, type: 3}
+  stageChips1:
+  - {fileID: 3902321112452085612, guid: d896614c6cb339543a742026d465642c, type: 3}
+  stageChips2:
+  - {fileID: 2399326795808465009, guid: 2b0a67fb37f150f4f9d4b0c57241ddc0, type: 3}
+  - {fileID: 4332637460492025328, guid: 830e6fea69a697f47ab734b86cab6c31, type: 3}
+  - {fileID: 7115911163003055400, guid: 6086f4de079d93946b1c33397b4ec1a7, type: 3}
+  stageNum: 3
+--- !u!4 &389032361
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 389032359}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -9.517088, y: 16.051683, z: -48.55018}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 14
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &407257658
 GameObject:
   m_ObjectHideFlags: 0
@@ -773,7 +827,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5184491314372762576, guid: c7706364d54912e499ded4a7ae3d9158, type: 3}
       propertyPath: speedX
-      value: 0.05
+      value: 0.1
       objectReference: {fileID: 0}
     - target: {fileID: 5184491314372762576, guid: c7706364d54912e499ded4a7ae3d9158, type: 3}
       propertyPath: speedZ
@@ -782,6 +836,10 @@ PrefabInstance:
     - target: {fileID: 5184491314372762576, guid: c7706364d54912e499ded4a7ae3d9158, type: 3}
       propertyPath: m_Enabled
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5184491314372762576, guid: c7706364d54912e499ded4a7ae3d9158, type: 3}
+      propertyPath: targetLane1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 5184491314372762576, guid: c7706364d54912e499ded4a7ae3d9158, type: 3}
       propertyPath: accelerationZ

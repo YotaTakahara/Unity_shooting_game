@@ -96,7 +96,7 @@ public class sstageGenerator : MonoBehaviour
             generatedStageList.Add(stageOb);
         }
 
-        while (generatedStageList.Count > preInstantiate + 2) DestroyOldestStage();
+        while (generatedStageList.Count > preInstantiate + 1) DestroyOldestStage();
         currentChipIndex = toChipIndex;
     }
 

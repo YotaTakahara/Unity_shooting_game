@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 5999747802507278386}
   - component: {fileID: -7291845709572284527}
   - component: {fileID: 9055041246788536677}
-  - component: {fileID: 4887729086041491230}
+  - component: {fileID: 4723475739901918647}
   m_Layer: 0
   m_Name: Bullet
   m_TagString: Untagged
@@ -102,7 +102,7 @@ MonoBehaviour:
   attackList: {fileID: 0}
   enemy: []
   span: 0.5
-  range: 60
+  range: 30
   attackOrWall: 1
 --- !u!114 &-7291845709572284527
 MonoBehaviour:
@@ -142,7 +142,7 @@ MonoBehaviour:
   _center: {x: 0, y: 0, z: 0}
   k: 1
   _radius: 0.5
---- !u!54 &4887729086041491230
+--- !u!54 &4723475739901918647
 Rigidbody:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}

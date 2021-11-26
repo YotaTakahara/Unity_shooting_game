@@ -57,7 +57,11 @@ public class ObjectMarker : MonoBehaviour
 
         // カメラの向きベクトル
         var cameraDir = cameraTransform.forward;
+
         // オブジェクトの位置
+        if(_target==null){
+            return;
+        }
         var targetWorldPos = _target.transform.position + _worldOffset;
         // カメラからターゲットへのベクトル
         var targetDir = targetWorldPos - cameraTransform.position;

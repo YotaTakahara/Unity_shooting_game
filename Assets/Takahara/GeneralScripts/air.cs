@@ -30,7 +30,7 @@ public class air : MonoBehaviour
 
     public Vector3 moveDirection = Vector3.zero;
     public int targetLane;
-    public int targetLane1=1;
+    public int targetLane1=2;
     public float speedZ;
     public float speedX;
     public float speedY;
@@ -95,7 +95,7 @@ public class air : MonoBehaviour
             moveDirection.y = ratioY * speedY;
 
             globalDirection = transform.TransformDirection(moveDirection);
-            transform.Translate(globalDirection);
+            transform.Translate(moveDirection);
             // tmpSpeed = globalDirection;
             // Debug.Log("tmpSpeed by airplane:" + tmpSpeed);
         }
@@ -133,7 +133,7 @@ public class air : MonoBehaviour
         life--;
         recoverTime = stopTime;
         //Debug.Log(life);
-        Instantiate(explosion, transform.position, Quaternion.identity);
+//        Instantiate(explosion, transform.position, Quaternion.identity);
 
     }
     //hennkou 

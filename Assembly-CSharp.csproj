@@ -36,6 +36,7 @@
     <ImplicitlyExpandDesignTimeFacades>false</ImplicitlyExpandDesignTimeFacades>
   </PropertyGroup>
   <ItemGroup>
+     <Compile Include="Assets\Takahara\GeneralScripts\StageList.cs" />
      <Compile Include="Assets\Takahara_Boss\TryColor.cs" />
      <Compile Include="Assets\Takahara\GeneralScripts\air.cs" />
      <Compile Include="Assets\Takahara\GeneralScripts\bulletGenerator.cs" />
@@ -105,7 +106,6 @@
      <Compile Include="Assets\Takahara\GeneralScripts\LifeGauge.cs" />
      <Compile Include="Assets\Takahara\collider\ColliderSphere.cs" />
      <Compile Include="Assets\EffectExamples\Shared\Scripts\GunAim.cs" />
-     <Compile Include="Assets\Takahara\GeneralScripts\StageList.cs" />
      <None Include="Assets\NejikoBaseAssets\LICENSE.txt" />
      <None Include="Assets\smcs.rsp" />
      <None Include="Assets\SampleScenes\Shaders\Skybox-Procedural.shader" />
