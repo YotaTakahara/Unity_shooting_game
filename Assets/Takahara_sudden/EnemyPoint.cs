@@ -26,7 +26,7 @@ public class EnemyPoint : MonoBehaviour
 
 
         GameObject go = (GameObject)Instantiate(prefab, Vector3.zero, Quaternion.identity);
-        Debug.Log("go:" + go);
+        //Debug.Log("go:" + go);
         uiController.UIInstance(go);
         //CallInitialize(go.transform);
         // if(prefab.gameObject.tag=="Monster"){

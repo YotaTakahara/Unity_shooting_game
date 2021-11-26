@@ -95,10 +95,10 @@ namespace Ai
         public void TakeDamage()
         {
             this.HP -= 1;
-            Debug.Log("HPダメージ判定に成功しました、残りのHP:" + HP);
+            //Debug.Log("HPダメージ判定に成功しました、残りのHP:" + HP);
             if (this.HP <= 0)
             {
-                Debug.Log("ここは呼ばれてるで");
+                //Debug.Log("ここは呼ばれてるで");
                 int index = (int)EnemyState.explode;
                 ChangeStateNext(index);
             }
@@ -204,7 +204,7 @@ namespace Ai
 
                 if (diff <= stopCircle)
                 {
-                    Debug.Log("shineeeeeeeeeeeeeeeeeeeeeeeeeeeeee");
+                    //Debug.Log("shineeeeeeeeeeeeeeeeeeeeeeeeeeeeee");
                     int index = (int)EnemyState.attack;
                     owner.ChangeStateNext(index);
                 }
