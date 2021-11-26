@@ -36,72 +36,74 @@
     <ImplicitlyExpandDesignTimeFacades>false</ImplicitlyExpandDesignTimeFacades>
   </PropertyGroup>
   <ItemGroup>
+     <Compile Include="Assets\Takahara_Boss\TryColor.cs" />
      <Compile Include="Assets\Takahara\air.cs" />
      <Compile Include="Assets\Takahara\bulletGenerator.cs" />
+     <Compile Include="Assets\SampleScenes\Scripts\ParticleSceneControls.cs" />
+     <Compile Include="Assets\Takahara\collider\ICollideObject.cs" />
+     <Compile Include="Assets\Takahara_general\CanvasSCore.cs" />
      <Compile Include="Assets\Fantasy Monster(wizard) Demo\Environment\Materials\Scripts\CamCTRLDemo.cs" />
+     <Compile Include="Assets\EffectExamples\Shared\Scripts\ExtinguishableFire.cs" />
+     <Compile Include="Assets\Takahara_sudden\CanvasPoint\BoxCheck.cs" />
+     <Compile Include="Assets\EffectExamples\Shared\Scripts\ParticleMenu.cs" />
      <Compile Include="Assets\Takahara\collider\NewBehaviourScript.cs" />
      <Compile Include="Assets\AutoSave.cs" />
+     <Compile Include="Assets\Takahara_Ai\StateMachine.cs" />
      <Compile Include="Assets\SampleScenes\Scripts\SlowMoButton.cs" />
-     <Compile Include="Assets\SampleScenes\Scripts\LevelReset.cs" />
+     <Compile Include="Assets\Takahara_sudden\Enemy\EnemyNew.cs" />
+     <Compile Include="Assets\Takahara_sudden\CanvasPoint\UIFollowTarget.cs" />
      <Compile Include="Assets\SampleScenes\Menu\Scripts\SceneAndURLLoader.cs" />
+     <Compile Include="Assets\SampleScenes\Scripts\LevelReset.cs" />
+     <Compile Include="Assets\SceneBackup.cs" />
      <Compile Include="Assets\Takahara_sudden\Tmp.cs" />
      <Compile Include="Assets\Takahara\GameController.cs" />
+     <Compile Include="Assets\Takahara_Ai\StatefulObjectBase.cs" />
      <Compile Include="Assets\EffectExamples\Shared\Scripts\DecalDestroyer.cs" />
      <Compile Include="Assets\Takahara\collider\MyColliderDetection.cs" />
+     <Compile Include="Assets\Takahara_sudden\sstageGenerator.cs" />
+     <Compile Include="Assets\EffectExamples\TutorialInfo\Scripts\Readme.cs" />
+     <Compile Include="Assets\Takahara_study\Bane.cs" />
      <Compile Include="Assets\Takahara\RigidBody\RigidTakahara.cs" />
      <Compile Include="Assets\Takahara_Ai\Enemy.cs" />
+     <Compile Include="Assets\Takahara\collider\List.cs" />
+     <Compile Include="Assets\Takahara_sudden\CanvasPoint\ObjectMarker.cs" />
      <Compile Include="Assets\Takahara\collider\ColliderCapsule.cs" />
      <Compile Include="Assets\Takahara\stageGenerator.cs" />
+     <Compile Include="Assets\EffectExamples\Shared\Scripts\ParticleExamples.cs" />
      <Compile Include="Assets\Takahara_general\AirPlane.cs" />
      <Compile Include="Assets\Takahara\Bullet\BulletCollider.cs" />
+     <Compile Include="Assets\SampleScenes\Menu\Scripts\PauseMenu.cs" />
+     <Compile Include="Assets\Takahara_general\GameManager.cs" />
      <Compile Include="Assets\Takahara\Bullet\bulletController.cs" />
+     <Compile Include="Assets\EffectExamples\Shared\Scripts\ParticleCollision.cs" />
      <Compile Include="Assets\SampleScenes\Scripts\CameraSwitch.cs" />
      <Compile Include="Assets\Takahara\collider\ColliderDetector.cs" />
+     <Compile Include="Assets\Takahara_Boss\BossText.cs" />
+     <Compile Include="Assets\EffectExamples\Shared\Scripts\GunShoot.cs" />
+     <Compile Include="Assets\Takahara\creature\enemyBullet.cs" />
      <Compile Include="Assets\Takahara\collider\BaseCollider.cs" />
+     <Compile Include="Assets\Takahara\collider\ICollider.cs" />
+     <Compile Include="Assets\Takahara_study\Test.cs" />
+     <Compile Include="Assets\SampleScenes\Scripts\PlaceTargetWithMouse.cs" />
+     <Compile Include="Assets\Takahara\LifePanel.cs" />
      <Compile Include="Assets\SampleScenes\Menu\Scripts\MenuSceneLoader.cs" />
+     <Compile Include="Assets\Takahara\simpleFollow.cs" />
+     <Compile Include="Assets\Takahara\charaController.cs" />
      <Compile Include="Assets\Takahara_Boss\BossZarigani.cs" />
+     <Compile Include="Assets\Takahara_sudden\EnemyPoint.cs" />
+     <Compile Include="Assets\Takahara_sudden\Collider\ColliderCube.cs" />
+     <Compile Include="Assets\Takahara_Ai\State.cs" />
      <Compile Include="Assets\Takahara_sudden\AirController.cs" />
+     <Compile Include="Assets\Takahara_general\SingletonMonoBehaviour.cs" />
      <Compile Include="Assets\Takahara_sudden\TmpCollider.cs" />
      <Compile Include="Assets\Takahara_study\Camerayota.cs" />
      <Compile Include="Assets\Takahara\AirPlaneController.cs" />
      <Compile Include="Assets\Fantasy Monster(wizard) Demo\Environment\Materials\Scripts\MoveCTRLDemo.cs" />
      <Compile Include="Assets\Takahara\LifeGauge.cs" />
      <Compile Include="Assets\Takahara\collider\ColliderSphere.cs" />
-     <Compile Include="Assets\Takahara_Boss\TryColor.cs" />
-     <Compile Include="Assets\SampleScenes\Scripts\ParticleSceneControls.cs" />
-     <Compile Include="Assets\Takahara\collider\ICollideObject.cs" />
-     <Compile Include="Assets\Takahara_general\CanvasSCore.cs" />
-     <Compile Include="Assets\EffectExamples\Shared\Scripts\ExtinguishableFire.cs" />
-     <Compile Include="Assets\Takahara_sudden\CanvasPoint\BoxCheck.cs" />
-     <Compile Include="Assets\EffectExamples\Shared\Scripts\ParticleMenu.cs" />
-     <Compile Include="Assets\Takahara_Ai\StateMachine.cs" />
-     <Compile Include="Assets\Takahara_sudden\Enemy\EnemyNew.cs" />
-     <Compile Include="Assets\Takahara_sudden\CanvasPoint\UIFollowTarget.cs" />
-     <Compile Include="Assets\SceneBackup.cs" />
-     <Compile Include="Assets\Takahara_Ai\StatefulObjectBase.cs" />
-     <Compile Include="Assets\Takahara_sudden\sstageGenerator.cs" />
-     <Compile Include="Assets\EffectExamples\TutorialInfo\Scripts\Readme.cs" />
-     <Compile Include="Assets\Takahara_study\Bane.cs" />
-     <Compile Include="Assets\Takahara\collider\List.cs" />
-     <Compile Include="Assets\Takahara_sudden\CanvasPoint\ObjectMarker.cs" />
-     <Compile Include="Assets\EffectExamples\Shared\Scripts\ParticleExamples.cs" />
-     <Compile Include="Assets\SampleScenes\Menu\Scripts\PauseMenu.cs" />
-     <Compile Include="Assets\Takahara_general\GameManager.cs" />
-     <Compile Include="Assets\EffectExamples\Shared\Scripts\ParticleCollision.cs" />
-     <Compile Include="Assets\Takahara_Boss\BossText.cs" />
-     <Compile Include="Assets\EffectExamples\Shared\Scripts\GunShoot.cs" />
-     <Compile Include="Assets\Takahara\creature\enemyBullet.cs" />
-     <Compile Include="Assets\Takahara\collider\ICollider.cs" />
-     <Compile Include="Assets\Takahara_study\Test.cs" />
-     <Compile Include="Assets\SampleScenes\Scripts\PlaceTargetWithMouse.cs" />
-     <Compile Include="Assets\Takahara\LifePanel.cs" />
-     <Compile Include="Assets\Takahara\simpleFollow.cs" />
-     <Compile Include="Assets\Takahara\charaController.cs" />
-     <Compile Include="Assets\Takahara_sudden\EnemyPoint.cs" />
-     <Compile Include="Assets\Takahara_sudden\Collider\ColliderCube.cs" />
-     <Compile Include="Assets\Takahara_Ai\State.cs" />
-     <Compile Include="Assets\Takahara_general\SingletonMonoBehaviour.cs" />
      <Compile Include="Assets\EffectExamples\Shared\Scripts\GunAim.cs" />
+     <Compile Include="Assets\Takahara_sudden\UIController.cs" />
+     <Compile Include="Assets\Takahara_sudden\CanvasPoint\TargetTexture.cs" />
      <None Include="Assets\NejikoBaseAssets\LICENSE.txt" />
      <None Include="Assets\smcs.rsp" />
      <None Include="Assets\SampleScenes\Shaders\Skybox-Procedural.shader" />
@@ -726,11 +728,11 @@
     <Reference Include="Unity.VisualStudio.Editor">
         <HintPath>C:/Users/denjo/Documents/intern/intern_takahara/Library/ScriptAssemblies/Unity.VisualStudio.Editor.dll</HintPath>
     </Reference>
-    <Reference Include="Unity.Sysroot.Linux_x86_64">
-        <HintPath>C:/Users/denjo/Documents/intern/intern_takahara/Library/ScriptAssemblies/Unity.Sysroot.Linux_x86_64.dll</HintPath>
-    </Reference>
     <Reference Include="Unity.Barracuda">
         <HintPath>C:/Users/denjo/Documents/intern/intern_takahara/Library/ScriptAssemblies/Unity.Barracuda.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Sysroot.Linux_x86_64">
+        <HintPath>C:/Users/denjo/Documents/intern/intern_takahara/Library/ScriptAssemblies/Unity.Sysroot.Linux_x86_64.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Timeline">
         <HintPath>C:/Users/denjo/Documents/intern/intern_takahara/Library/ScriptAssemblies/Unity.Timeline.dll</HintPath>
@@ -759,11 +761,11 @@
     <Reference Include="UnityEngine.UI">
         <HintPath>C:/Users/denjo/Documents/intern/intern_takahara/Library/ScriptAssemblies/UnityEngine.UI.dll</HintPath>
     </Reference>
-    <Reference Include="Unity.ML-Agents.CommunicatorObjects">
-        <HintPath>C:/Users/denjo/Documents/intern/intern_takahara/Library/ScriptAssemblies/Unity.ML-Agents.CommunicatorObjects.dll</HintPath>
-    </Reference>
     <Reference Include="Unity.Mathematics">
         <HintPath>C:/Users/denjo/Documents/intern/intern_takahara/Library/ScriptAssemblies/Unity.Mathematics.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.ML-Agents.CommunicatorObjects">
+        <HintPath>C:/Users/denjo/Documents/intern/intern_takahara/Library/ScriptAssemblies/Unity.ML-Agents.CommunicatorObjects.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Burst">
         <HintPath>C:/Users/denjo/Documents/intern/intern_takahara/Library/ScriptAssemblies/Unity.Burst.dll</HintPath>

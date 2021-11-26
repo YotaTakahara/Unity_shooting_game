@@ -1,9 +1,16 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class EnemyPoint : MonoBehaviour
 {
+    // [SerializeField] private RectTransform _markerPanel;
+    // [SerializeField] private ObjectMarker _markerPrefab;
+    [SerializeField] private UIController uiController;
+
+    [SerializeField] private GameObject canvas;
+    [SerializeField] private GameObject image;
     public GameObject attackList;
     public List list;
 
@@ -11,9 +18,28 @@ public class EnemyPoint : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        canvas = GameObject.Find("Canvas");
+        image = GameObject.Find("Image");
+        Debug.Log("image:" + image);
+        GameObject uiTmp = GameObject.Find("UIController");
+        uiController = uiTmp.GetComponent<UIController>();
+
+
 
 
         GameObject go = (GameObject)Instantiate(prefab, Vector3.zero, Quaternion.identity);
+        Debug.Log("go:" + go);
+        uiController.UIInstance(go.transform);
+        CallInitialize(go.transform);
+        // if(prefab.gameObject.tag=="Monster"){
+        //     GameObject tmpImage = (GameObject)Instantiate(image, Vector3.zero, Quaternion.identity);
+        //     UIFollowTarget target = image.GetComponent<UIFollowTarget>();
+        //     target.target = go.transform;
+        //     tmpImage.transform.SetParent(canvas.transform, false);
+        // }
+        // var marker = Instantiate(_markerPrefab, _markerPanel);
+        // marker.Initialize(go.transform);
+
 
         attackList = GameObject.Find("attackList");
         list = attackList.GetComponent<List>();
@@ -21,6 +47,9 @@ public class EnemyPoint : MonoBehaviour
 
 
         go.transform.SetParent(transform, false);
+    }
+    public void CallInitialize(Transform target){
+
     }
     void OnDrawGizmos()
     {

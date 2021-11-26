@@ -5,6 +5,7 @@ using UnityEngine.UI;
 
 public class ObjectMarker : MonoBehaviour
 {
+    [SerializeField] private GameObject airPlane;
     [SerializeField] private Camera _targetCamera;
 
     // UIを表示させる対象オブジェクト
@@ -29,6 +30,7 @@ public class ObjectMarker : MonoBehaviour
 
     private void Awake()
     {
+        airPlane = GameObject.Find("AirPlane");
         // カメラが指定されていなければメインカメラにする
         if (_targetCamera == null)
             _targetCamera = Camera.main;
@@ -40,12 +42,16 @@ public class ObjectMarker : MonoBehaviour
     // UIの位置を毎フレーム更新
     private void Update()
     {
+        if(_target==null){
+            Destroy(this.gameObject);
+        }
         OnUpdatePosition();
     }
 
     // UIの位置を更新する
     private void OnUpdatePosition()
     {
+
         var cameraTransform = _targetCamera.transform;
 
         // カメラの向きベクトル
@@ -60,9 +66,14 @@ public class ObjectMarker : MonoBehaviour
 
         // カメラ前方ならUI表示、後方なら非表示
         // _targetUI.gameObject.SetActive(isFront);
-        _targetUI.gameObject.SetActive(true);
+        _targetUI.gameObject.SetActive(isFront);
         if (!isFront) return;
 
+        float distance = Vector3.Magnitude(airPlane.transform.position - _target.position);
+        if(distance>100f){
+            _targetUI.gameObject.SetActive(false);
+            return;
+        }
         // オブジェクトのワールド座標→スクリーン座標変換
         var targetScreenPos = _targetCamera.WorldToScreenPoint(targetWorldPos);
 

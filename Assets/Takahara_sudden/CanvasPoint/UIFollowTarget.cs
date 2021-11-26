@@ -7,7 +7,7 @@ using UnityEngine.UI;
 public class UIFollowTarget : MonoBehaviour
 {
     RectTransform rectTransform = null;
-    [SerializeField] Transform target = null;
+    public Transform target = null;
     [SerializeField] Canvas canvas;
 
     void Awake()
