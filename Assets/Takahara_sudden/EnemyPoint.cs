@@ -8,24 +8,27 @@ public class EnemyPoint : MonoBehaviour
     // [SerializeField] private RectTransform _markerPanel;
     // [SerializeField] private ObjectMarker _markerPrefab;
     [SerializeField] private UIController uiController;
+    [SerializeField] private GameObject player;
 
     [SerializeField] private GameObject canvas;
-        public GameObject attackList;
+    public GameObject attackList;
     public List list;
 
     public GameObject prefab;
+    GameObject go;
     // Start is called before the first frame update
     void Start()
     {
         //canvas = GameObject.Find("Canvas");
-        
+        player = GameObject.Find("AirPlane");
+
         GameObject uiTmp = GameObject.Find("UIController");
         uiController = uiTmp.GetComponent<UIController>();
 
 
 
 
-        GameObject go = (GameObject)Instantiate(prefab, Vector3.zero, Quaternion.identity);
+        go = (GameObject)Instantiate(prefab, Vector3.zero, Quaternion.identity);
         //Debug.Log("go:" + go);
         uiController.UIInstance(go);
         //CallInitialize(go.transform);
@@ -45,6 +48,15 @@ public class EnemyPoint : MonoBehaviour
 
 
         go.transform.SetParent(transform, false);
+    }
+    public void Update() {
+        float deathDistance = transform.position.z - player.transform.position.z;
+        if(deathDistance<-3.0f){
+            list.attack.Remove(go.gameObject);
+            
+
+        }
+
     }
     public void CallInitialize(Transform target){
 

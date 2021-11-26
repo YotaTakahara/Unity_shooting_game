@@ -297,7 +297,7 @@ MonoBehaviour:
   stageList: {fileID: 0}
   currentStageIndex: 0
   startChipIndex: 1
-  preInstantiate: 3
+  preInstantiate: 2
   generatedStageList: []
   attackList: {fileID: 0}
   list: {fileID: 0}

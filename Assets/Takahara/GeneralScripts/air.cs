@@ -103,7 +103,7 @@ public class air : MonoBehaviour
 
     }
     public void MoveToUp(){
-        targetLane1 = 8;
+        targetLane1 = 6;
     }
     public void MoveToDown(){
         targetLane1 = 2;
@@ -133,7 +133,7 @@ public class air : MonoBehaviour
         life--;
         recoverTime = stopTime;
         //Debug.Log(life);
-//        Instantiate(explosion, transform.position, Quaternion.identity);
+        Instantiate(explosion, transform.position, Quaternion.identity);
 
     }
     //hennkou 

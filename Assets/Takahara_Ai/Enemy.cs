@@ -108,16 +108,16 @@ namespace Ai
                 ChangeStateNext(index);
             }
         }
-        public override void FixedUpdate()
-        {
-            float deathDistance = this.transform.position.z - player.transform.position.z;
-            if(deathDistance<-5f){
-                list.attack.Remove(this.gameObject);
-                Destroy(this.gameObject);
+        // public override void FixedUpdate()
+        // {
+        //     float deathDistance = this.transform.position.z - player.transform.position.z;
+        //     if(deathDistance<-5f){
+        //         list.attack.Remove(this.gameObject);
+        //         Destroy(this.gameObject);
 
 
-            }
-        }
+        //     }
+        // }
     
 
 
