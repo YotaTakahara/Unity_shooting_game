@@ -41,7 +41,7 @@ namespace Ai
         [SerializeField] private GameObject stageGenerator;
         [SerializeField] private sstageGenerator sstageGenerator;
         [SerializeField] private float LaneWidth;
-        [SerializeField] private float HP = 10;
+        public float HP = 10;
         // public GameObject damage;
 
 
@@ -98,6 +98,7 @@ namespace Ai
             Debug.Log("HPダメージ判定に成功しました、残りのHP:" + HP);
             if (this.HP <= 0)
             {
+                Debug.Log("ここは呼ばれてるで");
                 int index = (int)EnemyState.explode;
                 ChangeStateNext(index);
             }

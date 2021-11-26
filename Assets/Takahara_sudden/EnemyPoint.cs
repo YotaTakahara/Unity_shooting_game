@@ -10,17 +10,15 @@ public class EnemyPoint : MonoBehaviour
     [SerializeField] private UIController uiController;
 
     [SerializeField] private GameObject canvas;
-    [SerializeField] private GameObject image;
-    public GameObject attackList;
+        public GameObject attackList;
     public List list;
 
     public GameObject prefab;
     // Start is called before the first frame update
     void Start()
     {
-        canvas = GameObject.Find("Canvas");
-        image = GameObject.Find("Image");
-        Debug.Log("image:" + image);
+        //canvas = GameObject.Find("Canvas");
+        
         GameObject uiTmp = GameObject.Find("UIController");
         uiController = uiTmp.GetComponent<UIController>();
 
@@ -29,8 +27,8 @@ public class EnemyPoint : MonoBehaviour
 
         GameObject go = (GameObject)Instantiate(prefab, Vector3.zero, Quaternion.identity);
         Debug.Log("go:" + go);
-        uiController.UIInstance(go.transform);
-        CallInitialize(go.transform);
+        uiController.UIInstance(go);
+        //CallInitialize(go.transform);
         // if(prefab.gameObject.tag=="Monster"){
         //     GameObject tmpImage = (GameObject)Instantiate(image, Vector3.zero, Quaternion.identity);
         //     UIFollowTarget target = image.GetComponent<UIFollowTarget>();

@@ -40,6 +40,7 @@ public class GameController : MonoBehaviour
 
         // CheckSceneMove(c);
     }
+    
 
     void CheckSceneMove(int score)
     {

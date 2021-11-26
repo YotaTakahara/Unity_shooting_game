@@ -9,7 +9,7 @@ public class ObjectMarker : MonoBehaviour
     [SerializeField] private Camera _targetCamera;
 
     // UIを表示させる対象オブジェクト
-    [SerializeField] private Transform _target;
+    public  GameObject _target;
 
     // 表示するUI
     [SerializeField] private Transform _targetUI;
@@ -20,7 +20,7 @@ public class ObjectMarker : MonoBehaviour
     private RectTransform _parentUI;
 
     // 初期化メソッド（Prefabから生成する時などに使う）
-    public void Initialize(Transform target, Camera targetCamera = null)
+    public void Initialize(GameObject target, Camera targetCamera = null)
     {
         _target = target;
         _targetCamera = targetCamera != null ? targetCamera : Camera.main;
@@ -42,7 +42,8 @@ public class ObjectMarker : MonoBehaviour
     // UIの位置を毎フレーム更新
     private void Update()
     {
-        if(_target==null){
+        if(_target.gameObject==null){
+            
             Destroy(this.gameObject);
         }
         OnUpdatePosition();
@@ -57,7 +58,7 @@ public class ObjectMarker : MonoBehaviour
         // カメラの向きベクトル
         var cameraDir = cameraTransform.forward;
         // オブジェクトの位置
-        var targetWorldPos = _target.position + _worldOffset;
+        var targetWorldPos = _target.transform.position + _worldOffset;
         // カメラからターゲットへのベクトル
         var targetDir = targetWorldPos - cameraTransform.position;
 
@@ -69,7 +70,7 @@ public class ObjectMarker : MonoBehaviour
         _targetUI.gameObject.SetActive(isFront);
         if (!isFront) return;
 
-        float distance = Vector3.Magnitude(airPlane.transform.position - _target.position);
+        float distance = Vector3.Magnitude(airPlane.transform.position - _target.transform.position);
         if(distance>100f){
             _targetUI.gameObject.SetActive(false);
             return;

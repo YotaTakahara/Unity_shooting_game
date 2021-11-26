@@ -10,7 +10,7 @@ public class UIController : MonoBehaviour
    // [SerializeField] private EnemyPoint enemyPoint;
 
 
-    public void UIInstance(Transform target){
+    public void UIInstance(GameObject target){
         var marker = Instantiate(_markerPrefab, _markerPanel);
         marker.Initialize(target);
 
