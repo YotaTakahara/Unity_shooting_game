@@ -10,8 +10,13 @@ public class GameController : MonoBehaviour
     public air air;
     public GameObject airPlane;
     public Text text;
+    public int stageChipSize = 0;
+    public int stagePreInstantiate=0;
     [SerializeField] private int sceneNum = 0;
     [SerializeField] private int sceneDistance = 0;
+    [Space]
+    [SerializeField] private DesignController designController;
+    [Space]
     [SerializeField] private bool check = true;
     
 
@@ -19,6 +24,8 @@ public class GameController : MonoBehaviour
     {
         tmpStage = GameObject.Find("StageGenerator");
         stageGenerator = tmpStage.GetComponent<sstageGenerator>();
+        GameObject designTmp = GameObject.Find("DesignController");
+        designController = designTmp.GetComponent<DesignController>();
         airPlane = GameObject.Find("AirPlane");
         if (SceneManager.GetActiveScene().name == "Start")
         {
@@ -31,6 +38,7 @@ public class GameController : MonoBehaviour
     void Update()
     {
         ChangeStage();
+       
 
         int c = CalcScore();
         int ans = air.Life();
@@ -96,19 +104,42 @@ public class GameController : MonoBehaviour
     }
 
 
+    private int checkflag = 0;
+    private int checkChange = 0;
     void ChangeStage()
     {
 
         //動作確認済み
         //ただ改善の余地あり
         int distance = (int)air.transform.position.z;
-        if (400 * (stageGenerator.stageState + 1) < distance)
+        if (200 * (stageGenerator.stageState + 1) < distance)
         {
             Debug.Log("ステージ変更" + stageGenerator.stageState);
             stageGenerator.stageState += 1;
+            checkflag = -1;
             stageGenerator.ChangeStage();
+           //designController.SkyboxChange();
 
         }
+        if (200 * (stageGenerator.stageState +1 +checkflag)+(1+stagePreInstantiate) * stageChipSize < distance)
+        {
+            checkflag = 0;
+            designController.SkyboxChange();
+
+        }
+        // if(200<distance&&checkChange==0){
+        //     checkChange = 1;
+        //     designController.StageFinish();
+        // }
+        // Debug.Log("distance:" + distance);
+        // Debug.Log("sin"+stageGenerator.stageState);
+        //Debug.Log(400 * (stageGenerator.stageState + 1) + stagePreInstantiate * stageChipSize );
+
+        // if(10<distance){
+        //     Debug.Log("スカイボックス変更");
+        //     designController.SkyboxChange();
+        // }
+
 
     }
 }

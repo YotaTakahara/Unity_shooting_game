@@ -6,7 +6,7 @@ public class sstageGenerator : MonoBehaviour
     public float LaneWidth = 1.0f * 4;
     public int k = 2;
     public int stageState = 0;
-    [SerializeField] private int StageChipSize = 30;
+    public int StageChipSize = 30;
 
     private int currentChipIndex;
     public GameObject airPlane;
@@ -14,6 +14,7 @@ public class sstageGenerator : MonoBehaviour
 
     [SerializeField]private GameObject[] stageChips1;
     [SerializeField]private GameObject[] stageChips2;
+    [SerializeField] private GameObject[] stageChangeStage;
 
     [SerializeField] private GameObject[] currentStageChips;
     [SerializeField] private StageList stageList;
@@ -26,9 +27,12 @@ public class sstageGenerator : MonoBehaviour
 
     [SerializeField] private GameObject attackList;
     [SerializeField] private List list;
+    [SerializeField] private GameController gameController;
 
     void Start()
     {
+        GameObject conTmp = GameObject.Find("GameController");
+        gameController = conTmp.GetComponent<GameController>();
         GameObject stageTmp = GameObject.Find("StageList");
         stageList = stageTmp.GetComponent<StageList>();
         int stageNum = stageList.stageNum;
@@ -42,11 +46,15 @@ public class sstageGenerator : MonoBehaviour
             }
 
         }
+        stageChangeStage = stageList.stageChangeStage;
         currentStageChips = stageChips0;
 
 
 
         StageChipSize *= k;
+        gameController.stageChipSize = StageChipSize;
+        gameController.stagePreInstantiate = preInstantiate;
+
         currentChipIndex = startChipIndex - 1;
         UpdateStage(preInstantiate);
 
@@ -76,28 +84,20 @@ public class sstageGenerator : MonoBehaviour
         {
             GameObject stageOb = GenerateStage(i);
 
-            //hennkou
-            // Transform children = stageOb.GetComponentInChildren<Transform>();
-            // Debug.Log("children " + children);
-
-            // foreach (Transform ob in children)
-            // {
-            //     Debug.Log("ob " + ob);
-            //     Debug.Log("ob.gameObject.tag " + ob.gameObject.tag);
-
-            //     if (ob.gameObject.tag == "Monster")
-            //     {
-            //         Debug.Log("ここ呼び出されてんぞ");
-            //         Debug.Log("ob.gameObject:" + ob.gameObject);
-            //         // list.attack.Add(ob.gameObject);
-            //     }
-            // }
-
             generatedStageList.Add(stageOb);
         }
 
         while (generatedStageList.Count > preInstantiate +1) DestroyOldestStage();
         currentChipIndex = toChipIndex;
+    }
+    public void UpdateStageChange(int which){
+
+        GameObject stageOb = GenerateStageChange(which);
+        generatedStageList.Add(stageOb);
+        //while (generatedStageList.Count > preInstantiate + 1) DestroyOldestStage();
+        currentChipIndex +=1;
+        
+
     }
 
     GameObject GenerateStage(int chipIndex)
@@ -109,55 +109,13 @@ public class sstageGenerator : MonoBehaviour
         Debug.Log("stageStateの変更が反映された" + stageState);
         stageObject = (GameObject)Instantiate(currentStageChips[nextStageChip],
             new Vector3(0, 0, chipIndex * StageChipSize), Quaternion.identity);
-
-        // if (stageState == 1)
-        // {
-        //     nextStageChip = Random.Range(0, stageChips1.Length);
-
-        //     Debug.Log("stageStateの変更が反映された" + stageState);
-        //     stageObject = (GameObject)Instantiate(currentStageChips[nextStageChip],
-        //         new Vector3(0, 0, chipIndex * StageChipSize), Quaternion.identity);
-        //     // foreach (Transform child in stageObject.transform)
-        //     // {
-        //     //     if (child.gameObject.tag == "Monster")
-        //     //     {
-        //     //         list.attack.Add(child.gameObject);
-        //     //     }
-
-        //     // }
-
-        // }
-        // else
-        // {
-        //     nextStageChip = Random.Range(0, stageChips0.Length);
-
-        //     Debug.Log("stageStateの変更が反映された" + stageState);
-
-        //     //GameObjectとして消去する必要があることが分かった
-        //     //またinstantiateとするときはprefabのものを使わないとエラーになってしまうので気をつける
-
-        //     stageObject = (GameObject)Instantiate(stageChips0[nextStageChip],
-        //         new Vector3(0, 0, chipIndex * StageChipSize), Quaternion.identity);
-
-        //     foreach (Transform childTransform in stageObject.gameObject.transform)
-        //     {
-        //         // Debug.Log(childTransform.gameObject.name); // 子オブジェクト名を出力
-        //         // EnemyPoint tmp = childTransform.gameObject.GetComponent<EnemyPoint>();
-        //         //Debug.Log("enemy:" + tmp.prefab);
-        //     }
-        //     // foreach (Transform child in stageObject.transform)
-        //     // {
-        //     //     GameObject childCha = (GameObject)child.gameObject;
-        //     //     if (child.gameObject.tag == "Monster")
-        //     //     {
-        //     //         Debug.Log("child:" + child.gameObject);
-        //     //         list.attack.Add(childCha);
-        //     //     }
-
-        //     // }
-
-        // }
         return stageObject;
+    }
+    GameObject GenerateStageChange(int nextStageChip){
+        GameObject stageObject = (GameObject)Instantiate(stageChangeStage[nextStageChip],
+        new Vector3(0, 0, (currentChipIndex + 1) * StageChipSize),Quaternion.identity);
+        return stageObject;
+
     }
 
     void DestroyOldestStage()
@@ -170,6 +128,7 @@ public class sstageGenerator : MonoBehaviour
     }
     public void ChangeStage(){
         int now = stageState;
+        UpdateStageChange(now - 1);
         if(now==0){
             currentStageChips = stageChips0;
         }

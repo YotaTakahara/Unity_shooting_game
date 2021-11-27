@@ -7,6 +7,8 @@ public class StageList : MonoBehaviour
     public GameObject[] stageChips0;
     public GameObject[] stageChips1;
     public GameObject[] stageChips2;
+    public GameObject[] stageChangeStage;
+    
     public int stageNum = 3;
 
 

@@ -679,6 +679,8 @@ MonoBehaviour:
   - {fileID: 2399326795808465009, guid: 2b0a67fb37f150f4f9d4b0c57241ddc0, type: 3}
   - {fileID: 4332637460492025328, guid: 830e6fea69a697f47ab734b86cab6c31, type: 3}
   - {fileID: 7115911163003055400, guid: 6086f4de079d93946b1c33397b4ec1a7, type: 3}
+  stageChangeStage:
+  - {fileID: 4932547469474177602, guid: 63f16aa17d118c4469915078e43f2d5c, type: 3}
   stageNum: 3
 --- !u!4 &302738143
 Transform:
@@ -1653,6 +1655,58 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 917454417}
   m_CullTransparentMesh: 1
+--- !u!1 &927020072
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 927020073}
+  - component: {fileID: 927020074}
+  m_Layer: 0
+  m_Name: DesignController
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &927020073
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 927020072}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 4.640589, y: -14.0853, z: 330.32993}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 14
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &927020074
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 927020072}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bca623b0beaeca04aa6a8c35a7a183d2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  skybox:
+  - {fileID: 10304, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: bf1bf92a3ce592e40b898be6c21cc2fa, type: 2}
+  - {fileID: 15303, guid: 0000000000000000f000000000000000, type: 0}
+  span: 5
+  tmpSpan: 0
+  gameController: {fileID: 0}
+  stageGenerator: {fileID: 0}
+  tmp: 0
 --- !u!1 &967369680
 GameObject:
   m_ObjectHideFlags: 0
@@ -2221,6 +2275,7 @@ MonoBehaviour:
   stageChips0: []
   stageChips1: []
   stageChips2: []
+  stageChangeStage: []
   currentStageChips: []
   stageList: {fileID: 0}
   currentStageIndex: 0
@@ -2231,6 +2286,7 @@ MonoBehaviour:
   - {fileID: 0}
   attackList: {fileID: 0}
   list: {fileID: 0}
+  gameController: {fileID: 0}
 --- !u!1001 &1744069118
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2244,15 +2300,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5184491314372762576, guid: c7706364d54912e499ded4a7ae3d9158, type: 3}
       propertyPath: speedX
-      value: 0.05
+      value: 0.1
       objectReference: {fileID: 0}
     - target: {fileID: 5184491314372762576, guid: c7706364d54912e499ded4a7ae3d9158, type: 3}
       propertyPath: speedY
-      value: 0.05
+      value: 0.1
       objectReference: {fileID: 0}
     - target: {fileID: 5184491314372762576, guid: c7706364d54912e499ded4a7ae3d9158, type: 3}
       propertyPath: speedZ
-      value: 0.05
+      value: 0.1
       objectReference: {fileID: 0}
     - target: {fileID: 5184491314372762576, guid: c7706364d54912e499ded4a7ae3d9158, type: 3}
       propertyPath: m_Enabled
@@ -2623,8 +2679,11 @@ MonoBehaviour:
   air: {fileID: 0}
   airPlane: {fileID: 0}
   text: {fileID: 396600621}
+  stageChipSize: 0
+  stagePreInstantiate: 0
   sceneNum: 0
   sceneDistance: 0
+  designController: {fileID: 0}
   check: 1
 --- !u!4 &2142633247
 Transform:
