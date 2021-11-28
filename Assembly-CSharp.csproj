@@ -47,6 +47,7 @@
      <Compile Include="Assets\EffectExamples\Shared\Scripts\ExtinguishableFire.cs" />
      <Compile Include="Assets\Takahara_sudden\CanvasPoint\BoxCheck.cs" />
      <Compile Include="Assets\EffectExamples\Shared\Scripts\ParticleMenu.cs" />
+     <Compile Include="Assets\Takahara_Boss\BossBulletGenerator.cs" />
      <Compile Include="Assets\Takahara\collider\NewBehaviourScript.cs" />
      <Compile Include="Assets\AutoSave.cs" />
      <Compile Include="Assets\Takahara_Ai\StateMachine.cs" />
@@ -107,7 +108,7 @@
      <Compile Include="Assets\Takahara\GeneralScripts\LifeGauge.cs" />
      <Compile Include="Assets\Takahara\collider\ColliderSphere.cs" />
      <Compile Include="Assets\EffectExamples\Shared\Scripts\GunAim.cs" />
-     <Compile Include="Assets\Takahara_Boss\BossBulletGenerator.cs" />
+     <Compile Include="Assets\Takahara_sudden\TargetUI.cs" />
      <None Include="Assets\NejikoBaseAssets\LICENSE.txt" />
      <None Include="Assets\smcs.rsp" />
      <None Include="Assets\SampleScenes\Shaders\Skybox-Procedural.shader" />

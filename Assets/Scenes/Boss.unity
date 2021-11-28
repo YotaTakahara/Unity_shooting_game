@@ -768,8 +768,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1408331278}
   - component: {fileID: 1408331277}
-  - component: {fileID: 1408331279}
-  - component: {fileID: 1408331280}
   m_Layer: 0
   m_Name: BossBulletGenerator
   m_TagString: Untagged
@@ -799,12 +797,14 @@ MonoBehaviour:
   - 13
   zRange: 0
   bull: {fileID: 0}
+  targetImage: {fileID: 0}
+  canvas: {fileID: 1511621227}
   bullNum: 0
   rb: {fileID: 0}
   span: 1
-  power: 2000
+  power: 500
   center: {x: 0, y: 0, z: 25.25}
-  zurashi: {x: 0, y: 13.2, z: -7.55}
+  zurashi: {x: 0, y: 13.2, z: -18.08}
 --- !u!4 &1408331278
 Transform:
   m_ObjectHideFlags: 0
@@ -812,42 +812,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1408331276}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 12
+  m_Father: {fileID: 1511621231}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1408331279
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1408331276}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1861cef890956374a950e675e14c1e10, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &1408331280
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1408331276}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 93859e9345e96cb43b940a8c80c29a99, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  position: {x: 0, y: 0, z: 0}
-  mass: 1
-  k: 1
-  isdrag: 0
-  finalSpeed: {x: 0, y: 0, z: 0}
 --- !u!1 &1437351438 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1763693513203894, guid: f88c6ad57910d8648807bcf0c131f49d, type: 3}
@@ -999,7 +970,8 @@ RectTransform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0, y: 0, z: 0}
-  m_Children: []
+  m_Children:
+  - {fileID: 1408331278}
   m_Father: {fileID: 0}
   m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
