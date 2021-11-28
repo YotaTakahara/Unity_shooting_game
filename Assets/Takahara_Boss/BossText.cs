@@ -11,7 +11,7 @@ public class BossText : MonoBehaviour
     [SerializeField] private Text text;
     void Start()
     {
-        boss = GameObject.Find("Polygonal Metalon Red");
+        boss = GameObject.Find("Boss");
         zariScript = boss.GetComponent<BossZarigani>();
         scoreText = GameObject.Find("BossHP");
         text = scoreText.GetComponent<Text>();

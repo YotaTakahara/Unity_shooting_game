@@ -129,16 +129,16 @@ public class BossZarigani : Zari
             // this.speed = owner.speed;
             // Vector3 move = new Vector3(0, 0, speed);
             // owner.transform.Translate(move);
-            if (Input.GetAxis("Vertical") != 0)
-            {
-                Debug.Log("response");
-                int index = (int)BossState.damage;
-                owner.ChangeStateNext(index);
+            // if (Input.GetAxis("Vertical") != 0)
+            // {
+            //     Debug.Log("response");
+            //     int index = (int)BossState.damage;
+            //     owner.ChangeStateNext(index);
 
-            }
+            // }
 
             this.HP = owner.HP;
-            Debug.Log("HP " + this.HP);
+//            Debug.Log("HP " + this.HP);
             tmpSpan += Time.fixedDeltaTime;
             if (0 < HP && HP < 20)
             {
