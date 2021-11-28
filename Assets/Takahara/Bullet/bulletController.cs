@@ -22,9 +22,9 @@ public class bulletController : MonoBehaviour
 
     void Start()
     {
-        latestPos = transform.position;
-        attackList = GameObject.Find("attackList");
-        enemy = attackList.GetComponent<List>().attack;
+        // latestPos = transform.position;
+        // attackList = GameObject.Find("attackList");
+        // enemy = attackList.GetComponent<List>().attack;
     }
 
     void Update()
@@ -32,7 +32,12 @@ public class bulletController : MonoBehaviour
         Vector3 diff = transform.position - latestPos;
         if (diff.magnitude > range)
         {
-            Destroy(gameObject);
+            BulletDelete();
         }
+    }
+    public virtual void  BulletDelete(){
+        Destroy(gameObject);
+        Debug.Log("delete");
+
     }
 }

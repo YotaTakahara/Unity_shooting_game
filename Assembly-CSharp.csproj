@@ -59,6 +59,7 @@
      <Compile Include="Assets\Takahara_sudden\BlockPoint.cs" />
      <Compile Include="Assets\SceneBackup.cs" />
      <Compile Include="Assets\Takahara_sudden\Tmp.cs" />
+     <Compile Include="Assets\Takahara_sudden\TargetUI.cs" />
      <Compile Include="Assets\Takahara\GeneralScripts\GameController.cs" />
      <Compile Include="Assets\Takahara_Ai\StatefulObjectBase.cs" />
      <Compile Include="Assets\EffectExamples\Shared\Scripts\DecalDestroyer.cs" />
@@ -108,7 +109,7 @@
      <Compile Include="Assets\Takahara\GeneralScripts\LifeGauge.cs" />
      <Compile Include="Assets\Takahara\collider\ColliderSphere.cs" />
      <Compile Include="Assets\EffectExamples\Shared\Scripts\GunAim.cs" />
-     <Compile Include="Assets\Takahara_sudden\TargetUI.cs" />
+     <Compile Include="Assets\Takahara\Bullet\BossBulletController.cs" />
      <None Include="Assets\NejikoBaseAssets\LICENSE.txt" />
      <None Include="Assets\smcs.rsp" />
      <None Include="Assets\SampleScenes\Shaders\Skybox-Procedural.shader" />

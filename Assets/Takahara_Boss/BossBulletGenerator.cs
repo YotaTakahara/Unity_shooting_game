@@ -15,7 +15,7 @@ public class BossBulletGenerator : MonoBehaviour
     [SerializeField] private GameObject targetImage;
     [SerializeField] private GameObject canvas;
     [SerializeField] int bullNum;
-    [SerializeField] RigidTakahara rb;
+    [SerializeField] Rigidbody rb;
 
 
     public float span = 5.0f;
@@ -43,30 +43,42 @@ public class BossBulletGenerator : MonoBehaviour
         tmpSpan += Time.deltaTime;
         if(span<tmpSpan){
             tmpSpan = 0;
-            Shoot();
+            BulletMake();
         }
 
 
 
     }
-    public void Shoot(){
-        float x = Random.Range(xRange[0], xRange[1]);
-        float y = Random.Range(yRange[0], yRange[1]);
-        Vector3 where = new Vector3(x, y, zRange);
-        Vector3 tmp = new Vector3(0, 0, zRange);
-        GameObject bullMade=Instantiate(bull, where, Quaternion.identity);
-        GameObject imageMade=Instantiate(targetImage);
-        imageMade.GetComponent<TargetUI>().target = bullMade.transform;
-        imageMade.transform.SetParent(canvas.transform, false);
-        /*GameObject としてインスタンス化した法の情報を使うようにしないとprefabの情報を利用することに
-        なるので注意が必要なのである*/
+    public void BulletMake(){
+        for (int i =0; i < bullNum; i++)
+        {
+            float x = Random.Range(xRange[0], xRange[1]);
+            float y = Random.Range(yRange[0], yRange[1]);
+            Vector3 where = new Vector3(x, y, zRange);
+            Vector3 tmp = new Vector3(0, 0, zRange);
+            // GameObject bullMade = Instantiate(bull, where, Quaternion.identity);
+            GameObject imageMade = Instantiate(targetImage);
+            imageMade.GetComponent<TargetUI>().targetPosition=where;
+            imageMade.transform.SetParent(canvas.transform, false);
+            /*GameObject としてインスタンス化した法の情報を使うようにしないとprefabの情報を利用することに
+            なるので注意が必要なのである*/
 
-        //    Instantiate(bull, center+zurashi, Quaternion.identity);
-        //    Vector3 direction = where - (center + zurashi);
-        //     rb = bull.GetComponent<RigidTakahara>();
-        //     Debug.Log("direction:" + direction.normalized);
-        //     rb.AddForce(direction.normalized * power);
-        //     Debug.Log("hurufhruhfurhfur");
+            GameObject bullMade=Instantiate(bull, center+zurashi, Quaternion.identity);
+            bullMade.GetComponent<BossBulletController>().targetUI = imageMade;
+            bullMade.GetComponent<BossBulletController>().startPoint = center + zurashi;
+            Vector3 direction = where - (center + zurashi);
+            Shoot(bullMade, direction);
+
+        }
+    }
+       void Shoot(GameObject bullMade,Vector3 direction){
+        rb = bullMade.GetComponent<Rigidbody>();
+      //  Debug.Log("direction:" + direction.normalized);
+      //  yield return new WaitForSeconds(1.0f);
+        rb.AddForce(direction.normalized * power);
+       // Debug.Log("hurufhruhfurhfur");
+
+
     }
      public void OnDrawGizmos() {
         Gizmos.color = Color.blue;

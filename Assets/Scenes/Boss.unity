@@ -180,7 +180,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2329093932753029958, guid: ab5c34f869e5892438ebc383ef7402a7, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2329093932753029959, guid: ab5c34f869e5892438ebc383ef7402a7, type: 3}
       propertyPath: airPlane
@@ -799,9 +799,9 @@ MonoBehaviour:
   bull: {fileID: 0}
   targetImage: {fileID: 0}
   canvas: {fileID: 1511621227}
-  bullNum: 0
+  bullNum: 3
   rb: {fileID: 0}
-  span: 1
+  span: 3
   power: 500
   center: {x: 0, y: 0, z: 25.25}
   zurashi: {x: 0, y: 13.2, z: -18.08}
@@ -813,11 +813,11 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1408331276}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 291.3333, y: 134, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 1511621231}
-  m_RootOrder: 0
+  m_Father: {fileID: 0}
+  m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1437351438 stripped
 GameObject:
@@ -970,10 +970,9 @@ RectTransform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0, y: 0, z: 0}
-  m_Children:
-  - {fileID: 1408331278}
+  m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 11
+  m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}

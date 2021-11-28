@@ -88,4 +88,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a902aa0e09a227f4f9750cf60c003698, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  target: {fileID: 8601196178926323467, guid: fdd74a28b2e443d4ea33462c4a5131f1, type: 3}
+  target: {fileID: 0}
+  targetPosition: {x: 0, y: 0, z: 0}
