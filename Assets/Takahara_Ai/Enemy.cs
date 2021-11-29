@@ -268,7 +268,7 @@ namespace Ai
 
             public override void Enter()
             {
-                Debug.Log("attackStateが呼び出されています");
+//                Debug.Log("attackStateが呼び出されています");
                 this.air = owner.air;
             }
 

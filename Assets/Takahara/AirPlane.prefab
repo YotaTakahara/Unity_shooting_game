@@ -11,9 +11,7 @@ GameObject:
   - component: {fileID: 5184491313538357391}
   - component: {fileID: 5184491313538357384}
   - component: {fileID: 5184491313538357385}
-  - component: {fileID: 5184491313538357390}
-  - component: {fileID: 5184491313538357387}
-  - component: {fileID: 5184491313538357386}
+  - component: {fileID: 3008070940726982258}
   m_Layer: 0
   m_Name: Tail
   m_TagString: Untagged
@@ -84,38 +82,7 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!65 &5184491313538357390
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5184491313538357388}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 0
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &5184491313538357387
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5184491313538357388}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 712ae24e5ca8bf94185f0c662faa5725, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  attackList: {fileID: 0}
-  enemyBox: []
-  _didCollide: 0
-  airPlane: {fileID: 0}
-  airScript: {fileID: 0}
-  fire: {fileID: 0}
---- !u!114 &5184491313538357386
+--- !u!114 &3008070940726982258
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -124,7 +91,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 5184491313538357388}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 712ae24e5ca8bf94185f0c662faa5725, type: 3}
+  m_Script: {fileID: 11500000, guid: 0aea50c5ceffdf84a9c9cc68e523ce80, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   attackList: {fileID: 0}
@@ -132,7 +99,7 @@ MonoBehaviour:
   _didCollide: 0
   airPlane: {fileID: 0}
   airScript: {fileID: 0}
-  fire: {fileID: 1000011797152326, guid: acf39d9f4addf294d93fa56fa373961b, type: 3}
+  fire: {fileID: 0}
 --- !u!1 &5184491314025734630
 GameObject:
   m_ObjectHideFlags: 0
@@ -144,8 +111,7 @@ GameObject:
   - component: {fileID: 5184491314025734625}
   - component: {fileID: 5184491314025734626}
   - component: {fileID: 5184491314025734627}
-  - component: {fileID: 5184491314025734624}
-  - component: {fileID: 5184491314025734637}
+  - component: {fileID: 5807485071192913905}
   m_Layer: 0
   m_Name: body
   m_TagString: Untagged
@@ -216,21 +182,7 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!136 &5184491314025734624
-CapsuleCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5184491314025734630}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 0
-  m_Radius: 0.5
-  m_Height: 2
-  m_Direction: 1
-  m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &5184491314025734637
+--- !u!114 &5807485071192913905
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -239,7 +191,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 5184491314025734630}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 712ae24e5ca8bf94185f0c662faa5725, type: 3}
+  m_Script: {fileID: 11500000, guid: 0aea50c5ceffdf84a9c9cc68e523ce80, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   attackList: {fileID: 0}
@@ -247,7 +199,7 @@ MonoBehaviour:
   _didCollide: 0
   airPlane: {fileID: 0}
   airScript: {fileID: 0}
-  fire: {fileID: 1000011797152326, guid: acf39d9f4addf294d93fa56fa373961b, type: 3}
+  fire: {fileID: 0}
 --- !u!1 &5184491314093632639
 GameObject:
   m_ObjectHideFlags: 0
@@ -259,8 +211,7 @@ GameObject:
   - component: {fileID: 5184491314093632638}
   - component: {fileID: 5184491314093632635}
   - component: {fileID: 5184491314093632632}
-  - component: {fileID: 5184491314093632633}
-  - component: {fileID: 5184491314093632634}
+  - component: {fileID: 2199783164532484727}
   m_Layer: 0
   m_Name: Wing
   m_TagString: Untagged
@@ -331,20 +282,7 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!65 &5184491314093632633
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5184491314093632639}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 0
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &5184491314093632634
+--- !u!114 &2199783164532484727
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -353,7 +291,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 5184491314093632639}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 712ae24e5ca8bf94185f0c662faa5725, type: 3}
+  m_Script: {fileID: 11500000, guid: 0aea50c5ceffdf84a9c9cc68e523ce80, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   attackList: {fileID: 0}
@@ -361,7 +299,7 @@ MonoBehaviour:
   _didCollide: 0
   airPlane: {fileID: 0}
   airScript: {fileID: 0}
-  fire: {fileID: 1000011797152326, guid: acf39d9f4addf294d93fa56fa373961b, type: 3}
+  fire: {fileID: 0}
 --- !u!1 &5184491314372762581
 GameObject:
   m_ObjectHideFlags: 0
@@ -462,9 +400,25 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 0.4
   life: 3
+  hp: 100
   stopTime: 0.5
   recoverTime: 0
   fire: {fileID: 5202793587325307922, guid: 266942f6400df8b4aaa4805744bf8965, type: 3}
+  explosion: {fileID: 0}
   point: 0
   shotSpeed: 0
+  stage: {fileID: 0}
+  sstageGenerator: {fileID: 0}
+  miuRb: {fileID: 0}
   yotta: {fileID: 0}
+  LaneWidth: 4
+  LaneHeight: 2
+  moveDirection: {x: 0, y: 0, z: 0}
+  targetLane: 0
+  targetLane1: 2
+  speedZ: 0
+  speedX: 0
+  speedY: 0
+  accelerationZ: 0
+  globalDirection: {x: 0, y: 0, z: 0}
+  commandAdd: 0

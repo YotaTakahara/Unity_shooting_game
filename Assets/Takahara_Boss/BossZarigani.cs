@@ -158,7 +158,7 @@ public class BossZarigani : Zari
             }
             else if (HP < 20 && HP < 80)
             {
-                owner.animator.SetTrigger("Walk Backward In Place");
+                //owner.animator.SetTrigger("Walk Backward In Place");
                 span = 7.0f;
                 Debug.Log("span " + span);
                 if (span < tmpSpan)
@@ -175,8 +175,8 @@ public class BossZarigani : Zari
 
                 if (span < tmpSpan)
                 {
-                    Debug.Log("okei");
-                    owner.animator.SetTrigger("Walk Backward In Place");
+                    
+                   // owner.animator.SetTrigger("Walk Backward In Place");
 
                     StabAttack();
                     tmpSpan = 0f;
@@ -199,13 +199,13 @@ public class BossZarigani : Zari
         {
             Debug.Log("attack");
             owner.animator.SetTrigger("Stab Attack");
-            owner.airScript.AccidentBossDamage(owner.stabDamage);
+           // owner.airScript.AccidentBossDamage(owner.stabDamage);
             Debug.Log("player hp " + owner.airScript.hp);
         }
         public void SmashAttack()
         {
             owner.animator.SetTrigger("Smash Attack");
-            owner.airScript.AccidentBossDamage(owner.smashDamage);
+           // owner.airScript.AccidentBossDamage(owner.smashDamage);
             Debug.Log("player hp " + owner.airScript.hp);
         }
         //hennkou

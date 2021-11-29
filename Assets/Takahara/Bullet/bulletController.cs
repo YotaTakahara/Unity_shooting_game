@@ -22,7 +22,7 @@ public class bulletController : MonoBehaviour
 
     void Start()
     {
-        // latestPos = transform.position;
+         latestPos = transform.position;
         // attackList = GameObject.Find("attackList");
         // enemy = attackList.GetComponent<List>().attack;
     }
@@ -35,7 +35,7 @@ public class bulletController : MonoBehaviour
             BulletDelete();
         }
     }
-    public virtual void  BulletDelete(){
+      void  BulletDelete(){
         Destroy(gameObject);
         Debug.Log("delete");
 

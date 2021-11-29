@@ -180,7 +180,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2329093932753029958, guid: ab5c34f869e5892438ebc383ef7402a7, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2329093932753029959, guid: ab5c34f869e5892438ebc383ef7402a7, type: 3}
       propertyPath: airPlane
@@ -205,9 +205,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ff1df1125e8b8c949ac5115e775568ca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  damageChange: 0
   _center: {x: 0, y: 0, z: 0}
-  k: 2
-  _radius: 1.5
+  k: 8
+  _radius: 4
 --- !u!1 &234789403
 GameObject:
   m_ObjectHideFlags: 0
@@ -319,6 +320,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ff1df1125e8b8c949ac5115e775568ca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  damageChange: 0
   _center: {x: 0, y: 0, z: 0}
   k: 2
   _radius: 1.5
@@ -339,6 +341,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ff1df1125e8b8c949ac5115e775568ca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  damageChange: 0
   _center: {x: 0, y: 0, z: 0}
   k: 2
   _radius: 1.5
@@ -523,9 +526,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ff1df1125e8b8c949ac5115e775568ca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  damageChange: 0
   _center: {x: 0, y: 0, z: 0}
-  k: 2
-  _radius: 1.5
+  k: 0
+  _radius: 4
 --- !u!1 &593012703 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1675505690905546, guid: f88c6ad57910d8648807bcf0c131f49d, type: 3}
@@ -543,6 +547,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ff1df1125e8b8c949ac5115e775568ca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  damageChange: 0
   _center: {x: 0, y: 0, z: 0}
   k: 2
   _radius: 1.5
@@ -639,6 +644,48 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
+--- !u!1 &625332810 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1888273248922674, guid: f88c6ad57910d8648807bcf0c131f49d, type: 3}
+  m_PrefabInstance: {fileID: 1766803174}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &625332812
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 625332810}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ff1df1125e8b8c949ac5115e775568ca, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damageChange: 0
+  _center: {x: 0, y: 0, z: 0}
+  k: 2
+  _radius: 1.5
+--- !u!1 &821856533 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1823779791173050, guid: f88c6ad57910d8648807bcf0c131f49d, type: 3}
+  m_PrefabInstance: {fileID: 1766803174}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &821856535
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 821856533}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ff1df1125e8b8c949ac5115e775568ca, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damageChange: 0
+  _center: {x: 0, y: 0, z: 0}
+  k: 2
+  _radius: 1.5
 --- !u!1001 &877857444
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -735,9 +782,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ff1df1125e8b8c949ac5115e775568ca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  damageChange: 0
   _center: {x: 0, y: 0, z: 0}
-  k: 2
-  _radius: 1.5
+  k: 8
+  _radius: 4
 --- !u!1 &1363466921 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1865475983786716, guid: f88c6ad57910d8648807bcf0c131f49d, type: 3}
@@ -755,6 +803,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ff1df1125e8b8c949ac5115e775568ca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  damageChange: 0
   _center: {x: 0, y: 0, z: 0}
   k: 2
   _radius: 1.5
@@ -836,6 +885,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ff1df1125e8b8c949ac5115e775568ca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  damageChange: 0
   _center: {x: 0, y: 0, z: 0}
   k: 2
   _radius: 1.5
@@ -856,9 +906,26 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ff1df1125e8b8c949ac5115e775568ca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  damageChange: 1
   _center: {x: 0, y: 0, z: 10}
   k: 2
-  _radius: 24
+  _radius: 12
+--- !u!114 &1502265955
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1502265953}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ff1df1125e8b8c949ac5115e775568ca, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damageChange: 2
+  _center: {x: 0, y: 10.35, z: -13.73}
+  k: 1
+  _radius: 6
 --- !u!114 &1502265956
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1402,9 +1469,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ff1df1125e8b8c949ac5115e775568ca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  damageChange: 0
   _center: {x: 0, y: 0, z: 0}
-  k: 10
-  _radius: 1.5
+  k: 0
+  _radius: 4
 --- !u!114 &1766803180
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1417,9 +1485,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ff1df1125e8b8c949ac5115e775568ca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  damageChange: 0
   _center: {x: 0, y: 0, z: 0}
-  k: 10
-  _radius: 1.5
+  k: 8
+  _radius: 4
 --- !u!114 &1766803181
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1432,9 +1501,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ff1df1125e8b8c949ac5115e775568ca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  damageChange: 0
   _center: {x: 0, y: 0, z: 0}
-  k: 10
-  _radius: 1.5
+  k: 8
+  _radius: 4
 --- !u!114 &1766803182
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1447,9 +1517,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ff1df1125e8b8c949ac5115e775568ca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  damageChange: 0
   _center: {x: 0, y: 0, z: 0}
-  k: 10
-  _radius: 1.5
+  k: 8
+  _radius: 4
 --- !u!1 &1766803183 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1639718499868046, guid: f88c6ad57910d8648807bcf0c131f49d, type: 3}
@@ -1467,8 +1538,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ff1df1125e8b8c949ac5115e775568ca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  damageChange: 0
   _center: {x: 0, y: 0, z: 0}
-  k: 2
+  k: 4
   _radius: 1.5
 --- !u!1 &2068559706 stripped
 GameObject:
@@ -1487,6 +1559,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ff1df1125e8b8c949ac5115e775568ca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  damageChange: 0
   _center: {x: 0, y: 0, z: 0}
   k: 2
   _radius: 1.5
@@ -1507,6 +1580,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ff1df1125e8b8c949ac5115e775568ca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  damageChange: 0
   _center: {x: 0, y: 0, z: 0}
   k: 2
   _radius: 1.5

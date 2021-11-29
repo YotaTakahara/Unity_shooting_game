@@ -106,22 +106,22 @@ public class air : MonoBehaviour
   }
   public void MoveToUp()
   {
-    Debug.Log("上反応しています");
+    //Debug.Log("上反応しています");
     targetLane1 = 6;
   }
   public void MoveToDown()
   {
-    Debug.Log("上反応しています");
+    //Debug.Log("上反応しています");
     targetLane1 = 2;
   }
   public void MoveToLeft()
   {
-    Debug.Log("上反応しています");
+  //  Debug.Log("上反応しています");
     if (targetLane > MinLane) targetLane--;
   }
   public void MoveToRight()
   {
-    Debug.Log("上反応しています");
+//    Debug.Log("上反応しています");
     if (targetLane < MaxLane) targetLane++;
   }
 
@@ -141,7 +141,7 @@ public class air : MonoBehaviour
     life--;
     recoverTime = stopTime;
     //Debug.Log(life);
-    Instantiate(explosion, transform.position, Quaternion.identity);
+   // Instantiate(explosion, transform.position, Quaternion.identity);
 
   }
   //hennkou 
@@ -150,7 +150,7 @@ public class air : MonoBehaviour
     life--;
     hp -= str;
     Debug.Log(hp);
-    Instantiate(explosion, transform.position, Quaternion.identity);
+   // Instantiate(explosion, transform.position, Quaternion.identity);
 
   }
   public void GameOverScene()
