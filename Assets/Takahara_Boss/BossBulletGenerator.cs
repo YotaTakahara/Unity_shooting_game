@@ -16,6 +16,8 @@ public class BossBulletGenerator : MonoBehaviour
     [SerializeField] private GameObject canvas;
     [SerializeField] int bullNum;
     [SerializeField] Rigidbody rb;
+    [SerializeField] private GameObject attackList;
+    [SerializeField] private List list;
 
 
     public float span = 5.0f;
@@ -33,6 +35,9 @@ public class BossBulletGenerator : MonoBehaviour
         center =  boss.transform.position;
         bull =(GameObject) Resources.Load("EnemyBullet");
         targetImage = (GameObject)Resources.Load("TargetUI");
+        attackList = GameObject.Find("attackList");
+        list = attackList.GetComponent<List>();
+
 
     }
 
@@ -64,6 +69,7 @@ public class BossBulletGenerator : MonoBehaviour
             なるので注意が必要なのである*/
 
             GameObject bullMade=Instantiate(bull, center+zurashi, Quaternion.identity);
+            list.attack.Add(bullMade);
             bullMade.GetComponent<BossBulletController>().targetUI = imageMade;
             bullMade.GetComponent<BossBulletController>().startPoint = center + zurashi;
             Vector3 direction = where - (center + zurashi);

@@ -7,8 +7,9 @@ public class bulletController : MonoBehaviour
     GameObject airPlane;
     private Vector3 latestPos;
     public float num;
-    [SerializeField] private GameObject attackList;
-    [SerializeField] private List<GameObject> enemy;
+    public GameObject attackList;
+    public List list;
+    public List<GameObject> enemyList;
 
     public float span = 0.5f;
 
@@ -23,8 +24,9 @@ public class bulletController : MonoBehaviour
     void Start()
     {
          latestPos = transform.position;
-        // attackList = GameObject.Find("attackList");
-        // enemy = attackList.GetComponent<List>().attack;
+        attackList = GameObject.Find("attackList");
+        list = attackList.GetComponent<List>();
+        enemyList = list.attack;
     }
 
     void Update()
@@ -37,7 +39,7 @@ public class bulletController : MonoBehaviour
     }
       void  BulletDelete(){
         Destroy(gameObject);
-        Debug.Log("delete");
+//        Debug.Log("delete");
 
     }
 }

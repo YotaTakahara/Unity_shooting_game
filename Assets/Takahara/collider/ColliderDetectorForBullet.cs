@@ -66,6 +66,7 @@ public class ColliderDetectorForBullet : ColliderDetector
     private void Update()
     {
         _didCollide = false;
+        SphereDetection();
         if (whichBull == 1)
         {
             SphereDetection();
@@ -134,7 +135,7 @@ public class ColliderDetectorForBullet : ColliderDetector
                 {
                     if (attack[i].tag == "Boss")
                     {
-                        ColliderSphere[] shin = attack[i].GetComponentsInChildren<ColliderSphere>();
+                        ColliderSphere[] shin = attack[i].GetComponents<ColliderSphere>();
                         for (int j = 0; j < shin.Length; j++)
                         {
                             _didCollide = shin[j].CheckSphere(_sphere);

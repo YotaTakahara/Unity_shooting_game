@@ -7,6 +7,9 @@ public class BossBulletController : bulletController
     // Start is called before the first frame update
     public GameObject targetUI;
     public Vector3 startPoint;
+    // [SerializeField] private GameObject attackList;
+    // [SerializeField] private List list;
+     
 
     void Update() {
         float distance = Vector3.Magnitude(transform.position - startPoint);
@@ -23,8 +26,9 @@ public class BossBulletController : bulletController
     // Update is called once per frame
     public  void EveryDelete(){
         Destroy(targetUI.gameObject);
+        enemyList.Remove(gameObject);
         Destroy(gameObject);
-        Debug.Log("きえた!!!!");
+        
 
     }
 }

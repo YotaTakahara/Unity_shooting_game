@@ -67,4 +67,55 @@ public class ColliderSphere : MonoBehaviour, ICollider, ISphere
        
         Gizmos.DrawWireSphere(WorldCenter, _radius);
     }
+
+    public bool CheckCapsuleCollision( Vector3 playerPlace, Vector3 localPoint, float maxLen, float maxSeLen)
+    {
+        Vector3 diffPosition = WorldCenter - transform.position;
+        Vector3 relativePosition = transform.InverseTransformDirection(diffPosition);
+        float naiseki = Vector3.Dot(relativePosition, localPoint);
+        float absN = Mathf.Abs(naiseki);
+        // Debug.Log("localMyPlace " + localDiffPlace+ " naiseki " + naiseki+ " localPoint " + localPoint);
+
+        if (maxLen + Radius < absN)
+        {
+            return false;
+        }
+        else
+        {
+            if (maxLen - maxSeLen <= absN && absN <= maxLen + Radius)
+            {
+                Vector3 circleCenter = (maxLen - maxSeLen) * localPoint * naiseki / (Mathf.Abs(naiseki));
+                Vector3 circleDistance = circleCenter - relativePosition;
+                //  Debug.Log("circleCenter " + circleCenter + " circleDistance " + circleDistance.magnitude +
+                //            " ene.transform.localScale.x " +
+                //            ene.transform.localScale.x);
+                if (circleDistance.magnitude < Radius + maxSeLen)
+                {
+                    /*どうあがいても円判定の実装がおかしいので早めになおしておく*/
+                    Debug.Log("円判定");
+                    // Debug.Log("this:"+this);
+                    // Debug.Log("そっちかい");
+                    return true;
+                }
+            }
+
+            if (absN < maxLen - maxSeLen)
+            {
+                Vector3 line = naiseki * localPoint;
+                Vector3 lineDistance = line - relativePosition;
+                //  Debug.Log("line " + line + " lineDistance " + lineDistance.magnitude + " ene.transform.localScale.x " +
+                //           ene.transform.localScale.x);
+
+                if (lineDistance.magnitude < Radius + maxSeLen)
+                {
+                     Debug.Log("カプセル判定");
+                    // Debug.Log("this:" + this);
+                    // Debug.Log("そっちかい");
+                    return true;
+                }
+            }
+        }
+
+        return false;
+    }
 }
