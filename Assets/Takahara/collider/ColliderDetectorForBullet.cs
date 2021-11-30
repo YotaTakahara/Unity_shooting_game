@@ -184,11 +184,10 @@ public class ColliderDetectorForBullet : ColliderDetector
 
 
                                     Instantiate(fire, transform.position, Quaternion.identity);
-                                    // int index = attack.IndexOf(attack[i]);
-                                    // attack.RemoveAt(index);
-                                    if(attack[i]!=null){
-                                        scoreController.RatioChange(attack[i]);
-                                    }
+                                
+                                    // if(attack[i]!=null){
+                                    //     scoreController.RatioChange(attack[i]);
+                                    // }
                                     Destroy(attack[i]);
                                     Destroy(this.gameObject);
                                     Debug.Log("kottideshita");
