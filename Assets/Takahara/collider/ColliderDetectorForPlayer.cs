@@ -22,6 +22,7 @@ public class ColliderDetectorForPlayer : ColliderDetector
 
    public  void Awake()
     {
+        //fire = (GameObject)Resources.Load("tryFire");
         float x = transform.localScale.x;
         float y = transform.localScale.y;
         float z = transform.localScale.z;

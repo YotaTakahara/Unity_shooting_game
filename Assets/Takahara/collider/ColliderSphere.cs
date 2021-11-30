@@ -108,7 +108,7 @@ public class ColliderSphere : MonoBehaviour, ICollider, ISphere
 
                 if (lineDistance.magnitude < Radius + maxSeLen)
                 {
-                     Debug.Log("カプセル判定");
+                    // Debug.Log("カプセル判定");
                     // Debug.Log("this:" + this);
                     // Debug.Log("そっちかい");
                     return true;

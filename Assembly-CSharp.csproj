@@ -36,10 +36,10 @@
     <ImplicitlyExpandDesignTimeFacades>false</ImplicitlyExpandDesignTimeFacades>
   </PropertyGroup>
   <ItemGroup>
-     <Compile Include="Assets\Takahara\GeneralScripts\StageList.cs" />
+     <Compile Include="Assets\Takahara\RigidBody\GeneralScripts\StageList.cs" />
      <Compile Include="Assets\Takahara_Boss\TryColor.cs" />
-     <Compile Include="Assets\Takahara\GeneralScripts\air.cs" />
-     <Compile Include="Assets\Takahara\GeneralScripts\bulletGenerator.cs" />
+     <Compile Include="Assets\Takahara\RigidBody\GeneralScripts\air.cs" />
+     <Compile Include="Assets\Takahara\RigidBody\GeneralScripts\bulletGenerator.cs" />
      <Compile Include="Assets\SampleScenes\Scripts\ParticleSceneControls.cs" />
      <Compile Include="Assets\Takahara\collider\ICollideObject.cs" />
      <Compile Include="Assets\Takahara_general\CanvasSCore.cs" />
@@ -60,7 +60,7 @@
      <Compile Include="Assets\SceneBackup.cs" />
      <Compile Include="Assets\Takahara_sudden\Tmp.cs" />
      <Compile Include="Assets\Takahara_sudden\TargetUI.cs" />
-     <Compile Include="Assets\Takahara\GeneralScripts\GameController.cs" />
+     <Compile Include="Assets\Takahara\RigidBody\GeneralScripts\GameController.cs" />
      <Compile Include="Assets\Takahara_Ai\StatefulObjectBase.cs" />
      <Compile Include="Assets\EffectExamples\Shared\Scripts\DecalDestroyer.cs" />
      <Compile Include="Assets\Takahara\collider\MyColliderDetection.cs" />
@@ -73,7 +73,7 @@
      <Compile Include="Assets\Takahara\collider\List.cs" />
      <Compile Include="Assets\Takahara_sudden\CanvasPoint\ObjectMarker.cs" />
      <Compile Include="Assets\Takahara\collider\ColliderCapsule.cs" />
-     <Compile Include="Assets\Takahara\GeneralScripts\stageGenerator.cs" />
+     <Compile Include="Assets\Takahara\RigidBody\GeneralScripts\stageGenerator.cs" />
      <Compile Include="Assets\EffectExamples\Shared\Scripts\ParticleExamples.cs" />
      <Compile Include="Assets\Takahara_general\AirPlane.cs" />
      <Compile Include="Assets\Takahara\Bullet\BulletCollider.cs" />
@@ -90,29 +90,30 @@
      <Compile Include="Assets\Takahara\collider\BaseCollider.cs" />
      <Compile Include="Assets\Takahara_study\Test.cs" />
      <Compile Include="Assets\SampleScenes\Scripts\PlaceTargetWithMouse.cs" />
-     <Compile Include="Assets\Takahara\GeneralScripts\LifePanel.cs" />
+     <Compile Include="Assets\Takahara\RigidBody\GeneralScripts\LifePanel.cs" />
      <Compile Include="Assets\SampleScenes\Menu\Scripts\MenuSceneLoader.cs" />
-     <Compile Include="Assets\Takahara\GeneralScripts\simpleFollow.cs" />
-     <Compile Include="Assets\Takahara\GeneralScripts\charaController.cs" />
+     <Compile Include="Assets\Takahara\RigidBody\GeneralScripts\simpleFollow.cs" />
+     <Compile Include="Assets\Takahara\RigidBody\GeneralScripts\charaController.cs" />
      <Compile Include="Assets\Takahara_Boss\BossZarigani.cs" />
      <Compile Include="Assets\Takahara_sudden\EnemyPoint.cs" />
      <Compile Include="Assets\Takahara_sudden\Collider\ColliderCube.cs" />
      <Compile Include="Assets\Takahara_Ai\State.cs" />
      <Compile Include="Assets\Takahara_sudden\UIController.cs" />
+     <Compile Include="Assets\Takahara\collider\ColliderDetector.cs" />
      <Compile Include="Assets\Takahara_sudden\AirController.cs" />
      <Compile Include="Assets\Takahara\Bullet\BossBulletController.cs" />
      <Compile Include="Assets\Takahara_general\SingletonMonoBehaviour.cs" />
      <Compile Include="Assets\Takahara_sudden\TmpCollider.cs" />
      <Compile Include="Assets\Takahara_sudden\CanvasPoint\TargetTexture.cs" />
      <Compile Include="Assets\Takahara_study\Camerayota.cs" />
-     <Compile Include="Assets\Takahara\GeneralScripts\AirPlaneController.cs" />
+     <Compile Include="Assets\Takahara\RigidBody\GeneralScripts\AirPlaneController.cs" />
      <Compile Include="Assets\Fantasy Monster(wizard) Demo\Environment\Materials\Scripts\MoveCTRLDemo.cs" />
-     <Compile Include="Assets\Takahara\GeneralScripts\LifeGauge.cs" />
+     <Compile Include="Assets\Takahara\collider\ColliderDetectorForPlayer.cs" />
+     <Compile Include="Assets\Takahara\RigidBody\GeneralScripts\LifeGauge.cs" />
+     <Compile Include="Assets\Takahara\collider\DetectorTmp.cs" />
      <Compile Include="Assets\Takahara\collider\ColliderSphere.cs" />
      <Compile Include="Assets\EffectExamples\Shared\Scripts\GunAim.cs" />
-     <Compile Include="Assets\Takahara\collider\ColliderDetectorForPlayer.cs" />
-     <Compile Include="Assets\Takahara\collider\ColliderDetector.cs" />
-     <Compile Include="Assets\Takahara\collider\DetectorTmp.cs" />
+     <Compile Include="Assets\TakaharaAns\ScoreController.cs" />
      <None Include="Assets\NejikoBaseAssets\LICENSE.txt" />
      <None Include="Assets\smcs.rsp" />
      <None Include="Assets\SampleScenes\Shaders\Skybox-Procedural.shader" />

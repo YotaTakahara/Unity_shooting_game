@@ -15,6 +15,7 @@ public class ColliderDetectorForBullet : ColliderDetector
     // [SerializeField] private GameObject boss;
     // [SerializeField] private BossZarigani zariScript;
     [SerializeField] private bulletController bullController;
+    [SerializeField] private ScoreController scoreController;
     [SerializeField] private int whichBull = 0;
 
 
@@ -39,6 +40,8 @@ public class ColliderDetectorForBullet : ColliderDetector
         // }
 
         _sphere = GetComponent<ISphere>();
+        GameObject scoreTmp = GameObject.Find("ScoreController");
+        scoreController = scoreTmp.GetComponent<ScoreController>();
         //        Debug.Log("kokohayobareta");
 
         // attackList = GameObject.Find("attackList");
@@ -183,8 +186,13 @@ public class ColliderDetectorForBullet : ColliderDetector
                                     Instantiate(fire, transform.position, Quaternion.identity);
                                     // int index = attack.IndexOf(attack[i]);
                                     // attack.RemoveAt(index);
+                                    if(attack[i]!=null){
+                                        scoreController.RatioChange(attack[i]);
+                                    }
                                     Destroy(attack[i]);
                                     Destroy(this.gameObject);
+                                    Debug.Log("kottideshita");
+                                    
 
 
                                     airScript.point += 1;
@@ -217,13 +225,16 @@ public class ColliderDetectorForBullet : ColliderDetector
                                         Instantiate(fire, transform.position, Quaternion.identity);
                                         // int index = attack.IndexOf(attack[i]);
                                         // attack.RemoveAt(index);
+                                      //
+                                      
+                                        scoreController.RatioChange(attack[i]);
                                         Destroy(attack[i]);
                                         Destroy(this.gameObject);
 
 
                                         airScript.point += 1;
 
-                                        //Debug.Log("無事衝突判定ができました");
+                                        Debug.Log("無事衝突判定ができました");
                                     }
                                 }
 
