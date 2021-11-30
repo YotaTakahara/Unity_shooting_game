@@ -11,6 +11,7 @@ public class ScoreController : MonoBehaviour
     [SerializeField] string lastEnemy=null;
     [SerializeField] GameObject last=null;
     [SerializeField] private Text text;
+    int kuso = 0;
 
     void Start()
     {
@@ -25,29 +26,45 @@ public class ScoreController : MonoBehaviour
     }
     public void RatioChange(GameObject tmp){
         string tmpName = tmp.name;
-        Debug.Log("last:" + last.name);
+//        Debug.Log("last:" + last.name);
         Debug.Log("tmp:" + tmp.name);
-        if (last != null)
+        if (lastEnemy != null)
         {
+            
 
-            if (last.name == tmpName)
-            {
-                scoreChange += 1;
+            if (lastEnemy == tmpName)
+            {kuso += 1;
+                if(kuso==2){
+                    Debug.Log("last:" + last);
+                    Debug.Log("tmp:" + tmp);
+
+                    scoreChange += 1;
+                    kuso = 0;
+
+                }
+               
             }
             else
             {
                 scoreChange = 0;
-                // lastEnemy = tmp.name;
+                scoreRatio = 1;
+                lastEnemy = tmp.name;
 
             }
+        }else{
+            lastEnemy = tmpName;
         }
 
-        last = tmp;
+       // last = tmp;
+       
 
 
     }
     public void ratioCalc(){
-        scoreRatio = 1.0f + 1.0f*scoreChange / 5;
-        Debug.Log("scoreRatio:" + scoreRatio);
+        if (5 <= scoreChange)
+        {
+            scoreRatio = 1.0f + 1.0f * scoreChange / 5;
+            //        Debug.Log("scoreRatio:" + scoreRatio);
+        }
     }
 }

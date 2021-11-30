@@ -181,16 +181,19 @@ public class ColliderDetectorForBullet : ColliderDetector
                                 }
                                 else
                                 {
+                                    if (attack[i] != null)
+                                    {
+                                        scoreController.RatioChange(attack[i]);
 
+                                    }
+                                   
 
                                     Instantiate(fire, transform.position, Quaternion.identity);
                                 
-                                    // if(attack[i]!=null){
-                                    //     scoreController.RatioChange(attack[i]);
-                                    // }
+                                   
                                     Destroy(attack[i]);
                                     Destroy(this.gameObject);
-                                    Debug.Log("kottideshita");
+//                                    Debug.Log("kottideshita");
                                     
 
 
@@ -226,7 +229,7 @@ public class ColliderDetectorForBullet : ColliderDetector
                                         // attack.RemoveAt(index);
                                       //
                                       
-                                        scoreController.RatioChange(attack[i]);
+                                       // scoreController.RatioChange(attack[i]);
                                         Destroy(attack[i]);
                                         Destroy(this.gameObject);
 

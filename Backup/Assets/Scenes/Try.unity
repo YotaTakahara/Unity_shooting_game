@@ -2424,7 +2424,6 @@ MonoBehaviour:
   boss: {fileID: 0}
   zariScript: {fileID: 0}
   _didCollide: 0
-  fire: {fileID: 0}
 --- !u!4 &1744069122 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5184491314372762580, guid: c7706364d54912e499ded4a7ae3d9158, type: 3}

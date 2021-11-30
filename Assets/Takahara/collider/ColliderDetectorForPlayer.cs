@@ -22,7 +22,7 @@ public class ColliderDetectorForPlayer : ColliderDetector
 
    public  void Awake()
     {
-        //fire = (GameObject)Resources.Load("tryFire");
+        fire = (GameObject)Resources.Load("tryFire");
         float x = transform.localScale.x;
         float y = transform.localScale.y;
         float z = transform.localScale.z;
@@ -151,7 +151,7 @@ public class ColliderDetectorForPlayer : ColliderDetector
                                 {
 
 
-                                    Instantiate(fire, transform.position, Quaternion.identity);
+                                    //Instantiate(fire, transform.position, Quaternion.identity);
                                     // int index = attack.IndexOf(attack[i]);
                                     // attack.RemoveAt(index);
                                     Destroy(attack[i]);
