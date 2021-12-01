@@ -108,6 +108,7 @@ public class DetectorTmp : ColliderDetector
                         Debug.Log("dekitaaaaaa");
 
                         //  air.point += 1;
+                        pointAdder.PointCalcChange(1);
 
 
                     }
@@ -187,6 +188,7 @@ public class DetectorTmp : ColliderDetector
 
 
                                     air.point += 1;
+                                    pointAdder.PointCalcChange(1);
                                 }
 
 
@@ -221,6 +223,7 @@ public class DetectorTmp : ColliderDetector
 
 
                                         air.point += 1;
+                                        pointAdder.PointCalcChange(1);
 
                                         //Debug.Log("無事衝突判定ができました");
                                     }

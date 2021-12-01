@@ -41,7 +41,7 @@ public class ColliderDetectorForBullet : ColliderDetector
     private void Update()
     {
         _didCollide = false;
-        SphereDetection();
+        //SphereDetection();
         if (whichBull == 1)
         {
             SphereDetection();

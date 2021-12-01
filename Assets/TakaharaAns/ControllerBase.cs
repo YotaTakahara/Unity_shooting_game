@@ -17,7 +17,7 @@ public class ControllerBase : MonoBehaviour
     public ScoreController scoreController;
     public PointAdder pointAdder;
     [Space]
-    public float point = 0;
+    public float point = 0.0f;
 
     void Awake()
     {

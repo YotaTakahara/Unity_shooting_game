@@ -17,15 +17,16 @@ public class DesignController : MonoBehaviour
         gameController = gameTmp.GetComponent<GameController>();
         GameObject stageTmp = GameObject.Find("StageGenerator");
         stageGenerator = stageTmp.GetComponent<StageGenerator>();
-        //RenderSettings.skybox = skybox[0];
+        RenderSettings.skybox = skybox[0];
 
     }
 
     // Update is called once per frame
     void Update()
     {
-        //tmpSpan += Time.deltaTime;
-        // if(span<tmpSpan){
+        // tmpSpan += Time.deltaTime;
+        // if (span < tmpSpan)
+        // {
         //     tmpSpan = 0;
 
         //     RenderSettings.skybox = skybox[tmp];

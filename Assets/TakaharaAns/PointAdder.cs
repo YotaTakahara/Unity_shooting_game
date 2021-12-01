@@ -29,7 +29,7 @@ public class PointAdder : ControllerBase
 
     public void PointCalcChange(float pointPlus)
     {
-        //coefficient = scoreController.scoreRatio;
+        coefficient = scoreController.scoreRatio;
         AddPoint(coefficient, pointPlus);
 
 
