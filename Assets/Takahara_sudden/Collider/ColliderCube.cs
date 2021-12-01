@@ -14,17 +14,29 @@ public class ColliderCube : MonoBehaviour, ICollider, ICube
     {
         get { return _center; }
     }
+    // public float X
+    // {
+    //     get { return transform.localScale.x; }
+    // }
+    // public float Y
+    // {
+    //     get { return transform.localScale.y; }
+    // }
+    // public float Z
+    // {
+    //     get { return transform.localScale.z; }
+    // }
     public float X
     {
-        get { return transform.localScale.x; }
+        get { return transform.lossyScale.x; }
     }
     public float Y
     {
-        get { return transform.localScale.y; }
+        get { return transform.lossyScale.y; }
     }
     public float Z
     {
-        get { return transform.localScale.z; }
+        get { return transform.lossyScale.z; }
     }
     public Vector3 WorldCenter
     {

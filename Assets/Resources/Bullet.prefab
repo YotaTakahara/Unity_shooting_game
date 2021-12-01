@@ -100,10 +100,12 @@ MonoBehaviour:
   abs: 0
   num: 1
   attackList: {fileID: 0}
-  enemy: []
+  list: {fileID: 0}
+  enemyList: []
   span: 0.5
   range: 30
   attackOrWall: 1
+  attackPoint: 1
 --- !u!114 &-7291845709572284527
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -116,14 +118,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 619eb082e5dfd3f499e52ac5662545a4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  check: {fileID: 0}
+  player: {fileID: 0}
   air: {fileID: 0}
+  gameController: {fileID: 0}
+  stageGenerator: {fileID: 0}
   attackList: {fileID: 0}
+  list: {fileID: 0}
+  stageList: {fileID: 0}
+  designController: {fileID: 0}
+  uiController: {fileID: 0}
+  scoreController: {fileID: 0}
+  pointAdder: {fileID: 0}
+  point: 0
   attack: []
   obstacle: []
-  airScript: {fileID: 0}
   boss: {fileID: 0}
   zariScript: {fileID: 0}
+  _didCollide: 0
   bullController: {fileID: 0}
   whichBull: 0
   fire: {fileID: 1000011797152326, guid: acf39d9f4addf294d93fa56fa373961b, type: 3}
@@ -139,6 +150,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ff1df1125e8b8c949ac5115e775568ca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  damageChange: 0
   _center: {x: 0, y: 0, z: 0}
   k: 1
   _radius: 0.5

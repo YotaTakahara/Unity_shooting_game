@@ -296,6 +296,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ff1df1125e8b8c949ac5115e775568ca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  damageChange: 0
   _center: {x: 0, y: 0, z: 0}
   k: 1
   _radius: 0.7

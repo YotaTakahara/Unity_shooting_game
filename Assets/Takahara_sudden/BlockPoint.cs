@@ -13,9 +13,10 @@ public class BlockPoint : ControllerBase
     void Start()
     {
         canvas = GameObject.Find("Canvas");
+        prefab = (GameObject)Resources.Load("CubeSmall");
 
 
-        Vector3 tmpSize = new Vector3(0, transform.localScale.y, 0);
+        Vector3 tmpSize = new Vector3(0, transform.lossyScale.y, 0);
         GameObject go = (GameObject)Instantiate(prefab, tmpSize, Quaternion.identity);
         Debug.Log("go:" + go);
         list.obstacle.Add(go);
@@ -29,7 +30,8 @@ public class BlockPoint : ControllerBase
         {
             Vector3 offset = new Vector3(0, 2.5f, 0);
             Gizmos.color = new Color(0, 0.8f, 0, 0.5f);
-            Gizmos.DrawCube(transform.position + offset, new Vector3(5, 5, 2));
+            Vector3 size = prefab.transform.lossyScale;
+            Gizmos.DrawCube(transform.position + offset, size);
         }
 
     }

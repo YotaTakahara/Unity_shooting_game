@@ -5,7 +5,7 @@ public class ColliderSphere : MonoBehaviour, ICollider, ISphere
     //private Vector3 _center = Vector3.zero;
     //修正要確認
     //コライダーのコードまじでぐちゃぐちゃ
-    [SerializeField] private int damageChange=0;
+    [SerializeField] private int damageChange = 0;
     public Vector3 _center = new Vector3(0, 0, 0);
     public float k = 2 * 1.0f;
 
@@ -29,7 +29,7 @@ public class ColliderSphere : MonoBehaviour, ICollider, ISphere
     {
 
         // _transform = this.transform;
-        _radius = transform.localScale.y/2*k;/// 2 * k;
+        _radius = transform.lossyScale.y;/// 2 * k;
         // _radius = 15f;
     }
 
@@ -55,20 +55,23 @@ public class ColliderSphere : MonoBehaviour, ICollider, ISphere
 
     void OnDrawGizmos()
     {
-        if(damageChange==0){
+        if (damageChange == 0)
+        {
             Gizmos.color = Color.red;
         }
-        else if(damageChange==1){
+        else if (damageChange == 1)
+        {
             Gizmos.color = Color.green;
         }
-        else if(damageChange==2){
+        else if (damageChange == 2)
+        {
             Gizmos.color = Color.blue;
         }
-       
+
         Gizmos.DrawWireSphere(WorldCenter, _radius);
     }
 
-    public bool CheckCapsuleCollision( Vector3 playerPlace, Vector3 localPoint, float maxLen, float maxSeLen)
+    public bool CheckCapsuleCollision(Vector3 playerPlace, Vector3 localPoint, float maxLen, float maxSeLen)
     {
         Vector3 diffPosition = WorldCenter - transform.position;
         Vector3 relativePosition = transform.InverseTransformDirection(diffPosition);

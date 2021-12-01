@@ -14,6 +14,7 @@ public class StageGenerator : MonoBehaviour
 
     [SerializeField] private GameObject[] stageChips1;
     [SerializeField] private GameObject[] stageChips2;
+    [SerializeField] private GameObject[] stageChips3;
     [SerializeField] private GameObject[] stageChangeStage;
 
     [SerializeField] private GameObject[] currentStageChips;
@@ -50,10 +51,14 @@ public class StageGenerator : MonoBehaviour
             {
                 stageChips2 = stageList.stageChips2;
             }
+            else if (i == 3)
+            {
+                stageChips3 = stageList.stageChips3;
+            }
 
         }
-        stageChangeStage = stageList.stageChangeStage;
-        currentStageChips = stageChips2;
+
+        currentStageChips = stageChips3;
         //ここでちょびっと変更している
 
 

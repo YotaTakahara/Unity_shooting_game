@@ -14,6 +14,7 @@ public class EnemyPoint : ControllerBase
 
     void Start()
     {
+        //  prefab = (GameObject)Resources.Load("TurtleShellSmall");
         go = (GameObject)Instantiate(prefab, Vector3.zero, Quaternion.identity);
 
         uiController.UIInstance(go);

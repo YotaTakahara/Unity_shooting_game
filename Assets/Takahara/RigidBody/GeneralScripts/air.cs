@@ -32,7 +32,7 @@ public class air : MonoBehaviour
 
     public Vector3 moveDirection = Vector3.zero;
     public int targetLane;
-    public int targetLane1 = 2;
+    public float targetLane1;//= 2;
     public float speedZ;
     public float speedX;
     public float speedY;
@@ -71,6 +71,8 @@ public class air : MonoBehaviour
         miuRb = GetComponent<Rigidbody>();
         yotta = GetComponent<RigidTakahara>();
         LaneHeight = transform.position.y;
+        targetLane1 = transform.position.y;
+
 
     }
 
@@ -109,12 +111,12 @@ public class air : MonoBehaviour
     public void MoveToUp()
     {
         //Debug.Log("上反応しています");
-        targetLane1 = 6;
+        targetLane1 = LaneHeight * 1.5f;
     }
     public void MoveToDown()
     {
         //Debug.Log("上反応しています");
-        targetLane1 = 2;
+        targetLane1 = LaneHeight;
     }
     public void MoveToLeft()
     {
