@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657826, g: 0.49641263, b: 0.57481676, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -369,9 +369,10 @@ MonoBehaviour:
   bull: {fileID: 0}
   center: {x: 0, y: 0, z: 0}
   radius: 2
-  span: 2
+  player: {fileID: 0}
+  span: 3
   power: 500
-  bullNum: 6
+  bullNum: 9
 --- !u!1 &321515544
 GameObject:
   m_ObjectHideFlags: 0
@@ -1519,6 +1520,7 @@ MonoBehaviour:
   bull: {fileID: 0}
   center: {x: 0, y: 0, z: 0}
   radius: 0
+  player: {fileID: 0}
   span: 2
   power: 500
   bullNum: 0
@@ -1960,12 +1962,16 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3325622303383151224, guid: 1463e6a6eef722a4d9314d0fd145a7cc, type: 3}
+      propertyPath: span
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 3325622303383151224, guid: 1463e6a6eef722a4d9314d0fd145a7cc, type: 3}
       propertyPath: radius
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 3325622303383151224, guid: 1463e6a6eef722a4d9314d0fd145a7cc, type: 3}
       propertyPath: bullNum
-      value: 6
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 8699646024624280635, guid: 1463e6a6eef722a4d9314d0fd145a7cc, type: 3}
       propertyPath: m_Enabled
@@ -2509,9 +2515,10 @@ MonoBehaviour:
   bull: {fileID: 0}
   center: {x: 0, y: 0, z: 0}
   radius: 2
-  span: 2
+  player: {fileID: 0}
+  span: 3
   power: 500
-  bullNum: 6
+  bullNum: 9
 --- !u!1 &1811986362
 GameObject:
   m_ObjectHideFlags: 0
