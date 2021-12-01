@@ -19,12 +19,13 @@ public class bulletController : MonoBehaviour
     //銃弾役割切り替え成功
     //動作確認済み
     public int attackOrWall;
+    public int attackPoint = 1;
 
 
     void Start()
     {
-         latestPos = transform.position;
-        attackList = GameObject.Find("attackList");
+        latestPos = transform.position;
+        attackList = GameObject.Find("AttackList");
         list = attackList.GetComponent<List>();
         enemyList = list.attack;
     }
@@ -37,9 +38,10 @@ public class bulletController : MonoBehaviour
             BulletDelete();
         }
     }
-      void  BulletDelete(){
+    void BulletDelete()
+    {
         Destroy(gameObject);
-//        Debug.Log("delete");
+        //        Debug.Log("delete");
 
     }
 }

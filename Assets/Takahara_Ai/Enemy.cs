@@ -38,13 +38,16 @@ namespace Ai
         [SerializeField] private air air;
 
         [SerializeField] public float speed = 2.0f;
-        [SerializeField] private GameObject stageGenerator;
-        [SerializeField] private sstageGenerator sstageGenerator;
+        [SerializeField] private GameObject stageGeneratorTmp;
+        [SerializeField] private StageGenerator stageGenerator;
         [SerializeField] private float LaneWidth;
         [SerializeField] private List list;
-         
+        [SerializeField] private PointAdder pointAdder;
+        [Space]
+
 
         public float HP = 5;
+        public int defeatScore = 1;
         // public GameObject damage;
 
 
@@ -53,13 +56,13 @@ namespace Ai
             player = GameObject.Find("AirPlane");
             air = player.GetComponent<air>();
             animator = GetComponent<Animator>();
-            stageGenerator = GameObject.Find("StageGenerator");
-            sstageGenerator = stageGenerator.GetComponent<sstageGenerator>();
-            LaneWidth = sstageGenerator.LaneWidth;
-            GameObject listTmp = GameObject.Find("attackList");
+            stageGeneratorTmp = GameObject.Find("StageGenerator");
+            stageGenerator = stageGeneratorTmp.GetComponent<StageGenerator>();
+            LaneWidth = stageGenerator.LaneWidth;
+            GameObject listTmp = GameObject.Find("AttackList");
             list = listTmp.GetComponent<List>();
-
-
+            GameObject addTmp = GameObject.Find("PointAdder");
+            pointAdder = addTmp.GetComponent<PointAdder>();
             //  bullet = GameObject.FindGameObjectWithTag("enemyBullet");
             //Debug.Log("player " + player);
 
@@ -118,7 +121,7 @@ namespace Ai
 
         //     }
         // }
-    
+
 
 
         // void Update()
@@ -268,27 +271,28 @@ namespace Ai
 
             public override void Enter()
             {
-//                Debug.Log("attackStateが呼び出されています");
+                //                Debug.Log("attackStateが呼び出されています");
                 this.air = owner.air;
             }
 
             public override void Execute()
             {
                 // attackList = GameObject.Find("attackList");
-                
+
                 wherePlayer = owner.player.transform.position;
                 stopCircle = 20f;
                 span = 6.0f;
-                
+
 
                 //Debug.Log("Excute pursuit");
                 float diff = Vector3.Magnitude(wherePlayer - owner.transform.position);
-                Vector3 moveDirection = new Vector3(0, 0, owner.air.speedZ*1);
-                if(owner.player.transform.position.z<owner.transform.position.z){
+                Vector3 moveDirection = new Vector3(0, 0, owner.air.speedZ * 1);
+                if (owner.player.transform.position.z < owner.transform.position.z)
+                {
                     Vector3 globalDirection = transform.TransformDirection(moveDirection);
                     owner.transform.Translate(globalDirection);
                 }
-               
+
                 if (stopCircle < diff)
                 {
                     int index = (int)EnemyState.pursuit;
@@ -397,6 +401,7 @@ namespace Ai
 
                 Destroy(owner.gameObject);
                 owner.air.point += 1;
+                owner.pointAdder.PointCalcChange(owner.defeatScore);
             }
 
             public override void Exit()

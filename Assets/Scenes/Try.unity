@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657826, g: 0.49641263, b: 0.57481676, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -456,7 +456,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3770632971557873350, guid: e0f3d4fa04267e14fb4f1306810a64a8, type: 3}
       propertyPath: m_Name
-      value: attackList
+      value: AttackList
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e0f3d4fa04267e14fb4f1306810a64a8, type: 3}
@@ -1122,6 +1122,85 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 433874753}
   m_CullTransparentMesh: 1
+--- !u!1 &537391137
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 537391138}
+  - component: {fileID: 537391140}
+  - component: {fileID: 537391139}
+  m_Layer: 5
+  m_Name: RatioScore
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &537391138
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 537391137}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 811021197}
+  m_RootOrder: 7
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 1, y: 1}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: -200, y: -100}
+  m_SizeDelta: {x: 250, y: 200}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &537391139
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 537391137}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 0.049439307, g: 0.39149854, b: 0.9528302, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_FontData:
+    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_FontSize: 32
+    m_FontStyle: 0
+    m_BestFit: 0
+    m_MinSize: 3
+    m_MaxSize: 40
+    m_Alignment: 0
+    m_AlignByGeometry: 0
+    m_RichText: 1
+    m_HorizontalOverflow: 0
+    m_VerticalOverflow: 0
+    m_LineSpacing: 1
+  m_Text: New Text
+--- !u!222 &537391140
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 537391137}
+  m_CullTransparentMesh: 1
 --- !u!1 &580561736
 GameObject:
   m_ObjectHideFlags: 0
@@ -1379,6 +1458,7 @@ RectTransform:
   - {fileID: 594331032}
   - {fileID: 2139248171}
   - {fileID: 374373238}
+  - {fileID: 537391138}
   m_Father: {fileID: 0}
   m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -2149,6 +2229,109 @@ MonoBehaviour:
   _target: {fileID: 1744069122}
   _targetUI: {fileID: 2139248171}
   _worldOffset: {x: 0, y: 0, z: 0}
+--- !u!1 &1452278548
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1452278550}
+  - component: {fileID: 1452278549}
+  m_Layer: 0
+  m_Name: ScoreController
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1452278549
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1452278548}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 430206f684b155b448e4b75578d72385, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  scoreChange: 0
+  scoreRatio: 0
+  lastEnemy: 
+  last: {fileID: 0}
+  text: {fileID: 0}
+--- !u!4 &1452278550
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1452278548}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 436.99997, y: 201, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 15
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1504000387
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1504000389}
+  - component: {fileID: 1504000388}
+  m_Layer: 0
+  m_Name: PointAdder
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1504000388
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1504000387}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 535e3bf9788b7dc47b8c4ed115885d53, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 0}
+  air: {fileID: 0}
+  gameController: {fileID: 0}
+  stageGenerator: {fileID: 0}
+  attackList: {fileID: 0}
+  list: {fileID: 0}
+  stageList: {fileID: 0}
+  designController: {fileID: 0}
+  uiController: {fileID: 0}
+  scoreController: {fileID: 0}
+  pointAdder: {fileID: 0}
+  point: 0
+--- !u!4 &1504000389
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1504000387}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 1.0782166, y: 5.047352, z: -4.23}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 16
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1551890956
 GameObject:
   m_ObjectHideFlags: 0
@@ -2308,15 +2491,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5184491314372762576, guid: c7706364d54912e499ded4a7ae3d9158, type: 3}
       propertyPath: speedX
-      value: 0.1
+      value: 0.2
       objectReference: {fileID: 0}
     - target: {fileID: 5184491314372762576, guid: c7706364d54912e499ded4a7ae3d9158, type: 3}
       propertyPath: speedY
-      value: 0.1
+      value: 0.2
       objectReference: {fileID: 0}
     - target: {fileID: 5184491314372762576, guid: c7706364d54912e499ded4a7ae3d9158, type: 3}
       propertyPath: speedZ
-      value: 0.1
+      value: 0.2
       objectReference: {fileID: 0}
     - target: {fileID: 5184491314372762576, guid: c7706364d54912e499ded4a7ae3d9158, type: 3}
       propertyPath: m_Enabled
@@ -2428,11 +2611,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0aea50c5ceffdf84a9c9cc68e523ce80, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  player: {fileID: 0}
   air: {fileID: 0}
+  gameController: {fileID: 0}
+  stageGenerator: {fileID: 0}
   attackList: {fileID: 0}
+  list: {fileID: 0}
+  stageList: {fileID: 0}
+  designController: {fileID: 0}
+  uiController: {fileID: 0}
+  scoreController: {fileID: 0}
+  pointAdder: {fileID: 0}
+  point: 0
   attack: []
   obstacle: []
-  airScript: {fileID: 0}
   boss: {fileID: 0}
   zariScript: {fileID: 0}
   _didCollide: 0
@@ -2711,17 +2903,25 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a306b915b1290c745abd5a7b35650e27, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tmpStage: {fileID: 0}
-  stageGenerator: {fileID: 0}
-  panel: {fileID: 2052695488}
+  player: {fileID: 0}
   air: {fileID: 0}
-  airPlane: {fileID: 0}
+  gameController: {fileID: 0}
+  stageGenerator: {fileID: 0}
+  attackList: {fileID: 0}
+  list: {fileID: 0}
+  stageList: {fileID: 0}
+  designController: {fileID: 0}
+  uiController: {fileID: 0}
+  scoreController: {fileID: 0}
+  pointAdder: {fileID: 0}
+  point: 0
+  tmpStage: {fileID: 0}
+  panel: {fileID: 2052695488}
   text: {fileID: 396600621}
   stageChipSize: 0
   stagePreInstantiate: 0
   sceneNum: 0
   sceneDistance: 0
-  designController: {fileID: 0}
   check: 1
 --- !u!4 &2142633247
 Transform:

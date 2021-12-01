@@ -39,8 +39,8 @@ public class EnemyNew : StatefulObjectBase<EnemyNew, EnemyState>
     [SerializeField] private air air;
 
     [SerializeField] public float speed = 2.0f;
-    [SerializeField] private GameObject stageGenerator;
-    [SerializeField] private sstageGenerator sstageGenerator;
+    [SerializeField] private GameObject stageGeneratorTmp;
+    [SerializeField] private StageGenerator stageGenerator;
     [SerializeField] private float LaneWidth;
     // public GameObject damage;
 
@@ -50,9 +50,9 @@ public class EnemyNew : StatefulObjectBase<EnemyNew, EnemyState>
         player = GameObject.Find("AirPlane");
         air = player.GetComponent<air>();
         animator = GetComponent<Animator>();
-        stageGenerator = GameObject.Find("StageGenerator");
-        sstageGenerator = stageGenerator.GetComponent<sstageGenerator>();
-        LaneWidth = sstageGenerator.LaneWidth;
+        stageGeneratorTmp = GameObject.Find("StageGenerator");
+        stageGenerator = stageGeneratorTmp.GetComponent<StageGenerator>();
+        LaneWidth = stageGenerator.LaneWidth;
 
 
         //  bullet = GameObject.FindGameObjectWithTag("enemyBullet");

@@ -9,15 +9,15 @@ public class DesignController : MonoBehaviour
     [SerializeField] float span = 5.0f;
     [SerializeField] float tmpSpan = 0;
     [SerializeField] GameController gameController;
-    [SerializeField] private sstageGenerator stageGenerator;
-    [SerializeField]int tmp = 0;
+    [SerializeField] private StageGenerator stageGenerator;
+    [SerializeField] int tmp = 0;
     void Start()
     {
         GameObject gameTmp = GameObject.Find("GameController");
         gameController = gameTmp.GetComponent<GameController>();
         GameObject stageTmp = GameObject.Find("StageGenerator");
-        stageGenerator = stageTmp.GetComponent<sstageGenerator>();
-                //RenderSettings.skybox = skybox[0];
+        stageGenerator = stageTmp.GetComponent<StageGenerator>();
+        //RenderSettings.skybox = skybox[0];
 
     }
 
@@ -27,21 +27,23 @@ public class DesignController : MonoBehaviour
         //tmpSpan += Time.deltaTime;
         // if(span<tmpSpan){
         //     tmpSpan = 0;
-           
+
         //     RenderSettings.skybox = skybox[tmp];
         //     tmp += 1;
         // }
 
     }
-    public void SkyboxChange(){
+    public void SkyboxChange()
+    {
         tmp += 1;
         RenderSettings.skybox = skybox[tmp];
-        
+
 
 
 
     }
-    public void StageFinish(){
+    public void StageFinish()
+    {
         stageGenerator.UpdateStageChange(0);
     }
 }

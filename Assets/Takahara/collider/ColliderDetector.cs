@@ -2,20 +2,20 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ColliderDetector : MonoBehaviour
+public class ColliderDetector : ControllerBase
 {
     // Start is called before the first frame update
-    public GameObject air;
-    public GameObject attackList;
+    // public GameObject air;
+    // public GameObject attackList;
     public List<GameObject> attack;
     public List<GameObject> obstacle;
-    public air airScript;
+    //public air airScript;
     public GameObject boss;
     public BossZarigani zariScript;
     public bool _didCollide;
-    public void Start()
+    public void Initialize()
     {
-        air = GameObject.Find("AirPlane");
+        // air = GameObject.Find("AirPlane");
         //attackColliderRoot = GameObject.Find("Monsters");
         //attack = GameObject.FindGameObjectsWithTag("Monster");
         boss = GameObject.FindGameObjectWithTag("Boss");
@@ -24,16 +24,16 @@ public class ColliderDetector : MonoBehaviour
             zariScript = boss.GetComponent<BossZarigani>();
         }
 
-       // _sphere = GetComponent<ISphere>();
+        // _sphere = GetComponent<ISphere>();
 
-        attackList = GameObject.Find("attackList");
-        attack = attackList.GetComponent<List>().attack;
+        // attackList = GameObject.Find("AttackList");
+        attack = list.attack;
         //henkou
-        obstacle = attackList.GetComponent<List>().obstacle;
+        obstacle = list.obstacle;
 
-        airScript = air.GetComponent<air>();
-        
+        // airScript = air.GetComponent<air>();
+
     }
 
-    
+
 }

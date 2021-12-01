@@ -11,7 +11,7 @@ public class DetectorTmp : ColliderDetector
     // [SerializeField] private GameObject attackList;
     // [SerializeField] private List<GameObject> attack;
     // [SerializeField] private List<GameObject> obstacle;
-    // [SerializeField] private air airScript;
+    // [SerializeField] private air air;
     // [SerializeField] private GameObject boss;
     // [SerializeField] private BossZarigani zariScript;
     [SerializeField] private bulletController bullController;
@@ -39,14 +39,14 @@ public class DetectorTmp : ColliderDetector
         // }
 
         _sphere = GetComponent<ISphere>();
-//        Debug.Log("kokohayobareta");
+        //        Debug.Log("kokohayobareta");
 
         // attackList = GameObject.Find("attackList");
         // attack = attackList.GetComponent<List>().attack;
         // //henkou
         // obstacle = attackList.GetComponent<List>().obstacle;
 
-        // airScript = air.GetComponent<air>();
+        // air = air.GetComponent<air>();
 
         //  _colliders = attackColliderRoot.GetComponentsInChildren<ICollider>();
         //   _colliders = attackColliderRoot.GetComponentsInChildren<ICollider>();
@@ -107,7 +107,7 @@ public class DetectorTmp : ColliderDetector
 
                         Debug.Log("dekitaaaaaa");
 
-                        //  airScript.point += 1;
+                        //  air.point += 1;
 
 
                     }
@@ -186,7 +186,7 @@ public class DetectorTmp : ColliderDetector
                                     Destroy(this.gameObject);
 
 
-                                    airScript.point += 1;
+                                    air.point += 1;
                                 }
 
 
@@ -220,7 +220,7 @@ public class DetectorTmp : ColliderDetector
                                         Destroy(this.gameObject);
 
 
-                                        airScript.point += 1;
+                                        air.point += 1;
 
                                         //Debug.Log("無事衝突判定ができました");
                                     }
@@ -260,7 +260,7 @@ public class DetectorTmp : ColliderDetector
 //     [SerializeField] private GameObject attackList;
 //     [SerializeField] private List<GameObject> attack;
 //     [SerializeField] private List<GameObject> obstacle;
-//     [SerializeField] private air airScript;
+//     [SerializeField] private air air;
 //     [SerializeField] private GameObject boss;
 //     [SerializeField] private BossZarigani zariScript;
 //     [SerializeField] private bulletController bullController;
@@ -295,7 +295,7 @@ public class DetectorTmp : ColliderDetector
 //         //henkou
 //         obstacle = attackList.GetComponent<List>().obstacle;
 
-//         airScript = air.GetComponent<air>();
+//         air = air.GetComponent<air>();
 
 //         //  _colliders = attackColliderRoot.GetComponentsInChildren<ICollider>();
 //         //   _colliders = attackColliderRoot.GetComponentsInChildren<ICollider>();
@@ -356,7 +356,7 @@ public class DetectorTmp : ColliderDetector
 
 //                         Debug.Log("dekitaaaaaa");
 
-//                         //  airScript.point += 1;
+//                         //  air.point += 1;
 
 
 //                     }
@@ -435,7 +435,7 @@ public class DetectorTmp : ColliderDetector
 //                                     Destroy(this.gameObject);
 
 
-//                                     airScript.point += 1;
+//                                     air.point += 1;
 //                                 }
 
 
@@ -469,7 +469,7 @@ public class DetectorTmp : ColliderDetector
 //                                         Destroy(this.gameObject);
 
 
-//                                         airScript.point += 1;
+//                                         air.point += 1;
 
 //                                         //Debug.Log("無事衝突判定ができました");
 //                                     }

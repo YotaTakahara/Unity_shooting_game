@@ -4,18 +4,8 @@ using Ai;
 
 public class ColliderDetectorForBullet : ColliderDetector
 {
-    // [SerializeField] private GameObject _sphereObj;
-    //[SerializeField] private GameObject[] attack;
-    //[SerializeField] public ColliderSphere check;
-    // [SerializeField] private GameObject air;
-    // [SerializeField] private GameObject attackList;
-    // [SerializeField] private List<GameObject> attack;
-    // [SerializeField] private List<GameObject> obstacle;
-    // [SerializeField] private air airScript;
-    // [SerializeField] private GameObject boss;
-    // [SerializeField] private BossZarigani zariScript;
+
     [SerializeField] private bulletController bullController;
-    [SerializeField] private ScoreController scoreController;
     [SerializeField] private int whichBull = 0;
 
 
@@ -28,7 +18,7 @@ public class ColliderDetectorForBullet : ColliderDetector
     // GameObject cube;
 
 
-    private void Awake()
+    private void Start()
     {
         // air = GameObject.Find("AirPlane");
         // //attackColliderRoot = GameObject.Find("Monsters");
@@ -40,25 +30,7 @@ public class ColliderDetectorForBullet : ColliderDetector
         // }
 
         _sphere = GetComponent<ISphere>();
-        GameObject scoreTmp = GameObject.Find("ScoreController");
-        scoreController = scoreTmp.GetComponent<ScoreController>();
-        //        Debug.Log("kokohayobareta");
-
-        // attackList = GameObject.Find("attackList");
-        // attack = attackList.GetComponent<List>().attack;
-        // //henkou
-        // obstacle = attackList.GetComponent<List>().obstacle;
-
-        // airScript = air.GetComponent<air>();
-
-        //  _colliders = attackColliderRoot.GetComponentsInChildren<ICollider>();
-        //   _colliders = attackColliderRoot.GetComponentsInChildren<ICollider>();
-        // Debug.Log("targetが取得できたか" + attack.Length);
-        // Debug.Log("_sphere"+_sphere);
-
-
-        // cube = GameObject.FindGameObjectWithTag("Wall");
-        // cubeScript = cube.GetComponent<ColliderCube>();
+        Initialize();
 
         bullController = GetComponent<bulletController>();
         whichBull = bullController.attackOrWall;
@@ -111,7 +83,8 @@ public class ColliderDetectorForBullet : ColliderDetector
 
                         Debug.Log("dekitaaaaaa");
 
-                        //  airScript.point += 1;
+                        //  air.point += 1;
+                        //pointAdder.PointCalcChange(1);
 
 
                     }
@@ -155,9 +128,6 @@ public class ColliderDetectorForBullet : ColliderDetector
 
                         }
 
-
-
-
                     }
                     else
                     {
@@ -186,18 +156,15 @@ public class ColliderDetectorForBullet : ColliderDetector
                                         scoreController.RatioChange(attack[i]);
 
                                     }
-                                   
+
 
                                     Instantiate(fire, transform.position, Quaternion.identity);
-                                
-                                   
+
+
                                     Destroy(attack[i]);
                                     Destroy(this.gameObject);
-//                                    Debug.Log("kottideshita");
-                                    
-
-
-                                    airScript.point += 1;
+                                    air.point += 1;
+                                    pointAdder.PointCalcChange(1);
                                 }
 
 
@@ -209,9 +176,6 @@ public class ColliderDetectorForBullet : ColliderDetector
                             for (int j = 0; j < shin.Length; j++)
                             {
                                 _didCollide = shin[j].CheckSphere(_sphere);
-
-                                //Debug.Log("原因はここです");
-
                                 if (_didCollide)
                                 {
                                     if (attack[i].gameObject.tag == "MonsterHP")
@@ -222,22 +186,23 @@ public class ColliderDetectorForBullet : ColliderDetector
 
 
                                     }
-                                    else
-                                    {
-                                        Instantiate(fire, transform.position, Quaternion.identity);
-                                        // int index = attack.IndexOf(attack[i]);
-                                        // attack.RemoveAt(index);
-                                      //
-                                      
-                                       // scoreController.RatioChange(attack[i]);
-                                        Destroy(attack[i]);
-                                        Destroy(this.gameObject);
+                                    // else
+                                    // {
+                                    //     Instantiate(fire, transform.position, Quaternion.identity);
+                                    //     // int index = attack.IndexOf(attack[i]);
+                                    //     // attack.RemoveAt(index);
+                                    //     //
+
+                                    //     // scoreController.RatioChange(attack[i]);
+                                    //     Destroy(attack[i]);
+                                    //     Destroy(this.gameObject);
 
 
-                                        airScript.point += 1;
+                                    //     air.point += 1;
+                                    //     pointAdder.PointCalcChange(1);
 
-                                        Debug.Log("無事衝突判定ができました");
-                                    }
+                                    //     Debug.Log("無事衝突判定ができました");
+                                    // }
                                 }
 
                             }

@@ -4,159 +4,161 @@ using UnityEngine;
 
 public class air : MonoBehaviour
 {
-  public float speed = 0.4f;
+    public float speed = 0.4f;
 
-  public int life = 3;
-  //hennkou 
-  public int hp = 100;
-  //hennkou 
-  public float stopTime = 0.5f;
-  public float recoverTime = 0.0f;
-  public GameObject fire;
-  public GameObject explosion;
-  public int point = 0;
-  public float shotSpeed;
-  [SerializeField] private GameObject stage;
-  [SerializeField] private sstageGenerator sstageGenerator;
-  [Space]
-  [SerializeField] private Rigidbody miuRb;
+    public int life = 3;
+    //hennkou 
+    public int hp = 100;
+    //hennkou 
+    public float stopTime = 0.5f;
+    public float recoverTime = 0.0f;
+    public GameObject fire;
+    public GameObject explosion;
+    [Space]
+    public float point = 0;
+    [Space]
+    public float shotSpeed;
+    [SerializeField] private GameObject stage;
+    [SerializeField] private StageGenerator stageGenerator;
+    [Space]
+    [SerializeField] private Rigidbody miuRb;
 
-  [SerializeField] private RigidTakahara yotta;
+    [SerializeField] private RigidTakahara yotta;
 
-  const int MinLane = -2;
-  const int MaxLane = 2;
-  public float LaneWidth = 1.0f * 4;
-  public float LaneHeight = 2.0f;
+    const int MinLane = -2;
+    const int MaxLane = 2;
+    public float LaneWidth = 1.0f * 4;
+    public float LaneHeight = 2.0f;
 
-  public Vector3 moveDirection = Vector3.zero;
-  public int targetLane;
-  public int targetLane1 = 2;
-  public float speedZ;
-  public float speedX;
-  public float speedY;
-  public float accelerationZ;
-  public Vector3 globalDirection;
+    public Vector3 moveDirection = Vector3.zero;
+    public int targetLane;
+    public int targetLane1 = 2;
+    public float speedZ;
+    public float speedX;
+    public float speedY;
+    public float accelerationZ;
+    public Vector3 globalDirection;
 
-  [SerializeField] private bool commandAdd = false;
-
-
-
-  bool IsStun()
-  {
-    return recoverTime > 0.0f || life <= 0 || hp <= 0;
-    //return life <= 0;
-  }
-
-  public int Life()
-  {
-    return life;
-  }
-  //hennkou
-  public int HP()
-  {
-    return hp;
-  }
-  //hennkou
+    [SerializeField] private bool commandAdd = false;
 
 
 
-  void Start()
-  {
-    stage = GameObject.Find("StageGenerator");
-    sstageGenerator = stage.GetComponent<sstageGenerator>();
-    LaneWidth = sstageGenerator.LaneWidth;
-
-    miuRb = GetComponent<Rigidbody>();
-    yotta = GetComponent<RigidTakahara>();
-    LaneHeight = transform.position.y;
-
-  }
-
-  // Update is called once per frame
-  void FixedUpdate()
-  {
-    if (IsStun())
+    bool IsStun()
     {
-      //  miuRb.velocity = Vector3.zero;
-      recoverTime -= Time.deltaTime;
+        return recoverTime > 0.0f || life <= 0 || hp <= 0;
+        //return life <= 0;
     }
-    // else
-    // {
 
-    if (Input.GetKeyDown("up")) MoveToUp();
-    if (Input.GetKeyDown("down")) MoveToDown();
-    if (Input.GetKeyDown("left") || Input.GetKey(KeyCode.LeftArrow)) MoveToLeft();
-    if (Input.GetKeyDown("right") || Input.GetKey(KeyCode.RightArrow)) MoveToRight();
-
-    float accZ = moveDirection.z + accelerationZ * Time.deltaTime;
-    moveDirection.z = Mathf.Clamp(accZ, 0, speedZ);
-
-    float ratioX = (targetLane * LaneWidth - transform.position.x) / LaneWidth;
-    moveDirection.x = ratioX * speedX;
-    float ratioY = (targetLane1 - transform.position.y) / LaneHeight;
-    moveDirection.y = ratioY * speedY;
-
-    globalDirection = transform.TransformDirection(moveDirection);
-    transform.Translate(moveDirection);
-    // tmpSpeed = globalDirection;
-    // Debug.Log("tmpSpeed by airplane:" + tmpSpeed);
-    // }
+    public int Life()
+    {
+        return life;
+    }
+    //hennkou
+    public int HP()
+    {
+        return hp;
+    }
+    //hennkou
 
 
-  }
-  public void MoveToUp()
-  {
-    //Debug.Log("上反応しています");
-    targetLane1 = 6;
-  }
-  public void MoveToDown()
-  {
-    //Debug.Log("上反応しています");
-    targetLane1 = 2;
-  }
-  public void MoveToLeft()
-  {
-  //  Debug.Log("上反応しています");
-    if (targetLane > MinLane) targetLane--;
-  }
-  public void MoveToRight()
-  {
-//    Debug.Log("上反応しています");
-    if (targetLane < MaxLane) targetLane++;
-  }
 
-  public void Accident(GameObject other)
-  {
-    if (IsStun()) return;
-    life--;
-    recoverTime = stopTime;
-    Debug.Log(life);
-    Instantiate(fire, transform.position, Quaternion.identity);
-    Destroy(other.gameObject);
-  }
+    void Start()
+    {
+        stage = GameObject.Find("StageGenerator");
+        stageGenerator = stage.GetComponent<StageGenerator>();
+        LaneWidth = stageGenerator.LaneWidth;
 
-  public void AccidentStrong()
-  {
-    if (IsStun()) return;
-    life--;
-    recoverTime = stopTime;
-    //Debug.Log(life);
-   // Instantiate(explosion, transform.position, Quaternion.identity);
+        miuRb = GetComponent<Rigidbody>();
+        yotta = GetComponent<RigidTakahara>();
+        LaneHeight = transform.position.y;
 
-  }
-  //hennkou 
-  public void AccidentBossDamage(int str)
-  {
-    life--;
-    hp -= str;
-    Debug.Log(hp);
-   // Instantiate(explosion, transform.position, Quaternion.identity);
+    }
 
-  }
-  public void GameOverScene()
-  {
+    // Update is called once per frame
+    void FixedUpdate()
+    {
+        if (IsStun())
+        {
+            //  miuRb.velocity = Vector3.zero;
+            recoverTime -= Time.deltaTime;
+        }
+        // else
+        // {
 
-  }
+        if (Input.GetKeyDown("up")) MoveToUp();
+        if (Input.GetKeyDown("down")) MoveToDown();
+        if (Input.GetKeyDown("left") || Input.GetKey(KeyCode.LeftArrow)) MoveToLeft();
+        if (Input.GetKeyDown("right") || Input.GetKey(KeyCode.RightArrow)) MoveToRight();
+
+        float accZ = moveDirection.z + accelerationZ * Time.deltaTime;
+        moveDirection.z = Mathf.Clamp(accZ, 0, speedZ);
+
+        float ratioX = (targetLane * LaneWidth - transform.position.x) / LaneWidth;
+        moveDirection.x = ratioX * speedX;
+        float ratioY = (targetLane1 - transform.position.y) / LaneHeight;
+        moveDirection.y = ratioY * speedY;
+
+        globalDirection = transform.TransformDirection(moveDirection);
+        transform.Translate(moveDirection);
+        // tmpSpeed = globalDirection;
+        // Debug.Log("tmpSpeed by airplane:" + tmpSpeed);
+        // }
+
+
+    }
+    public void MoveToUp()
+    {
+        //Debug.Log("上反応しています");
+        targetLane1 = 6;
+    }
+    public void MoveToDown()
+    {
+        //Debug.Log("上反応しています");
+        targetLane1 = 2;
+    }
+    public void MoveToLeft()
+    {
+        //  Debug.Log("上反応しています");
+        if (targetLane > MinLane) targetLane--;
+    }
+    public void MoveToRight()
+    {
+        //    Debug.Log("上反応しています");
+        if (targetLane < MaxLane) targetLane++;
+    }
+
+    public void Accident(GameObject other)
+    {
+        if (IsStun()) return;
+        life--;
+        recoverTime = stopTime;
+        Debug.Log(life);
+        Instantiate(fire, transform.position, Quaternion.identity);
+        Destroy(other.gameObject);
+    }
+
+    public void AccidentStrong()
+    {
+        if (IsStun()) return;
+        life--;
+        recoverTime = stopTime;
+        //Debug.Log(life);
+        // Instantiate(explosion, transform.position, Quaternion.identity);
+
+    }
+    //hennkou 
+    public void AccidentBossDamage(int str)
+    {
+        life--;
+        hp -= str;
+        Debug.Log(hp);
+        // Instantiate(explosion, transform.position, Quaternion.identity);
+
+    }
+    public void GameOverScene()
+    {
+
+    }
 
 }
 

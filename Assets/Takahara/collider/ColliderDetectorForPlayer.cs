@@ -17,10 +17,10 @@ public class ColliderDetectorForPlayer : ColliderDetector
     [SerializeField] private MaxTry capsule;
 
     // [SerializeField] private GameObject air;
-    // [SerializeField] private air airScript;
+    // [SerializeField] private air air;
     public GameObject fire;
 
-   public  void Awake()
+    public void Start()
     {
         fire = (GameObject)Resources.Load("tryFire");
         float x = transform.localScale.x;
@@ -53,13 +53,14 @@ public class ColliderDetectorForPlayer : ColliderDetector
         // attackList = GameObject.Find("attackList");
         // attack = attackList.GetComponent<List>().attack;
         // air = GameObject.Find("air");
-        // airScript = air.GetComponent<air>();
+        // air = air.GetComponent<air>();
         //fire = GameObject.FindGameObjectWithTag("Fire");
+        Initialize();
     }
 
     void Update()
     {
-       //s Debug.Log("huuuhu");
+        //s Debug.Log("huuuhu");
         _didCollide = false;
         SphereDetection();
         for (int i = 0; i < attack.Count; i++)
@@ -76,12 +77,12 @@ public class ColliderDetectorForPlayer : ColliderDetector
 
             //     if (_didCollide)
             //     {
-            //         airScript.Accident(attack[i]);
+            //         air.Accident(attack[i]);
             //         Debug.Log("ookashii");
             //         //  Instantiate(fire, transform.position, Quaternion.identity);
-                  
+
             //             Instantiate(fire, attack[i].transform.position, Quaternion.identity);
-                    
+
 
             //         Destroy(attack[i]);
             //         // attack.RemoveAt(i);
@@ -95,80 +96,81 @@ public class ColliderDetectorForPlayer : ColliderDetector
 
     public void SphereDetection()
     {
-       
 
-            for (int i = 0; i < attack.Count; i++)
+
+        for (int i = 0; i < attack.Count; i++)
+        {
+
+
+            if (attack[i] != null && attack[i].gameObject.tag != "enemyBullet")
             {
 
-
-                if (attack[i] != null && attack[i].gameObject.tag != "enemyBullet")
+                if (attack[i].tag == "Boss")
                 {
-                    
-                    if (attack[i].tag == "Boss")
+                    // ColliderSphere[] shin = attack[i].GetComponents<ColliderSphere>();
+                    // for (int j = 0; j < shin.Length; j++)
+                    // {
+                    //      _didCollide = shin[j].CheckCapsuleCollision(transform.position,localPoint,maxLen,maxSeLen);
+
+                    //     if (_didCollide)
+                    //     {
+                    //         zariScript.HP -= 1;
+                    //         // Instantiate(fire, transform.position, Quaternion.identity);
+                    //         Destroy(this.gameObject);
+
+
+
+
+                    //     }
+
+                    // }
+
+                }
+                else
+                {
+
+                    // _didCollide |= _colliders[i].CheckSphere(_sphere);
+
+                    if (attack[i].GetComponent<ColliderSphere>() != null)
                     {
-                        // ColliderSphere[] shin = attack[i].GetComponents<ColliderSphere>();
-                        // for (int j = 0; j < shin.Length; j++)
-                        // {
-                        //      _didCollide = shin[j].CheckCapsuleCollision(transform.position,localPoint,maxLen,maxSeLen);
-
-                        //     if (_didCollide)
-                        //     {
-                        //         zariScript.HP -= 1;
-                        //         // Instantiate(fire, transform.position, Quaternion.identity);
-                        //         Destroy(this.gameObject);
-
-
-
-
-                        //     }
-
-                        // }
-
-                     }
-                    else
-                    {
-
-                        // _didCollide |= _colliders[i].CheckSphere(_sphere);
-
-                        if (attack[i].GetComponent<ColliderSphere>() != null)
-                        {
-                            //Debug.Log("ここが呼び出されいません");
-                            ColliderSphere shin = attack[i].GetComponent<ColliderSphere>();
+                        //Debug.Log("ここが呼び出されいません");
+                        ColliderSphere shin = attack[i].GetComponent<ColliderSphere>();
                         // _didCollide = shin.CheckSphere(_sphere);
                         _didCollide = shin.CheckCapsuleCollision(transform.position, localPoint, maxLen, maxSeLen);
 
 
                         if (_didCollide)
+                        {
+                            if (attack[i].gameObject.tag == "MonsterHP")
                             {
-                                if (attack[i].gameObject.tag == "MonsterHP")
-                                {
-                                    attack[i].GetComponent<Enemy>().TakeDamage();
-                                    Destroy(this.gameObject);
-
-
-                                }
-                                else
-                                {
-
-
-                                    //Instantiate(fire, transform.position, Quaternion.identity);
-                                    // int index = attack.IndexOf(attack[i]);
-                                    // attack.RemoveAt(index);
-                                    Destroy(attack[i]);
-                                    Destroy(this.gameObject);
-
-
-                                    airScript.point += 1;
-                                }
+                                attack[i].GetComponent<Enemy>().TakeDamage();
+                                Destroy(this.gameObject);
 
 
                             }
-                        }
-                        else
-                        {
-                            ColliderSphere[] shin = attack[i].GetComponentsInChildren<ColliderSphere>();
-                            for (int j = 0; j < shin.Length; j++)
+                            else
                             {
+
+
+                                //Instantiate(fire, transform.position, Quaternion.identity);
+                                // int index = attack.IndexOf(attack[i]);
+                                // attack.RemoveAt(index);
+                                Destroy(attack[i]);
+                                Destroy(this.gameObject);
+
+
+                                air.point += 1;
+                                pointAdder.PointCalcChange(1);
+                            }
+
+
+                        }
+                    }
+                    else
+                    {
+                        ColliderSphere[] shin = attack[i].GetComponentsInChildren<ColliderSphere>();
+                        for (int j = 0; j < shin.Length; j++)
+                        {
                             //_didCollide = shin[j].CheckSphere(_sphere);
                             _didCollide = shin[j].CheckCapsuleCollision(transform.position, localPoint, maxLen, maxSeLen);
 
@@ -176,45 +178,47 @@ public class ColliderDetectorForPlayer : ColliderDetector
                             //Debug.Log("原因はここです");
 
                             if (_didCollide)
+                            {
+                                if (attack[i].gameObject.tag == "MonsterHP")
                                 {
-                                    if (attack[i].gameObject.tag == "MonsterHP")
-                                    {
-                                        attack[i].GetComponent<Enemy>().TakeDamage();
-                                        Destroy(this.gameObject);
+                                    attack[i].GetComponent<Enemy>().TakeDamage();
+                                    Destroy(this.gameObject);
 
 
 
-                                    }
-                                    else
-                                    {
-                                        Instantiate(fire, transform.position, Quaternion.identity);
+                                }
+                                else
+                                {
+                                    Instantiate(fire, transform.position, Quaternion.identity);
                                     // int index = attack.IndexOf(attack[i]);
                                     // attack.RemoveAt(index);
-                                    Debug.Log("attack[i]:"+attack[i]);
+                                    Debug.Log("attack[i]:" + attack[i]);
                                     Destroy(attack[i]);
-                                        Destroy(this.gameObject);
-                                        
+                                    Destroy(this.gameObject);
 
 
-                                        airScript.point += 1;
 
-                                        //Debug.Log("無事衝突判定ができました");
-                                    }
+                                    air.point += 1;
+                                    pointAdder.PointCalcChange(1);
+
+                                    //Debug.Log("無事衝突判定ができました");
                                 }
-
                             }
 
-
                         }
+
+
                     }
-
-
                 }
 
-                else if(attack[i] != null && attack[i].gameObject.tag == "enemyBullet"){
+
+            }
+
+            else if (attack[i] != null && attack[i].gameObject.tag == "enemyBullet")
+            {
                 if (attack[i].GetComponent<ColliderSphere>() != null)
                 {
-//                    Debug.Log("ここが呼び出されいません");
+                    //                    Debug.Log("ここが呼び出されいません");
                     ColliderSphere shin = attack[i].GetComponent<ColliderSphere>();
                     // _didCollide = shin.CheckSphere(_sphere);
                     _didCollide = shin.CheckCapsuleCollision(transform.position, localPoint, maxLen, maxSeLen);
@@ -222,14 +226,14 @@ public class ColliderDetectorForPlayer : ColliderDetector
 
                     if (_didCollide)
                     {
-                                    
 
 
-                            Instantiate(fire, transform.position, Quaternion.identity);
+
+                        Instantiate(fire, transform.position, Quaternion.identity);
                         // int index = attack.IndexOf(attack[i]);
                         // attack.RemoveAt(index);
                         attack.Remove(attack[i]);
-                        
+
                         Destroy(attack[i]);
                         // Destroy(this.gameObject);
 
@@ -240,8 +244,8 @@ public class ColliderDetectorForPlayer : ColliderDetector
 
                     }
                 }
-                }
-            
+            }
+
         }
 
 
