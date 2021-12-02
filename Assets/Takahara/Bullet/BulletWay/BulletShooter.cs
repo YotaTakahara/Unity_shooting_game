@@ -21,7 +21,7 @@ public class BulletShooter : MonoBehaviour
         center = transform.position;
         deg = 2 * Mathf.PI / bullNum;
         bull = (GameObject)Resources.Load("EnemyBullet");
-        StartCoroutine(Shoot4());
+        StartCoroutine(Shoot3());
 
     }
 
