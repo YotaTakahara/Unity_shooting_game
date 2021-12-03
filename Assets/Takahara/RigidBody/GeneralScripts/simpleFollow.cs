@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class simpleFollow : MonoBehaviour
 {
-    public GameObject target;
+    public GameObject player;
 
     public float followSpeed;
 
@@ -13,21 +13,21 @@ public class simpleFollow : MonoBehaviour
 
     void Awake()
     {
-        target = GameObject.Find("AirPlane");
-        this.transform.position = new Vector3(target.transform.position.x, target.transform.position.y + 5, target.transform.position.z - 13);
+        player = GameObject.Find("AirPlane");
+        this.transform.position = new Vector3(player.transform.position.x, player.transform.position.y + 5, player.transform.position.z - 13);
     }
     void Start()
     {
-        // this.transform.position = new Vector3(target.transform.position.x, target.transform.position.y + 5, target.transform.position.z - 13);
-        diff = target.transform.position - transform.position;
+        // this.transform.position = new Vector3(player.transform.position.x, player.transform.position.y + 5, player.transform.position.z - 13);
+        diff = player.transform.position - transform.position;
     }
 
     // Update is called once per frame
     void FixedUpdate()
     {
-        // transform.position = Vector3.Lerp(transform.position, target.transform.position - diff,
+        // transform.position = Vector3.Lerp(transform.position, player.transform.position - diff,
         //     followSpeed * Time.deltaTime);
-        transform.position = Vector3.Lerp(transform.position, target.transform.position - diff,
+        transform.position = Vector3.Lerp(transform.position, player.transform.position - diff,
             followSpeed * Time.deltaTime);
         // rot = Quaternion.LookRotation(diff);
 

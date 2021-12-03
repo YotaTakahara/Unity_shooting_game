@@ -18,21 +18,24 @@ public class DesignController : MonoBehaviour
         GameObject stageTmp = GameObject.Find("StageGenerator");
         stageGenerator = stageTmp.GetComponent<StageGenerator>();
         RenderSettings.skybox = skybox[0];
+        //  RenderSettings.ambientIntensity = 7.8f;
+        StartCoroutine(ColorChange());
 
     }
 
     // Update is called once per frame
     void Update()
     {
-        // tmpSpan += Time.deltaTime;
-        // if (span < tmpSpan)
-        // {
-        //     tmpSpan = 0;
 
-        //     RenderSettings.skybox = skybox[tmp];
-        //     tmp += 1;
-        // }
 
+
+    }
+    IEnumerator ColorChange()
+    {
+        yield return new WaitForSeconds(5.0f);
+        RenderSettings.skybox = skybox[0];
+        //  RenderSettings.ambientIntensity = 6.33f;
+        // RenderSettings.fog = false;
     }
     public void SkyboxChange()
     {

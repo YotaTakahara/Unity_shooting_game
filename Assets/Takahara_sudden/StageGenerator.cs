@@ -131,7 +131,7 @@ public class StageGenerator : MonoBehaviour
             generatedStageList.Add(stageOb);
         }
 
-        while (generatedStageList.Count > preInstantiate + 1) DestroyOldestStage();
+        while (generatedStageList.Count > preInstantiate + 2) DestroyOldestStage();
         currentChipIndex = toChipIndex;
     }
     public void UpdateStageChange(int which)

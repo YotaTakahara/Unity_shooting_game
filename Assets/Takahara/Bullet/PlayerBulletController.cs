@@ -4,13 +4,13 @@ using UnityEngine;
 
 public class PlayerBulletController : bulletController
 {
-    
-    GameObject player;
-    private Vector3 latestPos;
-    public float num;
-   
 
-   
+    GameObject player;
+    //  private Vector3 latestPos;
+    public float num;
+
+
+
 
     //銃弾役割切り替え成功
     //動作確認済み
