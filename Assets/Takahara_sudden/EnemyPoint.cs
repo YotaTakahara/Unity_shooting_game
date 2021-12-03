@@ -24,6 +24,7 @@ public class EnemyPoint : ControllerBase
 
 
         go.transform.SetParent(transform, false);
+        Debug.Log("kokogadekitenai");
     }
     public void Update()
     {
