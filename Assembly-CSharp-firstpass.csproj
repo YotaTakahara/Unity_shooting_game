@@ -107,7 +107,6 @@
      <Compile Include="Assets\Standard Assets\ParticleSystems\Scripts\Hose.cs" />
      <Compile Include="Assets\Standard Assets\Utility\FPSCounter.cs" />
      <Compile Include="Assets\Standard Assets\Utility\SimpleActivatorMenu.cs" />
-     <None Include="Assets\Standard Assets\Prototyping\Shaders\WorldCoordDiffuse.shader" />
      <None Include="Assets\Standard Assets\Effects\Projectors\Shaders\ProjectorLight.shader" />
      <None Include="Assets\Standard Assets\Effects\Projectors\Shaders\ProjectorMultiply.shader" />
      <None Include="Assets\Standard Assets\Effects\Projectors\Guidelines.txt" />
