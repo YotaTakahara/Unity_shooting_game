@@ -5,7 +5,7 @@ using Ai;
 public class ColliderDetectorForBullet : ColliderDetector
 {
 
-    [SerializeField] private bulletController bullController;
+    [SerializeField] private PlayerBulletController playerBulletController;
     [SerializeField] private int whichBull = 0;
 
 
@@ -32,8 +32,8 @@ public class ColliderDetectorForBullet : ColliderDetector
         _sphere = GetComponent<ISphere>();
         Initialize();
 
-        bullController = GetComponent<bulletController>();
-        whichBull = bullController.attackOrWall;
+        playerBulletController = GetComponent<PlayerBulletController>();
+        whichBull = playerBulletController.attackOrWall;
 
     }
 

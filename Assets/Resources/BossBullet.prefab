@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 723851340034722288}
   - component: {fileID: 7884802437685337860}
   - component: {fileID: 5857109623731809238}
+  - component: {fileID: 1978941108749990668}
   m_Layer: 0
   m_Name: BossBullet
   m_TagString: Untagged
@@ -105,7 +106,7 @@ MonoBehaviour:
   span: 0.5
   range: 30
   attackOrWall: 1
-  BossOrNot: 1
+  attackPoint: 1
 --- !u!114 &723851340034722288
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -118,11 +119,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 619eb082e5dfd3f499e52ac5662545a4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  player: {fileID: 0}
   air: {fileID: 0}
+  gameController: {fileID: 0}
+  stageGenerator: {fileID: 0}
   attackList: {fileID: 0}
+  list: {fileID: 0}
+  stageList: {fileID: 0}
+  designController: {fileID: 0}
+  uiController: {fileID: 0}
+  scoreController: {fileID: 0}
+  pointAdder: {fileID: 0}
+  point: 0
   attack: []
   obstacle: []
-  airScript: {fileID: 0}
   boss: {fileID: 0}
   zariScript: {fileID: 0}
   _didCollide: 0
@@ -161,3 +171,15 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &1978941108749990668
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4960941704315719113}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 042a69c9eb5755743a9531b4d6050e43, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

@@ -8,6 +8,7 @@ public class BulletShooter : MonoBehaviour
     [SerializeField] private Vector3 center;
     [SerializeField] private float radius;
     [SerializeField] private GameObject player;
+    [SerializeField] private int shootStyle=3;
     public float span = 2.0f;
     public int power = 500;
     public int bullNum;
@@ -21,7 +22,21 @@ public class BulletShooter : MonoBehaviour
         center = transform.position;
         deg = 2 * Mathf.PI / bullNum;
         bull = (GameObject)Resources.Load("EnemyBullet");
-        StartCoroutine(Shoot3());
+        if(shootStyle==1){
+            StartCoroutine(Shoot1());
+        }
+        else if (shootStyle == 2)
+        {
+            StartCoroutine(Shoot2());
+        }
+       else  if (shootStyle == 3)
+        {
+            StartCoroutine(Shoot3());
+        }else if (shootStyle == 4)
+        {
+            StartCoroutine(Shoot4());
+        }
+        
 
     }
 

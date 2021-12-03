@@ -14,7 +14,7 @@ public class DetectorTmp : ColliderDetector
     // [SerializeField] private air air;
     // [SerializeField] private GameObject boss;
     // [SerializeField] private BossZarigani zariScript;
-    [SerializeField] private bulletController bullController;
+    [SerializeField] private PlayerBulletController playerBulletController;
     [SerializeField] private int whichBull = 0;
 
 
@@ -57,8 +57,8 @@ public class DetectorTmp : ColliderDetector
         // cube = GameObject.FindGameObjectWithTag("Wall");
         // cubeScript = cube.GetComponent<ColliderCube>();
 
-        bullController = GetComponent<bulletController>();
-        whichBull = bullController.attackOrWall;
+    playerBulletController = GetComponent<PlayerBulletController>();
+        whichBull = playerBulletController.attackOrWall;
 
     }
 

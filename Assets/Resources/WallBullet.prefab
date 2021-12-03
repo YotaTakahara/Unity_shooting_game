@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 6761937517961061563}
   - component: {fileID: 759051735375087072}
   - component: {fileID: 7921657436845806356}
+  - component: {fileID: 5372939769094196989}
   m_Layer: 0
   m_Name: WallBullet
   m_TagString: Untagged
@@ -97,13 +98,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 76ea5b844b5c07d4ca47fd5e260b4378, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  abs: 0
-  num: 1
-  attackList: {fileID: 0}
-  enemy: []
   span: 0.5
   range: 60
-  attackOrWall: 2
+  attackList: {fileID: 0}
+  list: {fileID: 0}
+  enemyList: []
 --- !u!54 &6761937517961061563
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -132,14 +131,25 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 619eb082e5dfd3f499e52ac5662545a4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  check: {fileID: 0}
+  player: {fileID: 0}
   air: {fileID: 0}
+  gameController: {fileID: 0}
+  stageGenerator: {fileID: 0}
   attackList: {fileID: 0}
+  list: {fileID: 0}
+  stageList: {fileID: 0}
+  designController: {fileID: 0}
+  uiController: {fileID: 0}
+  scoreController: {fileID: 0}
+  pointAdder: {fileID: 0}
+  point: 0
   attack: []
   obstacle: []
-  airScript: {fileID: 0}
   boss: {fileID: 0}
   zariScript: {fileID: 0}
+  _didCollide: 0
+  playerBulletController: {fileID: 0}
+  whichBull: 0
   fire: {fileID: 1000011797152326, guid: acf39d9f4addf294d93fa56fa373961b, type: 3}
 --- !u!114 &7921657436845806356
 MonoBehaviour:
@@ -153,6 +163,27 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ff1df1125e8b8c949ac5115e775568ca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  damageChange: 0
   _center: {x: 0, y: 0, z: 0}
   k: 1
   _radius: 0.5
+--- !u!114 &5372939769094196989
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4925773950189830617}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 042a69c9eb5755743a9531b4d6050e43, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  span: 0.5
+  range: 20
+  attackList: {fileID: 0}
+  list: {fileID: 0}
+  enemyList: []
+  num: 0
+  attackOrWall: 0
+  attackPoint: 1

@@ -16,6 +16,7 @@ GameObject:
   - component: {fileID: 4770091701086134421}
   - component: {fileID: 2703581293155910672}
   - component: {fileID: 9127107078691255372}
+  - component: {fileID: 2759290040875627455}
   m_Layer: 0
   m_Name: EnemyBullet
   m_TagString: enemyBullet
@@ -98,15 +99,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 76ea5b844b5c07d4ca47fd5e260b4378, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  abs: 0
-  num: 0
+  span: 1
+  range: 100
   attackList: {fileID: 0}
   list: {fileID: 0}
   enemyList: []
-  span: 1
-  range: 100
-  attackOrWall: 0
-  attackPoint: 1
 --- !u!114 &1742125976685289525
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -168,14 +165,27 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ed96399f1c78ac14286594e9f7edc1b0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  abs: 0
-  num: 0
+  span: 1
+  range: 30
   attackList: {fileID: 0}
   list: {fileID: 0}
   enemyList: []
-  span: 1
-  range: 30
-  attackOrWall: 0
-  attackPoint: 1
   targetUI: {fileID: 0}
   startPoint: {x: 0, y: 0, z: 0}
+--- !u!114 &2759290040875627455
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1272916725600244202}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 76ea5b844b5c07d4ca47fd5e260b4378, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  span: 0.5
+  range: 20
+  attackList: {fileID: 0}
+  list: {fileID: 0}
+  enemyList: []

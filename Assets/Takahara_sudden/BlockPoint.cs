@@ -21,6 +21,7 @@ public class BlockPoint : ControllerBase
         Debug.Log("go:" + go);
         list.obstacle.Add(go);
         go.transform.SetParent(transform, false);
+        
 
     }
 
