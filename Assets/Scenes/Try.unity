@@ -680,9 +680,11 @@ MonoBehaviour:
   - {fileID: 4332637460492025328, guid: 830e6fea69a697f47ab734b86cab6c31, type: 3}
   - {fileID: 7115911163003055400, guid: 6086f4de079d93946b1c33397b4ec1a7, type: 3}
   stageChips3: []
+  stageChips4: []
   stageChangeStage:
   - {fileID: 4932547469474177602, guid: 63f16aa17d118c4469915078e43f2d5c, type: 3}
   stageNum: 3
+  tmpStage: 0
 --- !u!4 &302738143
 Transform:
   m_ObjectHideFlags: 0
@@ -2538,6 +2540,7 @@ MonoBehaviour:
   stageChips1: []
   stageChips2: []
   stageChips3: []
+  stageChips4: []
   stageChangeStage: []
   currentStageChips: []
   stageList: {fileID: 0}

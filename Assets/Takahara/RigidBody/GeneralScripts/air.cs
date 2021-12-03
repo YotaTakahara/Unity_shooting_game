@@ -24,15 +24,21 @@ public class air : MonoBehaviour
     [SerializeField] private Rigidbody miuRb;
 
     [SerializeField] private RigidTakahara yotta;
+    [Space]
 
     const int MinLane = -2;
     const int MaxLane = 2;
-    public float LaneWidth = 1.0f * 4;
+    const int MaxLane1 = 3;
+    public int k = 8;
+    public float LaneWidth = 1.5f;
+    /*現在のステージの横幅は48
+      現在のステージの縦幅は120*/
     public float LaneHeight = 2.0f;
+    [Space]
 
     public Vector3 moveDirection = Vector3.zero;
-    public int targetLane;
-    public float targetLane1;//= 2;
+    public int targetLane = 0;
+    public int targetLane1 = 1;//= 2;
     public float speedZ;
     public float speedX;
     public float speedY;
@@ -64,14 +70,15 @@ public class air : MonoBehaviour
 
     void Start()
     {
+
         stage = GameObject.Find("StageGenerator");
         stageGenerator = stage.GetComponent<StageGenerator>();
         LaneWidth = stageGenerator.LaneWidth;
 
         miuRb = GetComponent<Rigidbody>();
         yotta = GetComponent<RigidTakahara>();
+        // LaneWidth = LaneWidth * k;
         LaneHeight = transform.position.y;
-        targetLane1 = transform.position.y;
 
 
     }
@@ -95,9 +102,9 @@ public class air : MonoBehaviour
         float accZ = moveDirection.z + accelerationZ * Time.deltaTime;
         moveDirection.z = Mathf.Clamp(accZ, 0, speedZ);
 
-        float ratioX = (targetLane * LaneWidth - transform.position.x) / LaneWidth;
+        float ratioX = (targetLane * 0.95f * LaneWidth - transform.position.x) / LaneWidth;
         moveDirection.x = ratioX * speedX;
-        float ratioY = (targetLane1 - transform.position.y) / LaneHeight;
+        float ratioY = (targetLane1 * LaneHeight - transform.position.y) / LaneHeight;
         moveDirection.y = ratioY * speedY;
 
         globalDirection = transform.TransformDirection(moveDirection);
@@ -111,12 +118,12 @@ public class air : MonoBehaviour
     public void MoveToUp()
     {
         //Debug.Log("上反応しています");
-        targetLane1 = LaneHeight * 1.5f;
+        if (targetLane1 < MaxLane1) targetLane1++;
     }
     public void MoveToDown()
     {
         //Debug.Log("上反応しています");
-        targetLane1 = LaneHeight;
+        targetLane1 = 1;
     }
     public void MoveToLeft()
     {

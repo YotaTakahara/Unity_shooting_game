@@ -90,26 +90,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
---- !u!114 &4031540129604649798
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6552527312126511854}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b097767bdfe913b43ae0dbf1e857d1cb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  bull: {fileID: 0}
-  center: {x: 0, y: 0, z: 0}
-  radius: 0
-  player: {fileID: 0}
-  shootStyle: 3
-  span: 2
-  power: 500
-  bullNum: 0
 --- !u!1001 &2216726710617804077
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -117,6 +97,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 6901421231000269128}
     m_Modifications:
+    - target: {fileID: 4031540129604649798, guid: 28dd3ba936c0c184cae57ad6f26c3fc2, type: 3}
+      propertyPath: bullNum
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4031540129604649798, guid: 28dd3ba936c0c184cae57ad6f26c3fc2, type: 3}
+      propertyPath: shootStyle
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4912342995306940355, guid: 28dd3ba936c0c184cae57ad6f26c3fc2, type: 3}
       propertyPath: m_Name
       value: TurtleShellNew
@@ -124,18 +112,6 @@ PrefabInstance:
     - target: {fileID: 4916798683330244089, guid: 28dd3ba936c0c184cae57ad6f26c3fc2, type: 3}
       propertyPath: m_RootOrder
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4916798683330244089, guid: 28dd3ba936c0c184cae57ad6f26c3fc2, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4916798683330244089, guid: 28dd3ba936c0c184cae57ad6f26c3fc2, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 4916798683330244089, guid: 28dd3ba936c0c184cae57ad6f26c3fc2, type: 3}
-      propertyPath: m_LocalScale.z
-      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4916798683330244089, guid: 28dd3ba936c0c184cae57ad6f26c3fc2, type: 3}
       propertyPath: m_LocalPosition.x
@@ -179,11 +155,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 28dd3ba936c0c184cae57ad6f26c3fc2, type: 3}
---- !u!1 &6552527312126511854 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 4912342995306940355, guid: 28dd3ba936c0c184cae57ad6f26c3fc2, type: 3}
-  m_PrefabInstance: {fileID: 2216726710617804077}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &6555164530932932820 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4916798683330244089, guid: 28dd3ba936c0c184cae57ad6f26c3fc2, type: 3}

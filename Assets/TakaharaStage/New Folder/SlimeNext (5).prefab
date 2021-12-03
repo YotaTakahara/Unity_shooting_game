@@ -784,6 +784,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 3288536836432258091}
     m_Modifications:
+    - target: {fileID: 4174015068469893536, guid: dda6ee0fcb1f2494ba31acc9ebfe1c72, type: 3}
+      propertyPath: isGizmosOn
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4507001466993854569, guid: dda6ee0fcb1f2494ba31acc9ebfe1c72, type: 3}
       propertyPath: m_Name
       value: TurtleSet

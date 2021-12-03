@@ -8,9 +8,12 @@ public class StageList : MonoBehaviour
     public GameObject[] stageChips1;
     public GameObject[] stageChips2;
     public GameObject[] stageChips3;
+    public GameObject[] stageChips4;
     public GameObject[] stageChangeStage;
 
+    [Space]
     public int stageNum = 4;
+    public int tmpStage = 0;
 
 
     // Start is called before the first frame update

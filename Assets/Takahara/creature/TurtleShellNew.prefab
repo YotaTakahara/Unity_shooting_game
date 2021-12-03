@@ -226,6 +226,7 @@ GameObject:
   - component: {fileID: 5006244097034027943}
   - component: {fileID: 4845423484909148913}
   - component: {fileID: 2869071813622676693}
+  - component: {fileID: 4031540129604649798}
   m_Layer: 0
   m_Name: TurtleShellNew
   m_TagString: Monster
@@ -242,7 +243,7 @@ Transform:
   m_GameObject: {fileID: 4912342995306940355}
   m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1.25, y: 5, z: 2.5}
+  m_LocalScale: {x: 1, y: 2, z: 1}
   m_Children:
   - {fileID: 4916592804052016847}
   - {fileID: 4916501325142616405}
@@ -300,6 +301,26 @@ MonoBehaviour:
   _center: {x: 0, y: 0, z: 0}
   k: 1
   _radius: 0.7
+--- !u!114 &4031540129604649798
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4912342995306940355}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b097767bdfe913b43ae0dbf1e857d1cb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bull: {fileID: 0}
+  center: {x: 0, y: 0, z: 0}
+  radius: 0
+  player: {fileID: 0}
+  shootStyle: 3
+  span: 2
+  power: 500
+  bullNum: 0
 --- !u!1 &4912380402098275439
 GameObject:
   m_ObjectHideFlags: 0

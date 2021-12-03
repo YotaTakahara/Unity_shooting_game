@@ -109,7 +109,7 @@ MonoBehaviour:
   point: 0
   canvas: {fileID: 0}
   prefab: {fileID: 2914200409683029076, guid: e9efb6c7dd6c2af41a10c112c718ca0c, type: 3}
-  isGizmosOn: 1
+  isGizmosOn: 0
 --- !u!1001 &3020635574106708873
 PrefabInstance:
   m_ObjectHideFlags: 0

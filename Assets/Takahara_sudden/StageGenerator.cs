@@ -15,6 +15,7 @@ public class StageGenerator : MonoBehaviour
     [SerializeField] private GameObject[] stageChips1;
     [SerializeField] private GameObject[] stageChips2;
     [SerializeField] private GameObject[] stageChips3;
+    [SerializeField] private GameObject[] stageChips4;
     [SerializeField] private GameObject[] stageChangeStage;
 
     [SerializeField] private GameObject[] currentStageChips;
@@ -42,6 +43,7 @@ public class StageGenerator : MonoBehaviour
             if (i == 0)
             {
                 stageChips0 = stageList.stageChips0;
+
             }
             else if (i == 1)
             {
@@ -55,10 +57,40 @@ public class StageGenerator : MonoBehaviour
             {
                 stageChips3 = stageList.stageChips3;
             }
+            else if (i == 4)
+            {
+                stageChips4 = stageList.stageChips4;
+            }
+
+        }
+        if (stageList.tmpStage == 0)
+        {
+            currentStageChips = stageChips0;
+
+        }
+        else if (stageList.tmpStage == 1)
+        {
+            currentStageChips = stageChips1;
+
+        }
+        else if (stageList.tmpStage == 2)
+        {
+            currentStageChips = stageChips2;
+
+        }
+        else if (stageList.tmpStage == 3)
+        {
+            currentStageChips = stageChips3;
+
+        }
+        else if (stageList.tmpStage == 4)
+        {
+            currentStageChips = stageChips4;
 
         }
 
-        currentStageChips = stageChips3;
+
+
         //ここでちょびっと変更している
 
 
