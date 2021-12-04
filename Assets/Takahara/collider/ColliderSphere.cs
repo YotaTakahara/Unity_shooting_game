@@ -29,7 +29,14 @@ public class ColliderSphere : MonoBehaviour, ICollider, ISphere
     {
 
         // _transform = this.transform;
-        _radius = transform.lossyScale.y;/// 2 * k;
+        float a = transform.lossyScale.y;
+        if(a<transform.lossyScale.x){
+            a = transform.lossyScale.x;
+        }
+        if(a<transform.lossyScale.z){
+            a = transform.lossyScale.z;
+        }
+        _radius = a/2*k;/// 2 * k;
         // _radius = 15f;
     }
 

@@ -971,7 +971,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   damageChange: 0
   _center: {x: 0, y: 0, z: 0}
-  k: 1
+  k: 4
   _radius: 0.7
 --- !u!114 &5260172229617220174
 MonoBehaviour:

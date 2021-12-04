@@ -164,8 +164,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   damageChange: 0
   _center: {x: 0, y: 0, z: 0}
-  k: 2
-  _radius: 0
+  k: 1
+  _radius: 1
 --- !u!114 &-7747919107280611664
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -196,7 +196,7 @@ MonoBehaviour:
   zariScript: {fileID: 0}
   _didCollide: 0
   playerBulletController: {fileID: 0}
-  whichBull: 0
+  whichBull: 1
   fire: {fileID: 1000011797152326, guid: acf39d9f4addf294d93fa56fa373961b, type: 3}
 --- !u!114 &8155705884449818395
 MonoBehaviour:
@@ -216,7 +216,7 @@ MonoBehaviour:
   list: {fileID: 0}
   enemyList: []
   num: 0
-  attackOrWall: 0
+  attackOrWall: 1
   attackPoint: 1
 --- !u!1 &7944100285219630842
 GameObject:

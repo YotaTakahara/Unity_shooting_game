@@ -133,7 +133,7 @@ MonoBehaviour:
   zariScript: {fileID: 0}
   _didCollide: 0
   playerBulletController: {fileID: 0}
-  whichBull: 0
+  whichBull: 1
   fire: {fileID: 1000011797152326, guid: acf39d9f4addf294d93fa56fa373961b, type: 3}
 --- !u!114 &9055041246788536677
 MonoBehaviour:
@@ -185,5 +185,5 @@ MonoBehaviour:
   list: {fileID: 0}
   enemyList: []
   num: 0
-  attackOrWall: 0
+  attackOrWall: 1
   attackPoint: 1

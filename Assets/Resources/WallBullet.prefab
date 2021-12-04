@@ -185,5 +185,5 @@ MonoBehaviour:
   list: {fileID: 0}
   enemyList: []
   num: 0
-  attackOrWall: 0
+  attackOrWall: 2
   attackPoint: 1

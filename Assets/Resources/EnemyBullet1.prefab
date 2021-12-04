@@ -119,7 +119,7 @@ MonoBehaviour:
   damageChange: 0
   _center: {x: 0, y: 0, z: 0}
   k: 1
-  _radius: 0
+  _radius: 2
 --- !u!114 &4122583473033704054
 MonoBehaviour:
   m_ObjectHideFlags: 0

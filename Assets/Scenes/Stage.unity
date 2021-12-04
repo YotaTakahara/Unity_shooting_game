@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657838, g: 0.49641234, b: 0.57481676, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657826, g: 0.49641263, b: 0.57481676, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -792,7 +792,7 @@ MonoBehaviour:
   - {fileID: 882474832392448405, guid: e5fc9308bf8a21d449600d8751fdbf26, type: 3}
   stageChangeStage: []
   stageNum: 5
-  tmpStage: 4
+  tmpStage: 3
 --- !u!4 &429699119
 Transform:
   m_ObjectHideFlags: 0
@@ -1813,7 +1813,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5184491314372762576, guid: c7706364d54912e499ded4a7ae3d9158, type: 3}
       propertyPath: speedZ
-      value: 0.6
+      value: 0.3
       objectReference: {fileID: 0}
     - target: {fileID: 5184491314372762576, guid: c7706364d54912e499ded4a7ae3d9158, type: 3}
       propertyPath: LaneWidth

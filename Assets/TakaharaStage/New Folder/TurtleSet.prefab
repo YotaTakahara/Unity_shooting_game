@@ -109,6 +109,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: TurtleShellNew
       objectReference: {fileID: 0}
+    - target: {fileID: 4912342995306940355, guid: 28dd3ba936c0c184cae57ad6f26c3fc2, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4916798683330244089, guid: 28dd3ba936c0c184cae57ad6f26c3fc2, type: 3}
       propertyPath: m_RootOrder
       value: 0
