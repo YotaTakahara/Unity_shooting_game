@@ -180,7 +180,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   span: 0.5
-  range: 30
+  range: 40
   attackList: {fileID: 0}
   list: {fileID: 0}
   enemyList: []

@@ -25,12 +25,16 @@ public class GameController : ControllerBase
 
 
 
-        if (SceneManager.GetActiveScene().name == "Start")
-        {
-            PlayerPrefs.SetInt("進んだ距離", 0);
-        }
+        // if (SceneManager.GetActiveScene().name == "Start")
+        // {
+        //     PlayerPrefs.SetInt("進んだ距離", 0);
+        // }
+        text.fontSize=48;
+        text.color = Color.green;
         //air = player.GetComponent<air>();
         DontDestroyOnLoad(player);
+        
+
     }
 
     void Update()

@@ -953,10 +953,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1d458d632a83fca4cb4df27282a66f49, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bullet: {fileID: 1272916725600244202, guid: fdd74a28b2e443d4ea33462c4a5131f1, type: 3}
   span: 1.5
-  Speed: 560
+  range: 0
   attackList: {fileID: 0}
+  list: {fileID: 0}
+  enemyList: []
 --- !u!114 &8623168508507867232
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -987,12 +988,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bull: {fileID: 0}
   center: {x: 0, y: 0, z: 0}
-  radius: 0
+  radius: 1
   player: {fileID: 0}
   shootStyle: 1
   span: 2
   power: 500
-  bullNum: 0
+  bullNum: 20
 --- !u!1 &1465795203015897244
 GameObject:
   m_ObjectHideFlags: 0

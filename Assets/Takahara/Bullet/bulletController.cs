@@ -21,7 +21,7 @@ public class bulletController : MonoBehaviour
     //銃弾役割切り替え成功
     //動作確認済み
 
-    void Start(){
+    void Awake(){
         latestPos = transform.position;
         attackList = GameObject.Find("AttackList");
         list = attackList.GetComponent<List>();
