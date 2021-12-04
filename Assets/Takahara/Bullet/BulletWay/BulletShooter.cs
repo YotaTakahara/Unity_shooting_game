@@ -69,7 +69,7 @@ public class BulletShooter : MonoBehaviour
 
     }
 
-    IEnumerator Shoot1()
+   public  IEnumerator Shoot1()
     {
         while (true)
         {
@@ -84,7 +84,7 @@ public class BulletShooter : MonoBehaviour
             yield return new WaitForSeconds(span);
         }
     }
-    IEnumerator Shoot2()
+    public  IEnumerator Shoot2()
     {
         float baseDirection = GetAim();
         int count = 0;
@@ -106,7 +106,7 @@ public class BulletShooter : MonoBehaviour
         }
 
     }
-    IEnumerator Shoot3()
+    public IEnumerator Shoot3()
     {
 
         while (true)
@@ -126,7 +126,7 @@ public class BulletShooter : MonoBehaviour
             yield return new WaitForSeconds(5.0f);
         }
     }
-    IEnumerator Shoot4()
+    public IEnumerator Shoot4()
     {
         while (true)
         {
