@@ -116,11 +116,14 @@ public class BossPlus:MonoBehaviour
             float rad = 0;
             while (rad < 2 * Mathf.PI)
             {
-                rad += 2 * Mathf.PI * 8 / 360;
-                float cos = Mathf.Cos(rad);
-                float sin = Mathf.Sin(rad);
-                Vector3 pos = center + new Vector3(cos, sin, 0);
-                InstantiateAndShoot(pos);
+                for (int i = 0; i < 3; i++)
+                {
+                    rad += 2 * Mathf.PI * 8 / 360;
+                    float cos = Mathf.Cos(rad+i*2*Mathf.PI/3);
+                    float sin = Mathf.Sin(rad+i*2 * Mathf.PI / 3);
+                    Vector3 pos = center + new Vector3(cos, sin, 0);
+                    InstantiateAndShoot(pos);
+                }
                 yield return new WaitForSeconds(0.1f);
 
 

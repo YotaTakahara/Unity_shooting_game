@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657826, g: 0.49641263, b: 0.57481676, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -408,6 +408,8 @@ MonoBehaviour:
   stageChips1:
   - {fileID: 3902321112452085612, guid: d896614c6cb339543a742026d465642c, type: 3}
   stageChips2: []
+  stageChips3: []
+  stageChips4: []
   stageChangeStage: []
   currentStageChips: []
   stageList: {fileID: 0}
@@ -776,8 +778,11 @@ MonoBehaviour:
   - {fileID: 2399326795808465009, guid: 2b0a67fb37f150f4f9d4b0c57241ddc0, type: 3}
   - {fileID: 4332637460492025328, guid: 830e6fea69a697f47ab734b86cab6c31, type: 3}
   - {fileID: 7115911163003055400, guid: 6086f4de079d93946b1c33397b4ec1a7, type: 3}
+  stageChips3: []
+  stageChips4: []
   stageChangeStage: []
   stageNum: 3
+  tmpStage: 0
 --- !u!4 &389032361
 Transform:
   m_ObjectHideFlags: 0
@@ -1541,7 +1546,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f4ac7f4692c75f54caf6bd6736a542f1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  target: {fileID: 531059390}
+  player: {fileID: 0}
   followSpeed: 10
 --- !u!1 &1114569646
 GameObject:
